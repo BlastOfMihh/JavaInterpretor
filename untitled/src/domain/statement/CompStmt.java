@@ -1,7 +1,7 @@
 package domain.statement;
 
 
-import domain.ProgramState;
+import domain.program_state.ProgramState;
 
 public class CompStmt implements IStmt {
     IStmt leftStatement, rightStatement;

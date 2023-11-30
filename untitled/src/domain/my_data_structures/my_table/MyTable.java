@@ -1,4 +1,4 @@
-package domain.my_table;
+package domain.my_data_structures.my_table;
 import java.util.Hashtable;
 
 

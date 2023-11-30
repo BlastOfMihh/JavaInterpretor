@@ -3,7 +3,8 @@ package domain.expression;
 public abstract class BinaryExpression implements IExpression{
     static public enum OperationTypes{
         plus, minus, multiplication, division,
-        or, and
+        or, and,
+        equal, smaller, smallerEqual, greater, greaterEqual, notEqual
     }
     final OperationTypes operationType;
     IExpression leftExp, rightExp;

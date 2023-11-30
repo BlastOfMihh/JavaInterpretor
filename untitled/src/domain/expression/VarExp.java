@@ -1,6 +1,7 @@
 package domain.expression;
 
-import domain.my_table.IMyTable;
+import domain.program_state.heap.Heap;
+import domain.my_data_structures.my_table.IMyTable;
 import domain.value.IValue;
 import exceptions.MyException;
 
@@ -10,7 +11,8 @@ public class VarExp implements IExpression{
         this.key=key;
     }
     @Override
-    public IValue eval(IMyTable<String, IValue> symTable) throws MyException {
+    public IValue eval(IMyTable<String, IValue> symTable, Heap heap) throws MyException {
+
         return symTable.get(key);
     }
     @Override

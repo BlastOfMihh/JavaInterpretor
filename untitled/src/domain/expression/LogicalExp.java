@@ -1,6 +1,7 @@
 package domain.expression;
 
-import domain.my_table.IMyTable;
+import domain.program_state.heap.Heap;
+import domain.my_data_structures.my_table.IMyTable;
 import domain.value.BoolValue;
 import domain.type.BoolType;
 import domain.value.IValue;
@@ -11,8 +12,8 @@ public class LogicalExp extends BinaryExpression{
         super(operationType, leftExp, rightExp);
     }
     @Override
-    public IValue eval(IMyTable<String, IValue> symTable) throws MyException {
-        IValue leftEval= leftExp.eval(symTable), rightEval= rightExp.eval(symTable);
+    public IValue eval(IMyTable<String, IValue> symTable, Heap heap) throws MyException {
+        IValue leftEval= leftExp.eval(symTable, heap), rightEval= rightExp.eval(symTable, heap);
         if(!(leftEval.sameType(rightEval) && leftEval.sameType(new BoolType()))){
             throw new MyException("ERROR: invalid operands");
         }

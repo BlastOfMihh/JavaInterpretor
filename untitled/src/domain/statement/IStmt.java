@@ -1,6 +1,6 @@
 package domain.statement;
 
-import domain.ProgramState;
+import domain.program_state.ProgramState;
 import exceptions.MyException;
 
 public interface IStmt {

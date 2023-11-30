@@ -1,4 +1,4 @@
-package domain.my_stack;
+package domain.my_data_structures.my_stack;
 
 public interface IMyStack<E> {
     public E pop();

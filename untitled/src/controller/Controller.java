@@ -1,48 +1,42 @@
-import domain.ProgramState;
+package controller;
+
+import domain.program_state.ProgramState;
 import exceptions.MyException;
 import repository.IRepository;
 
 import java.util.Vector;
 
 public class Controller {
-    private IRepository<ProgramState> repository;
+    private final IRepository<ProgramState> repository;
     boolean displayExecution;
-
     public Controller(IRepository<ProgramState> repository) {
         this.repository = repository;
-        displayExecution=true;
     }
-
-    // public ProgramState oneStepExecution (ProgramState programState) throws MyException{
-    //     if (programState.isCompleted())
-    //         throw new MyException("EXECUTION already completed for this state");
-    //     return programState.execute();
-    // }
-    public void commpleteProgramExecution() throws MyException {
+    public void setDisplayExecution(boolean value){
+        displayExecution=value;
+    }
+    public void completeProgramExecution() throws MyException {
         var all = repository.getAll();
         String ouput = new String();
         Vector<ProgramState> inExecution = (Vector<ProgramState>) all.clone();
         if(displayExecution)
-            for (var curr : inExecution) {
-                System.out.print(curr.toString() + "\n");
-            }
-        boolean finished = false;
-        while (!finished) {
-            finished = true;
+            repository.logRepo();
+        while (!inExecution.isEmpty()) {
             for (int i = 0; i < inExecution.size(); ++i) {
                 var currentProgram = inExecution.elementAt(i);
                 if (currentProgram.isCompleted()) {
-                    ouput += currentProgram.getOutput()+"\n\n";//+"\n;;;;;;;;;\n";
+                    ouput += currentProgram.getOutput()+"\n";//+"\n;;;;;;;;;\n";
                     inExecution.remove(i--);
                 } else {
-                    finished = false;
                     currentProgram.execute(); //oneStepExecution(currentProgram);
-                    if (displayExecution)
-                        System.out.print(currentProgram.toString() + "\n");
+                    currentProgram.collectGarbage();
+                    if (displayExecution){
+                        repository.logRepo();
+                    }
                 }
             }
             if (displayExecution) {
-                System.out.print("\n===========\n");
+                repository.logRepo();
             }
         }
         System.out.print(String.format("Output:\n%s\nendOuput", ouput));

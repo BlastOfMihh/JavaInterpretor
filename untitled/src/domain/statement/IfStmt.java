@@ -1,6 +1,6 @@
 package domain.statement;
 
-import domain.ProgramState;
+import domain.program_state.ProgramState;
 import domain.expression.IExpression;
 import domain.type.BoolType;
 import domain.value.BoolValue;
@@ -22,7 +22,7 @@ public class IfStmt implements IStmt {
         var exeStack = state.getExecutionStack();
         var table = state.getSymTable();
         //var output=state.getOutputLog();
-        IValue expressionValue = expression.eval(table);
+        IValue expressionValue = expression.eval(table,state.getHeap());
         if (!expressionValue.sameType(new BoolType())) {
             throw new MyException("The expression does not evaluate to BOOL!");
         }

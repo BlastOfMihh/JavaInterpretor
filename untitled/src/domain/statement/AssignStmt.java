@@ -1,8 +1,7 @@
 package domain.statement;
 
-import domain.ProgramState;
+import domain.program_state.ProgramState;
 import domain.expression.IExpression;
-import domain.value.IValue;
 import exceptions.MyException;
 
 public class AssignStmt implements IStmt {
@@ -18,7 +17,7 @@ public class AssignStmt implements IStmt {
         var table=state.getSymTable();
         //var output=state.getOutputLog();
         if (table.containsKey(key)){
-            table.put(key, expression.eval(table));
+            table.put(key, expression.eval(table,state.getHeap()));
         }else
             throw new MyException("AssgnmtStatement : Variable name not found!");
         return state;

@@ -1,4 +1,4 @@
-package domain.my_list;
+package domain.my_data_structures.my_list;
 import java.util.Vector;
 
 public class MyList<E> extends Vector<E> implements IMyList<E> {

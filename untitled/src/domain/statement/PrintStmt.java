@@ -1,8 +1,8 @@
 package domain.statement;
 
-import domain.ProgramState;
+import domain.program_state.ProgramState;
 import domain.expression.IExpression;
-import domain.my_list.IMyList;
+import domain.my_data_structures.my_list.IMyList;
 import exceptions.MyException;
 
 public class PrintStmt implements IStmt {
@@ -15,7 +15,7 @@ public class PrintStmt implements IStmt {
        // var exeStack=state.getExecutionStack();
         var table=state.getSymTable();
         IMyList<String> output=state.getOutputLog();
-        output.add(expression.eval(table).toString());
+        output.add(expression.eval(table, state.getHeap()).toString()+"\n");
         return state;
     }
     @Override

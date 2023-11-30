@@ -1,4 +1,4 @@
-package domain.my_list;
+package domain.my_data_structures.my_list;
 
 public interface IMyList<E> {
     boolean add(E e);

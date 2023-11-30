@@ -1,20 +1,29 @@
-package domain;
+package domain.program_state;
 
-import domain.my_stack.IMyStack;
-import domain.my_list.IMyList;
-import domain.my_table.IMyTable;
+import domain.FileDesc;
+import domain.program_state.heap.Heap;
+import domain.my_data_structures.my_stack.IMyStack;
+import domain.my_data_structures.my_list.IMyList;
+import domain.my_data_structures.my_table.IMyTable;
 import domain.statement.IStmt;
 import domain.value.IValue;
 import exceptions.MyException;
 
 public class ProgramState {
+    IMyTable<String, FileDesc> fileTable;
     IMyTable<String, IValue> symTable;
     IMyList<String> outputLog;
     IMyStack<IStmt> executionStack;
-    public ProgramState(IMyTable<String,IValue> symTable, IMyList<String> outputLog, IMyStack<IStmt> executionStack){
+    Heap heap;
+    public ProgramState(IMyTable<String,IValue> symTable, Heap heap, IMyList<String> outputLog, IMyStack<IStmt> executionStack, IMyTable<String,FileDesc> fileTable){
+        this.heap=heap;
         this.symTable=symTable;
         this.outputLog=outputLog;
         this.executionStack=executionStack;
+        this.fileTable=fileTable;
+    }
+    public IMyTable<String, FileDesc> getFileTable(){
+        return fileTable;
     }
     public IMyList<String> getOutputLog() {
         return outputLog;
@@ -24,6 +33,9 @@ public class ProgramState {
     }
     public IMyTable<String,IValue> getSymTable() {
         return symTable;
+    }
+    public Heap getHeap(){
+        return heap;
     }
     public ProgramState execute()throws MyException {
         if (executionStack.empty()){
@@ -39,10 +51,12 @@ public class ProgramState {
 
     @Override
     public String toString() {// good enough might change later
-        return String.format("Symtable : %s\n--------\nOutput log : %s\n----\nExecutionStack:%s\n",
+        return String.format("Symtable : %s\n--------\nOutput log : %s\n----\nExecutionStack:%s\n----\nFileTable: %s\n============\nHeap: %s\\n============\\n",
                 symTable.toString(),
                 outputLog.toString(),
-                executionStack.toString()
+                executionStack.toString(),
+                fileTable.toString(),
+                heap.toString()
         );
     }
     public String getOutput(){
@@ -51,5 +65,8 @@ public class ProgramState {
             answer.append(outputLog.get(i).toString());
         }
         return answer.toString();
+    }
+
+    public void collectGarbage() {
     }
 }
