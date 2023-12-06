@@ -20,16 +20,26 @@ public class HeapWriteStmt implements IStmt{
         Heap heap=state.getHeap();
         var symTable= state.getSymTable();
         var referenceIValue=symTable.get(referenceName);
-        if (!referenceIValue.getClass().equals(RefType.class)){
-            throw new MyException(String.format("Not %s a reference value", referenceIValue));
+        if (!referenceIValue.getClass().equals(RefValue.class)){
+            throw new MyException(String.format("%s is NOT a reference value", referenceIValue));
         }
-        var reference = (RefValue)heap.get(referenceIValue);
-        if (! heap.contains(reference.getAdress()))
+        var reference = (RefValue)(referenceIValue);
+        if (reference == null)
+            throw new MyException("reference is nullll!!! in: "+this);
+        if (! heap.containsKey(reference.getAdress()))
             throw new MyException("Adress not found!");
         IValue evaluatedExpression=expression.eval(symTable, heap);
-        if (! reference.getLocationType().equals(evaluatedExpression.getType()))
+        if (! reference.getLocationType().getClass().equals(evaluatedExpression.getType().getClass()))
             throw new MyException(String.format("Expression ins't of type %s", reference.getLocationType()));
         heap.put(reference.getAdress(), evaluatedExpression);
         return state;
+    }
+
+    @Override
+    public String toString() {
+        return "HeapWriteStmt{" +
+                "referenceName='" + referenceName + '\'' +
+                ", expression=" + expression +
+                '}';
     }
 }

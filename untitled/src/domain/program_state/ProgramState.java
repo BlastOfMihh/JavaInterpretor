@@ -1,6 +1,7 @@
 package domain.program_state;
 
 import domain.FileDesc;
+import domain.program_state.garbage_collector.GarbageCollector;
 import domain.program_state.heap.Heap;
 import domain.my_data_structures.my_stack.IMyStack;
 import domain.my_data_structures.my_list.IMyList;
@@ -14,6 +15,7 @@ public class ProgramState {
     IMyTable<String, IValue> symTable;
     IMyList<String> outputLog;
     IMyStack<IStmt> executionStack;
+    GarbageCollector garbageCollector;
     Heap heap;
     public ProgramState(IMyTable<String,IValue> symTable, Heap heap, IMyList<String> outputLog, IMyStack<IStmt> executionStack, IMyTable<String,FileDesc> fileTable){
         this.heap=heap;
@@ -21,6 +23,7 @@ public class ProgramState {
         this.outputLog=outputLog;
         this.executionStack=executionStack;
         this.fileTable=fileTable;
+        this.garbageCollector=new GarbageCollector(heap, symTable);
     }
     public IMyTable<String, FileDesc> getFileTable(){
         return fileTable;
@@ -51,7 +54,8 @@ public class ProgramState {
 
     @Override
     public String toString() {// good enough might change later
-        return String.format("Symtable : %s\n--------\nOutput log : %s\n----\nExecutionStack:%s\n----\nFileTable: %s\n============\nHeap: %s\\n============\\n",
+        //String sep=new String("\n");
+        return String.format("Symtable : %s\n--------\nOutput log : %s\n----\nExecutionStack:%s\n----\nFileTable: %s\n============\nHeap: %s\n============\n\n",
                 symTable.toString(),
                 outputLog.toString(),
                 executionStack.toString(),
@@ -68,5 +72,6 @@ public class ProgramState {
     }
 
     public void collectGarbage() {
+        garbageCollector.cleanHeap();
     }
 }

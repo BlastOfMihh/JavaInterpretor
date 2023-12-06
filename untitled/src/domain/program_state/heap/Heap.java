@@ -11,6 +11,6 @@ public class Heap extends MyTable<Integer, IValue>{
     }
     public int addEntry(IValue newEntry){
         this.put(availableAdress++, newEntry);
-        return availableAdress;
+        return availableAdress-1;
     }
 }

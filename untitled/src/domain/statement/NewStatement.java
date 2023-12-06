@@ -11,7 +11,7 @@ import domain.program_state.heap.Heap;
 public class NewStatement implements IStmt{
     String varName;
     IExpression expression;
-    NewStatement(String varName, IExpression expression){
+    public NewStatement(String varName, IExpression expression){
         this.expression=expression;
         this.varName=varName;
     }
@@ -20,16 +20,25 @@ public class NewStatement implements IStmt{
         Heap heap = state.getHeap();
         IMyTable<String, IValue> symTable=state.getSymTable();
         if (!(symTable.containsKey(varName)))
-            throw new MyException(String.format("%s does not exist!!", varName));
-        if (! (symTable.get(varName) instanceof RefValue))
-            throw new MyException(String.format("Not the same type", varName));
-        int newAdress=heap.addEntry(expression.eval(symTable, heap));
-        RefValue reference=(RefValue)symTable.get(varName);
+            throw new MyException(String.format("%s does not exist!!"+this, varName));
+        if (! (symTable.get(varName) instanceof RefValue reference))
+            throw new MyException(String.format("Not the same type "+this.toString(), varName));
+        int newAddress=heap.addEntry(expression.eval(symTable, heap));
         IValue evaluatedExpression=expression.eval(symTable, heap);
-        if (! reference.getLocationType().equals(evaluatedExpression.getType())){
-            throw new MyException(String.format("Inner type not equal", varName));
+        if (! reference.getLocationType().getClass().equals(evaluatedExpression.getType().getClass())){
+            System.out.print(reference.getLocationType());
+            System.out.print(evaluatedExpression.getType());
+            throw new MyException(String.format("Inner type not equal "+this.toString(), varName));
         }
-        reference.setAdress(newAdress);
+        reference.setAdress(newAddress);
         return state;
+    }
+
+    @Override
+    public String toString() {
+        return "NewStatement{" +
+                "varName='" + varName + '\'' +
+                ", expression=" + expression +
+                '}';
     }
 }

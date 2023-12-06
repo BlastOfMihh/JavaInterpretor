@@ -15,12 +15,19 @@ public class ReadHeapExp implements IExpression{
     @Override
     public IValue eval(IMyTable<String, IValue> symTable, Heap heap) throws MyException {
         IValue evaluatedExpression=expression.eval(symTable, heap);
-        if (! evaluatedExpression.getClass().equals(RefType.class)){
-            throw new MyException(String.format("Not %s a reference value", evaluatedExpression));
+        if (! evaluatedExpression.getClass().equals(RefValue.class)){
+            throw new MyException(String.format("%s is NOT a reference value in this %s", evaluatedExpression, this));
         }
         var reference = (RefValue)evaluatedExpression;
-        if (! heap.contains(reference.getAdress()))
-            throw new MyException("Adress not found!");
+        if (! heap.containsKey(reference.getAdress()))
+            throw new MyException(String.format("Adress not found! in %s", this));
         return heap.get(reference.getAdress());
+    }
+
+    @Override
+    public String toString() {
+        return "ReadHeapExp{" +
+                "expression=" + expression +
+                '}';
     }
 }

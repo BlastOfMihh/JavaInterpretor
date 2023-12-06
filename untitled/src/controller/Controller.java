@@ -39,7 +39,7 @@ public class Controller {
                 repository.logRepo();
             }
         }
-        System.out.print(String.format("Output:\n%s\nendOuput", ouput));
+        System.out.print(String.format("Output:\n%sEndOuput\n\n", ouput));
     }
 
     public void addProgramToExecution(ProgramState program) {
