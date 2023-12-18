@@ -8,7 +8,7 @@ import exceptions.MyException;
 public class ValueExp implements IExpression{
     IValue value;
     public ValueExp(IValue value){
-        this.value=value;
+        this.value=value.deepCopy();
     }
     @Override
     public IValue eval(IMyTable<String, IValue> symTable, Heap heap) throws MyException {

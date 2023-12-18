@@ -32,7 +32,7 @@ public class HeapWriteStmt implements IStmt{
         if (! reference.getLocationType().getClass().equals(evaluatedExpression.getType().getClass()))
             throw new MyException(String.format("Expression ins't of type %s", reference.getLocationType()));
         heap.put(reference.getAdress(), evaluatedExpression);
-        return state;
+        return null;
     }
 
     @Override

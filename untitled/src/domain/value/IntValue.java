@@ -20,4 +20,7 @@ public class IntValue extends Value<Integer>{
     public String toString() {
         return super.toString();
     }
+    public IValue deepCopy(){
+        return new IntValue(getValue());
+    }
 }

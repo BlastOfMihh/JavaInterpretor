@@ -19,7 +19,7 @@ public class RunExampleCommand extends Command{
             Scanner readOption=new Scanner(System.in);
             String option=readOption.next();
             controller.setDisplayExecution(option.equals("y"));
-            controller.completeProgramExecution();
+            controller.completeProgramsExecution();
         }catch (MyException e){
             System.out.println(e.getMessage());
         }

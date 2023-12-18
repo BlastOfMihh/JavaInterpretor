@@ -19,4 +19,9 @@ public class BoolValue extends Value<Boolean>{
     public String toString() {
         return super.toString();
     }
+
+    @Override
+    public IValue deepCopy(){
+        return new BoolValue(getValue());
+    }
 }

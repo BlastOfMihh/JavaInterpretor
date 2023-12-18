@@ -34,14 +34,28 @@ public class GarbageCollector {
                 .collect(Collectors.toMap(Map.Entry::getKey, element->element.getValue()));
     }
     // static Heap constructCleanHeap()
-    public void cleanHeap(){
+    //public void cleanHeap(){
+    //    //if(true) return; //disable it please do not forget to re-enable it
+    //    Map<Integer, IValue> newHeap=getCleanHeap(
+    //            Stream.concat(getAddressesFromCollection(symTable.values()).stream(),
+    //                getAddressesFromCollection(heap.values()).stream()).toList()
+    //            , heap
+    //        );
+    //    heap.clear();
+    //    newHeap.entrySet().stream().forEach(element->heap.put(element.getKey(), element.getValue()));
+    //}
+    public  Map<Integer, IValue> getNewCleanedHeap(){
         //if(true) return; //disable it please do not forget to re-enable it
         Map<Integer, IValue> newHeap=getCleanHeap(
                 Stream.concat(getAddressesFromCollection(symTable.values()).stream(),
-                    getAddressesFromCollection(heap.values()).stream()).toList()
+                        getAddressesFromCollection(heap.values()).stream()).toList()
                 , heap
-            );
-        heap.clear();
-        newHeap.entrySet().stream().forEach(element->heap.put(element.getKey(), element.getValue()));
+        );
+        return newHeap;
+        //heap.clear();
+        //newHeap.entrySet().stream().forEach(element->heap.put(element.getKey(), element.getValue()));
+    }
+    public void setHeap(Heap heap){
+        this.heap=heap;
     }
 }

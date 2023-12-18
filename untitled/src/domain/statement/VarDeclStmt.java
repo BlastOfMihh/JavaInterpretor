@@ -18,7 +18,7 @@ public class VarDeclStmt implements IStmt {
             table.put(varName, type.newDefaultValue());
         else
             throw new MyException();
-        return state;
+        return null;
     }
     public String toString(){
         return "VarDeclarationStatement:"+varName+" with type="+type.toString();

@@ -26,7 +26,7 @@ public class CloseRFile extends FileStatement {
             throw new MyException(this.toString()+e.getMessage());
         }
         fileTable.remove(expressionStringValue.getValue());
-        return state;
+        return null;
     }
 
     @Override

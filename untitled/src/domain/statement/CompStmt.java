@@ -18,7 +18,7 @@ public class CompStmt implements IStmt {
         // var output=state.getOutputLog();
         exeStack.push(rightStatement);
         exeStack.push(leftStatement);
-        return state;
+        return null;
     }
     public String toString(){
         return "("+leftStatement.toString()+","+rightStatement.toString()+")";

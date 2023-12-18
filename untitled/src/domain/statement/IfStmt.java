@@ -22,7 +22,7 @@ public class IfStmt implements IStmt {
         var exeStack = state.getExecutionStack();
         var table = state.getSymTable();
         //var output=state.getOutputLog();
-        IValue expressionValue = expression.eval(table,state.getHeap());
+        IValue expressionValue = expression.eval(table, state.getHeap());
         if (!expressionValue.sameType(new BoolType())) {
             throw new MyException("The expression does not evaluate to BOOL!");
         }
@@ -32,7 +32,7 @@ public class IfStmt implements IStmt {
         } else {
             exeStack.push(falseStatement);
         }
-        return state;
+        return null;
     }
 
     @Override

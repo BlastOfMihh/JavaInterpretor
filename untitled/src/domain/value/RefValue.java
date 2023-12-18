@@ -40,4 +40,8 @@ public class RefValue implements IValue {
                 ", locationType=" + locationType +
                 '}';
     }
+    @Override
+    public IValue deepCopy() {
+        return new RefValue(locationType, adress);
+    }
 }

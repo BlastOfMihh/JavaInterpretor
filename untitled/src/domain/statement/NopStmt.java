@@ -6,7 +6,7 @@ import exceptions.MyException;
 public class NopStmt implements IStmt {
     @Override
     public ProgramState execute(ProgramState state) throws MyException {
-        return state;
+        return null;
     }
     @Override
     public String toString() {

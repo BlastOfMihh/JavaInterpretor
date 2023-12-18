@@ -27,7 +27,7 @@ public class OpenRfSmt extends FileStatement{
         }catch (Exception e){
             throw new MyException(this.toString()+e.getMessage());
         }
-        return state;
+        return null;
     }
 
     @Override

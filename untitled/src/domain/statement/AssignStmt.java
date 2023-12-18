@@ -20,7 +20,7 @@ public class AssignStmt implements IStmt {
             table.put(key, expression.eval(table,state.getHeap()));
         }else
             throw new MyException("AssgnmtStatement : Variable name not found!");
-        return state;
+        return null;
     }
     public String toString(){
         return "AssigmentStatemnet " + key + "="+ expression.toString();

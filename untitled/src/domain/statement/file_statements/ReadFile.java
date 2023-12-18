@@ -44,7 +44,7 @@ public class ReadFile extends FileStatement {
         }catch (Exception e){
             throw new MyException(this.toString()+e.getMessage());
         }
-        return state;
+        return null;
     }
     @Override
     public String toString() {

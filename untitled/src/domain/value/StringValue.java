@@ -14,4 +14,10 @@ public class StringValue extends Value<String>{
     public IType getType() {
         return new StringType();
     }
+
+    @Override
+    public IValue deepCopy() {
+        return new StringValue(new String(getValue()));
+    }
+
 }

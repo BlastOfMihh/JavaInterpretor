@@ -25,9 +25,8 @@ public class FileRepo<T> extends Repository<T>{
         PrintWriter writer;
         try{
             writer= new PrintWriter(new BufferedWriter(new FileWriter(fileName, true)));
-            for (var item : items){
-                writer.append(item.toString());
-            }
+            //for (var item : items){ writer.append(item.toString()); }
+            items.forEach(item -> writer.append(item.toString()));
             writer.close();
         }catch(Exception e){
             throw new MyException(e.getMessage());

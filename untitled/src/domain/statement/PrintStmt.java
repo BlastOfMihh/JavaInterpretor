@@ -16,7 +16,7 @@ public class PrintStmt implements IStmt {
         var table=state.getSymTable();
         IMyList<String> output=state.getOutputLog();
         output.add(expression.eval(table, state.getHeap()).toString()+"\n");
-        return state;
+        return null;
     }
     @Override
     public String toString() {

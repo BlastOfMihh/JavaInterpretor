@@ -23,15 +23,13 @@ public class NewStatement implements IStmt{
             throw new MyException(String.format("%s does not exist!!"+this, varName));
         if (! (symTable.get(varName) instanceof RefValue reference))
             throw new MyException(String.format("Not the same type "+this.toString(), varName));
-        int newAddress=heap.addEntry(expression.eval(symTable, heap));
         IValue evaluatedExpression=expression.eval(symTable, heap);
         if (! reference.getLocationType().getClass().equals(evaluatedExpression.getType().getClass())){
-            System.out.print(reference.getLocationType());
-            System.out.print(evaluatedExpression.getType());
             throw new MyException(String.format("Inner type not equal "+this.toString(), varName));
         }
+        int newAddress=heap.addEntry(evaluatedExpression);
         reference.setAdress(newAddress);
-        return state;
+        return null;
     }
 
     @Override

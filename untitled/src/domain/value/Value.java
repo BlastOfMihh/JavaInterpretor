@@ -27,4 +27,6 @@ public abstract class Value<T> implements IValue{
     public String toString() {
         return String.format("Type:%s Value:%s", this.getType().toString(), value.toString());
     }
+
+
 }

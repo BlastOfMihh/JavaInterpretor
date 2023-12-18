@@ -10,6 +10,8 @@ import domain.statement.IStmt;
 import domain.value.IValue;
 import exceptions.MyException;
 
+import java.util.Map;
+
 public class ProgramState {
     IMyTable<String, FileDesc> fileTable;
     IMyTable<String, IValue> symTable;
@@ -17,6 +19,9 @@ public class ProgramState {
     IMyStack<IStmt> executionStack;
     GarbageCollector garbageCollector;
     Heap heap;
+    private int id;
+    static int availableId=0;
+
     public ProgramState(IMyTable<String,IValue> symTable, Heap heap, IMyList<String> outputLog, IMyStack<IStmt> executionStack, IMyTable<String,FileDesc> fileTable){
         this.heap=heap;
         this.symTable=symTable;
@@ -24,6 +29,11 @@ public class ProgramState {
         this.executionStack=executionStack;
         this.fileTable=fileTable;
         this.garbageCollector=new GarbageCollector(heap, symTable);
+        this.id=availableId++;
+        //availableId++;
+    }
+    public int getId(){
+        return id;
     }
     public IMyTable<String, FileDesc> getFileTable(){
         return fileTable;
@@ -40,7 +50,7 @@ public class ProgramState {
     public Heap getHeap(){
         return heap;
     }
-    public ProgramState execute()throws MyException {
+    public ProgramState executeOneStep()throws MyException {
         if (executionStack.empty()){
             throw new MyException("No more elements in the execution Stack");
         }
@@ -55,7 +65,8 @@ public class ProgramState {
     @Override
     public String toString() {// good enough might change later
         //String sep=new String("\n");
-        return String.format("Symtable : %s\n--------\nOutput log : %s\n----\nExecutionStack:%s\n----\nFileTable: %s\n============\nHeap: %s\n============\n\n",
+        return String.format("id %s -> Symtable : %s\n--------\nOutput log : %s\n----\nExecutionStack:%s\n----\nFileTable: %s\n============\nHeap: %s\n============\n\n",
+                id,
                 symTable.toString(),
                 outputLog.toString(),
                 executionStack.toString(),
@@ -71,7 +82,14 @@ public class ProgramState {
         return answer.toString();
     }
 
-    public void collectGarbage() {
-        garbageCollector.cleanHeap();
+   // public void collectGarbage() {
+   //     garbageCollector.cleanHeap();
+   // }
+    public Map<Integer, IValue> getNewCleanedHeap(){
+        return garbageCollector.getNewCleanedHeap();
+    }
+    public void setHeap(Heap heap){
+        this.heap=heap;
+        this.garbageCollector.setHeap(heap);
     }
 }
