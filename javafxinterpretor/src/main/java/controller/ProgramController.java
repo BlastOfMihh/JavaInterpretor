@@ -1,7 +1,6 @@
 package controller;
 
-import domain.my_data_structures.my_table.IMyTable;
-import domain.my_data_structures.my_table.MyTable;
+import domain.my_data_structures.my_list.IMyList;
 import domain.program_state.ProgramState;
 import domain.program_state.heap.Heap;
 import domain.value.IValue;
@@ -10,16 +9,19 @@ import repository.IRepository;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Vector;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.stream.Collectors;
 
-public class Controller {
+public class ProgramController {
     private final IRepository<ProgramState> repository;
+    IMyList<String> outputLog;
+    Heap heap;
     boolean displayExecution;
     ExecutorService executor;
-    public Controller(IRepository<ProgramState> repository) {
+    public ProgramController(IRepository<ProgramState> repository) {
         this.repository = repository;
         executor = Executors.newFixedThreadPool(2);
     }
@@ -41,18 +43,7 @@ public class Controller {
         programs.stream().forEach(program->program.setHeap(newOverallHeap));
         return programs;
     }
-    public void completeProgramsExecution() throws MyException {
-        List<ProgramState> programList=repository.getAll();
-        while(programList.size()>0){
-            // old way ; programList.forEach(programState -> programState.collectGarbage());
-            programList=cleanHeaps(programList);
-            executeOneStepForEachProgram(programList);
-            programList=removeCompletedPrograms(programList);
-            repository.setProgramList(programList);
-            //programList=cleanHeaps(programList);
-        }
-        executor.shutdown();
-    }
+
     private void executeOneStepForEachProgram(List<ProgramState> programList) throws MyException{ // allSteps method
         repository.logRepo();
         List<Callable<ProgramState>> callables=programList.stream()
@@ -80,34 +71,32 @@ public class Controller {
         repository.setProgramList(programList);
         repository.logRepo();
     }
-///    public void completeProgramExecution() throws MyException {
-///        var all = repository.getAll();
-///        StringBuilder output = new StringBuilder(new String());
-///        Vector<ProgramState> inExecution = (Vector<ProgramState>) all.clone();
-///        if(displayExecution)
-///            repository.logRepo();
-///        while (!inExecution.isEmpty()) {
-///            for (int i = 0; i < inExecution.size(); ++i) {
-///                var currentProgram = inExecution.elementAt(i);
-///                if (currentProgram.isCompleted()) {
-///                    output.append(currentProgram.getOutput()).append("\n");//+"\n;;;;;;;;;\n";
-///                    inExecution.remove(i--);
-///                } else {
-///                    currentProgram.execute(); //oneStepExecution(currentProgram);
-///                    currentProgram.collectGarbage();
-///                    if (displayExecution){
-///                        repository.logRepo();
-///                    }
-///                }
-///            }
-///           // if (displayExecution) {
-///           //     repository.logRepo();
-///           // }
-///        }
-///        System.out.print(String.format("Output:\n%sEndOuput\n\n", output.toString()));
-///    }
-///
+    public void executeOneStep() throws MyException {
+        List<ProgramState> programList=repository.getAll();
+        programList=cleanHeaps(programList);
+        executeOneStepForEachProgram(programList);
+        programList=removeCompletedPrograms(programList);
+        repository.setProgramList(programList);
+        // old way ; programList.forEach(programState -> programState.collectGarbage());
+    }
+    public void completeProgramsExecution() throws MyException {
+        while(repository.getAll().size()>0){
+            executeOneStep();
+        }
+        executor.shutdown();
+    }
     public void addProgramToExecution(ProgramState program) {
         repository.add(program);
+        outputLog=program.getOutputLog();
+        heap=program.getHeap();
+    }
+    public Vector<ProgramState>getListOfPrograms (){
+        return repository.getAll();
+    }
+    public List<String> getOutputLog(){
+        return (List<String>) outputLog;
+    }
+    public Heap getHeap() {
+        return heap;
     }
 }

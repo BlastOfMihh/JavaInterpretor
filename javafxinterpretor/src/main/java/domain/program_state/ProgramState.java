@@ -65,7 +65,8 @@ public class ProgramState {
     @Override
     public String toString() {// good enough might change later
         //String sep=new String("\n");
-        return String.format("id %s -> Symtable : %s\n--------\nOutput log : %s\n----\nExecutionStack:%s\n----\nFileTable: %s\n============\nHeap: %s\n============\n\n",
+        //return String.format("id %s -> Symtable : %s\n--------\nOutput log : %s\n----\nExecutionStack:%s\n----\nFileTable: %s\n============\nHeap: %s\n============\n\n",
+        return String.format("id %s \n *Symtable : %s\n *Output log : %s\n *ExecutionStack:%s\n *FileTable: %s\n *Heap: %s\n\n",
                 id,
                 symTable.toString(),
                 outputLog.toString(),

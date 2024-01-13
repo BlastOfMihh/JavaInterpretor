@@ -133,7 +133,13 @@
                         <!-- Default configuration for running with: mvn clean javafx:run -->
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>org.example.javafxinterpretor/org.example.javafxinterpretor.HelloApplication
+                            <mainClass>
+                                <!--
+                                org.example.javafxinterpretor/view.viewgui.Application
+                                -->
+                                view.gui.Main
+
+
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>

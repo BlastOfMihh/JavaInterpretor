@@ -1,13 +1,13 @@
-package view;
+package view.viewcli;
 
-import controller.Controller;
+import controller.ProgramController;
 import exceptions.MyException;
 
 import java.util.Scanner;
 
 public class RunExampleCommand extends Command{
-    private final Controller controller;
-    public RunExampleCommand(String key, String description, Controller controller){
+    private final ProgramController controller;
+    public RunExampleCommand(String key, String description, ProgramController controller){
         super(key, description);
         this.controller=controller;
     }

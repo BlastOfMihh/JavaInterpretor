@@ -1,6 +1,6 @@
-package view;
+package view.viewcli;
 
-import controller.Controller;
+import controller.ProgramController;
 import domain.FileDesc;
 import domain.expression.*;
 import domain.program_state.ProgramState;
@@ -22,7 +22,7 @@ import repository.Repository;
 
 public class InterpreterMain {
 
-    public static void addState(Controller controller, IStmt ex) throws MyException{
+    public static void addState(ProgramController controller, IStmt ex) throws MyException{
         ex.typeCheck(new MyTable<>());
         Heap heap=new Heap();
         MyTable<String, IValue> symTable=new MyTable<String,IValue>();
@@ -54,7 +54,7 @@ public class InterpreterMain {
                 new CloseRFile(new VarExp("varf"))
         ) ) ) ) ) ) ));
         Repository<ProgramState> repository = new FileRepo<ProgramState>("repolog.txt");
-        Controller controller=new Controller(repository);
+        ProgramController controller=new ProgramController(repository);
         addState(controller, ex);
         menu.addCommand(new RunExampleCommand("1", ex.toString(), controller));
     }
@@ -72,7 +72,7 @@ public class InterpreterMain {
         );
 
         Repository<ProgramState> repository = new FileRepo<ProgramState>("repolog.txt");
-        Controller controller=new Controller(repository);
+        ProgramController controller=new ProgramController(repository);
         addState(controller, ex);
         menu.addCommand(new RunExampleCommand("2", ex.toString(), controller));
     }
@@ -92,8 +92,8 @@ public class InterpreterMain {
             new CompStmt(
             new VarDeclStmt("v", new RefType(new IntType())), new CompStmt(
             new NewStatement("v", new ValueExp(new IntValue(20))), new CompStmt(
-            new NewStatement("v", new ValueExp(new StringValue())), new CompStmt(
-            //new VarDeclStmt("a", new RefType(new RefType(new IntType()))), new CompStmt(
+            //new NewStatement("v", new ValueExp(new StringValue())), new CompStmt(
+            new VarDeclStmt("a", new RefType(new RefType(new IntType()))), new CompStmt(
             new NewStatement("a", new VarExp("v")), new CompStmt(
             new NewStatement("v", new ValueExp(new IntValue(30))), new CompStmt(
             new NewStatement("v", new ValueExp(new IntValue(35))), new CompStmt(
@@ -110,7 +110,7 @@ public class InterpreterMain {
             );
 
         Repository<ProgramState> repository = new FileRepo<ProgramState>("repolog.txt");
-        Controller controller=new Controller(repository);
+        ProgramController controller=new ProgramController(repository);
         addState(controller, ex);
         menu.addCommand(new RunExampleCommand("8", ex.toString(), controller));
     }
@@ -135,7 +135,7 @@ public class InterpreterMain {
                 );
 
         Repository<ProgramState> repository = new FileRepo<ProgramState>("repolog.txt");
-        Controller controller=new Controller(repository);
+        ProgramController controller=new ProgramController(repository);
         addState(controller, ex);
         menu.addCommand(new RunExampleCommand("2", ex.toString(), controller));
     }
@@ -166,7 +166,7 @@ public class InterpreterMain {
         )
         );
         Repository<ProgramState> repository = new FileRepo<ProgramState>("repolog.txt");
-        Controller controller=new Controller(repository);
+        ProgramController controller=new ProgramController(repository);
         addState(controller, ex);
         menu.addCommand(new RunExampleCommand("1", ex.toString(), controller));
     }
@@ -186,7 +186,7 @@ public class InterpreterMain {
             ))
         )) ;
         Repository<ProgramState> repository = new FileRepo<ProgramState>("repolog.txt");
-        Controller controller=new Controller(repository);
+        ProgramController controller=new ProgramController(repository);
         addState(controller, ex);
         menu.addCommand(new RunExampleCommand("2", ex.toString(), controller));
     }
@@ -203,7 +203,7 @@ public class InterpreterMain {
                                 new NewStatement("b", new ValueExp(new IntValue(8))))
                 ) ;
         Repository<ProgramState> repository = new FileRepo<ProgramState>("repolog.txt");
-        Controller controller=new Controller(repository);
+        ProgramController controller=new ProgramController(repository);
         addState(controller, ex);
         menu.addCommand(new RunExampleCommand("2", ex.toString(), controller));
     }

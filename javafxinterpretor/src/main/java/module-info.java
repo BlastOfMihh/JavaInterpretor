@@ -11,6 +11,6 @@ module org.example.javafxinterpretor {
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
 
-    opens org.example.javafxinterpretor to javafx.fxml;
-    exports org.example.javafxinterpretor;
+    opens view.viewgui to javafx.fxml;
+    exports view.viewgui;
 }

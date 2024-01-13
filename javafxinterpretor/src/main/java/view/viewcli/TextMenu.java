@@ -1,4 +1,4 @@
-package view;
+package view.viewcli;
 
 import domain.my_data_structures.my_table.IMyTable;
 import domain.my_data_structures.my_table.MyTable;
