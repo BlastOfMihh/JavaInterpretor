@@ -68,7 +68,7 @@ public class SelectProgramController {
                         ,
                         new CompStmt(new VarDeclStmt("b", new RefType(new IntType())),
                                 new NewStatement("b", new ValueExp(new IntValue(8))))
-                ) ;
+                );
         return ex;
     }
     IStmt addThreadsExample() {
@@ -99,17 +99,19 @@ public class SelectProgramController {
         );
         return ex;
     }
-
+    private IStmt addNop(IStmt stmt){
+        return new CompStmt(stmt, new NopStmt());
+    }
     private void addExamples(){
         programList.setItems(FXCollections.observableArrayList(
-                getRelationalExample(),
-                addNimrodExamples(),
-                addThreadsExample()
+               addNop( getRelationalExample()),
+               addNop( addNimrodExamples()),
+               addNop( addThreadsExample())
         ));
     }
     @FXML
     public void initialize(){
-        System.out.print("Lets fight the epic battle");
+        //System.out.print("Lets fight the epic battle");
         addExamples();
     }
     @FXML

@@ -41,6 +41,7 @@ public class ProgramController {
             newOverallHeap.putAll(newCurrHeap);
         });
         programs.stream().forEach(program->program.setHeap(newOverallHeap));
+        this.heap=newOverallHeap;
         return programs;
     }
 

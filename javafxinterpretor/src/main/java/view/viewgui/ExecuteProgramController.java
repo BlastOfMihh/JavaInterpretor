@@ -60,13 +60,13 @@ public class ExecuteProgramController extends StatedEPC {
         programStatesListView.setOnMouseClicked(mouseEvent -> updateGui());
     }
 
-    private void populateProgramIDsView() {
+    private void updateProgramIDsView() {
         List<ProgramState> listOfPrograms = programController.getListOfPrograms();
         List<Integer> idList = listOfPrograms.stream().map(ProgramState::getId).toList();
         programStatesListView.setItems(FXCollections.observableList(idList));
         numberOfProgramStates.setText(Integer.toString(listOfPrograms.size()));
     }
-    private void populateHeap() {
+    private void updateHeap() {
         //List<Integer> dummy=new ArrayList<>();
         //dummy.add(2);
         //dummy.add(2);
@@ -75,19 +75,20 @@ public class ExecuteProgramController extends StatedEPC {
         Heap heap = new Heap();
         if (!programController.getListOfPrograms().isEmpty())
             heap = programController.getListOfPrograms().get(0).getHeap();
+            //heap = programController.getHeap();
         List<Pair<Integer, IValue>> heapTableList = new ArrayList<Pair<Integer, IValue>>();
         for (var entry : heap.entrySet())
             heapTableList.add(new Pair<>(entry.getKey(), entry.getValue()));
         heapTableView.setItems(FXCollections.observableList(heapTableList));
         heapTableView.refresh();
     }
-    private void populateFileTableView() {
+    private void updateFileTableView() {
         ArrayList<String> namesOfFiles = new ArrayList<>();
         if (!programController.getListOfPrograms().isEmpty())
             namesOfFiles = new ArrayList<String>(programController.getListOfPrograms().get(0).getFileTable().keySet());
         fileListView.setItems(FXCollections.observableArrayList(namesOfFiles));
     }
-    private void populateOutputView() {
+    private void updateOutputView() {
         List<String> output = new ArrayList<>();
             //output = controller.getListOfPrograms().get(0).getOutputList().getContentAsListOfStrings();
         output = (List<String>) programController.getOutputLog();
@@ -104,7 +105,7 @@ public class ExecuteProgramController extends StatedEPC {
         return programController.getListOfPrograms().get(currentId);
     }
 
-    private void populateExecutionStackView() {
+    private void updateExecutionStackView() {
         ProgramState currentProgram = getCurrentProgram();
         List<String> executionStackAsListOfStrings = new ArrayList<>();
         if (currentProgram!=null)
@@ -113,7 +114,7 @@ public class ExecuteProgramController extends StatedEPC {
         executionStackListView.refresh();
     }
 
-    private void populateSymbolTableView() {
+    private void updateSymbolTableView() {
         ProgramState currentProgram = getCurrentProgram();
         List<Pair<String, IValue>> symbolTableList = new ArrayList<>();
         if (currentProgram!=null)
@@ -123,12 +124,12 @@ public class ExecuteProgramController extends StatedEPC {
         symbolTableView.refresh();
     }
     protected void updateGui(){
-        populateExecutionStackView();
-        populateSymbolTableView();
-        populateOutputView();
-        populateFileTableView();
-        populateProgramIDsView();
-        populateHeap();
+        updateExecutionStackView();
+        updateSymbolTableView();
+        updateOutputView();
+        updateFileTableView();
+        updateProgramIDsView();
+        updateHeap();
     }
 
     @FXML
