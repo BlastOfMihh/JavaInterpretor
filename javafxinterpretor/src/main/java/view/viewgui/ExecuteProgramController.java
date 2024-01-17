@@ -102,7 +102,7 @@ public class ExecuteProgramController extends StatedEPC {
         int currentId = programStatesListView.getSelectionModel().getSelectedIndex();
         if (currentId == -1)
             return programController.getListOfPrograms().get(0);
-        return programController.getListOfPrograms().get(currentId);
+        return programController.getListOfPrograms().get(Math.min(currentId, programController.getListOfPrograms().size()-1));
     }
 
     private void updateExecutionStackView() {

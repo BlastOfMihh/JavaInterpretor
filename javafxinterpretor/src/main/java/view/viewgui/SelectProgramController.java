@@ -13,6 +13,7 @@ import domain.type.IntType;
 import domain.type.RefType;
 import domain.value.IValue;
 import domain.value.IntValue;
+import domain.value.StringValue;
 import exceptions.MyException;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
@@ -64,7 +65,8 @@ public class SelectProgramController {
         IStmt ex =
                 new CompStmt(
                         new CompStmt(new VarDeclStmt("a", new RefType(new IntType())),
-                                new NewStatement("a", new ValueExp(new IntValue(7))))
+                                new NewStatement("a", new ValueExp(new StringValue())))
+                                //new NewStatement("a", new ValueExp(new (7))))
                         ,
                         new CompStmt(new VarDeclStmt("b", new RefType(new IntType())),
                                 new NewStatement("b", new ValueExp(new IntValue(8))))
