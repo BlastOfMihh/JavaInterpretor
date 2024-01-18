@@ -52,7 +52,6 @@ public class ExecuteProgramController extends StatedEPC {
     }
 
     public void initialize() {
-        System.out.print("yes epic");
         heapAddressColumn.setCellValueFactory(p -> new SimpleIntegerProperty(p.getValue().getKey()).asObject());
         heapValueColumn.setCellValueFactory(p -> new SimpleStringProperty(p.getValue().getValue().toString()));
         symbolTableVariableNameColumn.setCellValueFactory(p -> new SimpleStringProperty(p.getValue().getKey()));

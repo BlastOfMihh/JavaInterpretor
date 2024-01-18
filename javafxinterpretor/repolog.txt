@@ -1,126 +1,347 @@
-id 2 
+id 0 
  *Symtable : {}
  *Output log : []
- *ExecutionStack:[(((VarDeclarationStatement:a with type=RefType,NewStatement{varName='a', expression=ValueExpression{value=Type:IntType Value:7}}),(VarDeclarationStatement:b with type=RefType,NewStatement{varName='b', expression=ValueExpression{value=Type:IntType Value:8}})),NopStatement)]
+ *ExecutionStack:[((VarDeclarationStatement:v with type=IntType,(VarDeclarationStatement:a with type=RefType,(AssigmentStatemnet v=ValueExpression{value=Type:IntType Value:10},(NewStatement{varName='a', expression=ValueExpression{value=Type:IntType Value:22}},(ForkStmt{statement=(HeapWriteStmt{referenceName='a', expression=ValueExpression{value=Type:IntType Value:30}},(AssigmentStatemnet v=ValueExpression{value=Type:IntType Value:32},(PrintStatement{VariableExpression{key='v'}},PrintStatement{ReadHeapExp{expression=VariableExpression{key='a'}}})))},(PrintStatement{VariableExpression{key='v'}},PrintStatement{ReadHeapExp{expression=VariableExpression{key='a'}}})))))),NopStatement)]
  *FileTable: {}
  *Heap: {}
 
-id 2 
+id 0 
  *Symtable : {}
  *Output log : []
- *ExecutionStack:[NopStatement, ((VarDeclarationStatement:a with type=RefType,NewStatement{varName='a', expression=ValueExpression{value=Type:IntType Value:7}}),(VarDeclarationStatement:b with type=RefType,NewStatement{varName='b', expression=ValueExpression{value=Type:IntType Value:8}}))]
+ *ExecutionStack:[NopStatement, (VarDeclarationStatement:v with type=IntType,(VarDeclarationStatement:a with type=RefType,(AssigmentStatemnet v=ValueExpression{value=Type:IntType Value:10},(NewStatement{varName='a', expression=ValueExpression{value=Type:IntType Value:22}},(ForkStmt{statement=(HeapWriteStmt{referenceName='a', expression=ValueExpression{value=Type:IntType Value:30}},(AssigmentStatemnet v=ValueExpression{value=Type:IntType Value:32},(PrintStatement{VariableExpression{key='v'}},PrintStatement{ReadHeapExp{expression=VariableExpression{key='a'}}})))},(PrintStatement{VariableExpression{key='v'}},PrintStatement{ReadHeapExp{expression=VariableExpression{key='a'}}}))))))]
  *FileTable: {}
  *Heap: {}
 
-id 2 
+id 0 
  *Symtable : {}
  *Output log : []
- *ExecutionStack:[NopStatement, ((VarDeclarationStatement:a with type=RefType,NewStatement{varName='a', expression=ValueExpression{value=Type:IntType Value:7}}),(VarDeclarationStatement:b with type=RefType,NewStatement{varName='b', expression=ValueExpression{value=Type:IntType Value:8}}))]
+ *ExecutionStack:[NopStatement, (VarDeclarationStatement:v with type=IntType,(VarDeclarationStatement:a with type=RefType,(AssigmentStatemnet v=ValueExpression{value=Type:IntType Value:10},(NewStatement{varName='a', expression=ValueExpression{value=Type:IntType Value:22}},(ForkStmt{statement=(HeapWriteStmt{referenceName='a', expression=ValueExpression{value=Type:IntType Value:30}},(AssigmentStatemnet v=ValueExpression{value=Type:IntType Value:32},(PrintStatement{VariableExpression{key='v'}},PrintStatement{ReadHeapExp{expression=VariableExpression{key='a'}}})))},(PrintStatement{VariableExpression{key='v'}},PrintStatement{ReadHeapExp{expression=VariableExpression{key='a'}}}))))))]
  *FileTable: {}
  *Heap: {}
 
-id 2 
+id 0 
  *Symtable : {}
  *Output log : []
- *ExecutionStack:[NopStatement, (VarDeclarationStatement:b with type=RefType,NewStatement{varName='b', expression=ValueExpression{value=Type:IntType Value:8}}), (VarDeclarationStatement:a with type=RefType,NewStatement{varName='a', expression=ValueExpression{value=Type:IntType Value:7}})]
+ *ExecutionStack:[NopStatement, (VarDeclarationStatement:a with type=RefType,(AssigmentStatemnet v=ValueExpression{value=Type:IntType Value:10},(NewStatement{varName='a', expression=ValueExpression{value=Type:IntType Value:22}},(ForkStmt{statement=(HeapWriteStmt{referenceName='a', expression=ValueExpression{value=Type:IntType Value:30}},(AssigmentStatemnet v=ValueExpression{value=Type:IntType Value:32},(PrintStatement{VariableExpression{key='v'}},PrintStatement{ReadHeapExp{expression=VariableExpression{key='a'}}})))},(PrintStatement{VariableExpression{key='v'}},PrintStatement{ReadHeapExp{expression=VariableExpression{key='a'}}}))))), VarDeclarationStatement:v with type=IntType]
  *FileTable: {}
  *Heap: {}
 
-id 2 
+id 0 
  *Symtable : {}
  *Output log : []
- *ExecutionStack:[NopStatement, (VarDeclarationStatement:b with type=RefType,NewStatement{varName='b', expression=ValueExpression{value=Type:IntType Value:8}}), (VarDeclarationStatement:a with type=RefType,NewStatement{varName='a', expression=ValueExpression{value=Type:IntType Value:7}})]
+ *ExecutionStack:[NopStatement, (VarDeclarationStatement:a with type=RefType,(AssigmentStatemnet v=ValueExpression{value=Type:IntType Value:10},(NewStatement{varName='a', expression=ValueExpression{value=Type:IntType Value:22}},(ForkStmt{statement=(HeapWriteStmt{referenceName='a', expression=ValueExpression{value=Type:IntType Value:30}},(AssigmentStatemnet v=ValueExpression{value=Type:IntType Value:32},(PrintStatement{VariableExpression{key='v'}},PrintStatement{ReadHeapExp{expression=VariableExpression{key='a'}}})))},(PrintStatement{VariableExpression{key='v'}},PrintStatement{ReadHeapExp{expression=VariableExpression{key='a'}}}))))), VarDeclarationStatement:v with type=IntType]
  *FileTable: {}
  *Heap: {}
 
-id 2 
- *Symtable : {}
+id 0 
+ *Symtable : {v=Type:IntType Value:0}
  *Output log : []
- *ExecutionStack:[NopStatement, (VarDeclarationStatement:b with type=RefType,NewStatement{varName='b', expression=ValueExpression{value=Type:IntType Value:8}}), NewStatement{varName='a', expression=ValueExpression{value=Type:IntType Value:7}}, VarDeclarationStatement:a with type=RefType]
+ *ExecutionStack:[NopStatement, (VarDeclarationStatement:a with type=RefType,(AssigmentStatemnet v=ValueExpression{value=Type:IntType Value:10},(NewStatement{varName='a', expression=ValueExpression{value=Type:IntType Value:22}},(ForkStmt{statement=(HeapWriteStmt{referenceName='a', expression=ValueExpression{value=Type:IntType Value:30}},(AssigmentStatemnet v=ValueExpression{value=Type:IntType Value:32},(PrintStatement{VariableExpression{key='v'}},PrintStatement{ReadHeapExp{expression=VariableExpression{key='a'}}})))},(PrintStatement{VariableExpression{key='v'}},PrintStatement{ReadHeapExp{expression=VariableExpression{key='a'}}})))))]
  *FileTable: {}
  *Heap: {}
 
-id 2 
- *Symtable : {}
+id 0 
+ *Symtable : {v=Type:IntType Value:0}
  *Output log : []
- *ExecutionStack:[NopStatement, (VarDeclarationStatement:b with type=RefType,NewStatement{varName='b', expression=ValueExpression{value=Type:IntType Value:8}}), NewStatement{varName='a', expression=ValueExpression{value=Type:IntType Value:7}}, VarDeclarationStatement:a with type=RefType]
+ *ExecutionStack:[NopStatement, (VarDeclarationStatement:a with type=RefType,(AssigmentStatemnet v=ValueExpression{value=Type:IntType Value:10},(NewStatement{varName='a', expression=ValueExpression{value=Type:IntType Value:22}},(ForkStmt{statement=(HeapWriteStmt{referenceName='a', expression=ValueExpression{value=Type:IntType Value:30}},(AssigmentStatemnet v=ValueExpression{value=Type:IntType Value:32},(PrintStatement{VariableExpression{key='v'}},PrintStatement{ReadHeapExp{expression=VariableExpression{key='a'}}})))},(PrintStatement{VariableExpression{key='v'}},PrintStatement{ReadHeapExp{expression=VariableExpression{key='a'}}})))))]
  *FileTable: {}
  *Heap: {}
 
-id 2 
- *Symtable : {a=RefValue{adress=0, locationType=IntType}}
+id 0 
+ *Symtable : {v=Type:IntType Value:0}
  *Output log : []
- *ExecutionStack:[NopStatement, (VarDeclarationStatement:b with type=RefType,NewStatement{varName='b', expression=ValueExpression{value=Type:IntType Value:8}}), NewStatement{varName='a', expression=ValueExpression{value=Type:IntType Value:7}}]
+ *ExecutionStack:[NopStatement, (AssigmentStatemnet v=ValueExpression{value=Type:IntType Value:10},(NewStatement{varName='a', expression=ValueExpression{value=Type:IntType Value:22}},(ForkStmt{statement=(HeapWriteStmt{referenceName='a', expression=ValueExpression{value=Type:IntType Value:30}},(AssigmentStatemnet v=ValueExpression{value=Type:IntType Value:32},(PrintStatement{VariableExpression{key='v'}},PrintStatement{ReadHeapExp{expression=VariableExpression{key='a'}}})))},(PrintStatement{VariableExpression{key='v'}},PrintStatement{ReadHeapExp{expression=VariableExpression{key='a'}}})))), VarDeclarationStatement:a with type=RefType]
  *FileTable: {}
  *Heap: {}
 
-id 2 
- *Symtable : {a=RefValue{adress=0, locationType=IntType}}
+id 0 
+ *Symtable : {v=Type:IntType Value:0}
  *Output log : []
- *ExecutionStack:[NopStatement, (VarDeclarationStatement:b with type=RefType,NewStatement{varName='b', expression=ValueExpression{value=Type:IntType Value:8}}), NewStatement{varName='a', expression=ValueExpression{value=Type:IntType Value:7}}]
+ *ExecutionStack:[NopStatement, (AssigmentStatemnet v=ValueExpression{value=Type:IntType Value:10},(NewStatement{varName='a', expression=ValueExpression{value=Type:IntType Value:22}},(ForkStmt{statement=(HeapWriteStmt{referenceName='a', expression=ValueExpression{value=Type:IntType Value:30}},(AssigmentStatemnet v=ValueExpression{value=Type:IntType Value:32},(PrintStatement{VariableExpression{key='v'}},PrintStatement{ReadHeapExp{expression=VariableExpression{key='a'}}})))},(PrintStatement{VariableExpression{key='v'}},PrintStatement{ReadHeapExp{expression=VariableExpression{key='a'}}})))), VarDeclarationStatement:a with type=RefType]
  *FileTable: {}
  *Heap: {}
 
-id 2 
- *Symtable : {a=RefValue{adress=1, locationType=IntType}}
+id 0 
+ *Symtable : {a=RefValue{adress=0, locationType=IntType}, v=Type:IntType Value:0}
  *Output log : []
- *ExecutionStack:[NopStatement, (VarDeclarationStatement:b with type=RefType,NewStatement{varName='b', expression=ValueExpression{value=Type:IntType Value:8}})]
+ *ExecutionStack:[NopStatement, (AssigmentStatemnet v=ValueExpression{value=Type:IntType Value:10},(NewStatement{varName='a', expression=ValueExpression{value=Type:IntType Value:22}},(ForkStmt{statement=(HeapWriteStmt{referenceName='a', expression=ValueExpression{value=Type:IntType Value:30}},(AssigmentStatemnet v=ValueExpression{value=Type:IntType Value:32},(PrintStatement{VariableExpression{key='v'}},PrintStatement{ReadHeapExp{expression=VariableExpression{key='a'}}})))},(PrintStatement{VariableExpression{key='v'}},PrintStatement{ReadHeapExp{expression=VariableExpression{key='a'}}}))))]
  *FileTable: {}
- *Heap: {1=Type:IntType Value:7}
+ *Heap: {}
 
-id 2 
- *Symtable : {a=RefValue{adress=1, locationType=IntType}}
+id 0 
+ *Symtable : {a=RefValue{adress=0, locationType=IntType}, v=Type:IntType Value:0}
  *Output log : []
- *ExecutionStack:[NopStatement, (VarDeclarationStatement:b with type=RefType,NewStatement{varName='b', expression=ValueExpression{value=Type:IntType Value:8}})]
+ *ExecutionStack:[NopStatement, (AssigmentStatemnet v=ValueExpression{value=Type:IntType Value:10},(NewStatement{varName='a', expression=ValueExpression{value=Type:IntType Value:22}},(ForkStmt{statement=(HeapWriteStmt{referenceName='a', expression=ValueExpression{value=Type:IntType Value:30}},(AssigmentStatemnet v=ValueExpression{value=Type:IntType Value:32},(PrintStatement{VariableExpression{key='v'}},PrintStatement{ReadHeapExp{expression=VariableExpression{key='a'}}})))},(PrintStatement{VariableExpression{key='v'}},PrintStatement{ReadHeapExp{expression=VariableExpression{key='a'}}}))))]
  *FileTable: {}
- *Heap: {1=Type:IntType Value:7}
+ *Heap: {}
 
-id 2 
- *Symtable : {a=RefValue{adress=1, locationType=IntType}}
+id 0 
+ *Symtable : {a=RefValue{adress=0, locationType=IntType}, v=Type:IntType Value:0}
  *Output log : []
- *ExecutionStack:[NopStatement, NewStatement{varName='b', expression=ValueExpression{value=Type:IntType Value:8}}, VarDeclarationStatement:b with type=RefType]
+ *ExecutionStack:[NopStatement, (NewStatement{varName='a', expression=ValueExpression{value=Type:IntType Value:22}},(ForkStmt{statement=(HeapWriteStmt{referenceName='a', expression=ValueExpression{value=Type:IntType Value:30}},(AssigmentStatemnet v=ValueExpression{value=Type:IntType Value:32},(PrintStatement{VariableExpression{key='v'}},PrintStatement{ReadHeapExp{expression=VariableExpression{key='a'}}})))},(PrintStatement{VariableExpression{key='v'}},PrintStatement{ReadHeapExp{expression=VariableExpression{key='a'}}}))), AssigmentStatemnet v=ValueExpression{value=Type:IntType Value:10}]
  *FileTable: {}
- *Heap: {1=Type:IntType Value:7}
+ *Heap: {}
 
-id 2 
- *Symtable : {a=RefValue{adress=1, locationType=IntType}}
+id 0 
+ *Symtable : {a=RefValue{adress=0, locationType=IntType}, v=Type:IntType Value:0}
  *Output log : []
- *ExecutionStack:[NopStatement, NewStatement{varName='b', expression=ValueExpression{value=Type:IntType Value:8}}, VarDeclarationStatement:b with type=RefType]
+ *ExecutionStack:[NopStatement, (NewStatement{varName='a', expression=ValueExpression{value=Type:IntType Value:22}},(ForkStmt{statement=(HeapWriteStmt{referenceName='a', expression=ValueExpression{value=Type:IntType Value:30}},(AssigmentStatemnet v=ValueExpression{value=Type:IntType Value:32},(PrintStatement{VariableExpression{key='v'}},PrintStatement{ReadHeapExp{expression=VariableExpression{key='a'}}})))},(PrintStatement{VariableExpression{key='v'}},PrintStatement{ReadHeapExp{expression=VariableExpression{key='a'}}}))), AssigmentStatemnet v=ValueExpression{value=Type:IntType Value:10}]
  *FileTable: {}
- *Heap: {1=Type:IntType Value:7}
+ *Heap: {}
 
-id 2 
- *Symtable : {b=RefValue{adress=0, locationType=IntType}, a=RefValue{adress=1, locationType=IntType}}
+id 0 
+ *Symtable : {a=RefValue{adress=0, locationType=IntType}, v=Type:IntType Value:10}
  *Output log : []
- *ExecutionStack:[NopStatement, NewStatement{varName='b', expression=ValueExpression{value=Type:IntType Value:8}}]
+ *ExecutionStack:[NopStatement, (NewStatement{varName='a', expression=ValueExpression{value=Type:IntType Value:22}},(ForkStmt{statement=(HeapWriteStmt{referenceName='a', expression=ValueExpression{value=Type:IntType Value:30}},(AssigmentStatemnet v=ValueExpression{value=Type:IntType Value:32},(PrintStatement{VariableExpression{key='v'}},PrintStatement{ReadHeapExp{expression=VariableExpression{key='a'}}})))},(PrintStatement{VariableExpression{key='v'}},PrintStatement{ReadHeapExp{expression=VariableExpression{key='a'}}})))]
  *FileTable: {}
- *Heap: {1=Type:IntType Value:7}
+ *Heap: {}
 
-id 2 
- *Symtable : {b=RefValue{adress=0, locationType=IntType}, a=RefValue{adress=1, locationType=IntType}}
+id 0 
+ *Symtable : {a=RefValue{adress=0, locationType=IntType}, v=Type:IntType Value:10}
  *Output log : []
- *ExecutionStack:[NopStatement, NewStatement{varName='b', expression=ValueExpression{value=Type:IntType Value:8}}]
+ *ExecutionStack:[NopStatement, (NewStatement{varName='a', expression=ValueExpression{value=Type:IntType Value:22}},(ForkStmt{statement=(HeapWriteStmt{referenceName='a', expression=ValueExpression{value=Type:IntType Value:30}},(AssigmentStatemnet v=ValueExpression{value=Type:IntType Value:32},(PrintStatement{VariableExpression{key='v'}},PrintStatement{ReadHeapExp{expression=VariableExpression{key='a'}}})))},(PrintStatement{VariableExpression{key='v'}},PrintStatement{ReadHeapExp{expression=VariableExpression{key='a'}}})))]
  *FileTable: {}
- *Heap: {1=Type:IntType Value:7}
+ *Heap: {}
 
-id 2 
- *Symtable : {b=RefValue{adress=2, locationType=IntType}, a=RefValue{adress=1, locationType=IntType}}
+id 0 
+ *Symtable : {a=RefValue{adress=0, locationType=IntType}, v=Type:IntType Value:10}
  *Output log : []
+ *ExecutionStack:[NopStatement, (ForkStmt{statement=(HeapWriteStmt{referenceName='a', expression=ValueExpression{value=Type:IntType Value:30}},(AssigmentStatemnet v=ValueExpression{value=Type:IntType Value:32},(PrintStatement{VariableExpression{key='v'}},PrintStatement{ReadHeapExp{expression=VariableExpression{key='a'}}})))},(PrintStatement{VariableExpression{key='v'}},PrintStatement{ReadHeapExp{expression=VariableExpression{key='a'}}})), NewStatement{varName='a', expression=ValueExpression{value=Type:IntType Value:22}}]
+ *FileTable: {}
+ *Heap: {}
+
+id 0 
+ *Symtable : {a=RefValue{adress=0, locationType=IntType}, v=Type:IntType Value:10}
+ *Output log : []
+ *ExecutionStack:[NopStatement, (ForkStmt{statement=(HeapWriteStmt{referenceName='a', expression=ValueExpression{value=Type:IntType Value:30}},(AssigmentStatemnet v=ValueExpression{value=Type:IntType Value:32},(PrintStatement{VariableExpression{key='v'}},PrintStatement{ReadHeapExp{expression=VariableExpression{key='a'}}})))},(PrintStatement{VariableExpression{key='v'}},PrintStatement{ReadHeapExp{expression=VariableExpression{key='a'}}})), NewStatement{varName='a', expression=ValueExpression{value=Type:IntType Value:22}}]
+ *FileTable: {}
+ *Heap: {}
+
+id 0 
+ *Symtable : {a=RefValue{adress=1, locationType=IntType}, v=Type:IntType Value:10}
+ *Output log : []
+ *ExecutionStack:[NopStatement, (ForkStmt{statement=(HeapWriteStmt{referenceName='a', expression=ValueExpression{value=Type:IntType Value:30}},(AssigmentStatemnet v=ValueExpression{value=Type:IntType Value:32},(PrintStatement{VariableExpression{key='v'}},PrintStatement{ReadHeapExp{expression=VariableExpression{key='a'}}})))},(PrintStatement{VariableExpression{key='v'}},PrintStatement{ReadHeapExp{expression=VariableExpression{key='a'}}}))]
+ *FileTable: {}
+ *Heap: {1=Type:IntType Value:22}
+
+id 0 
+ *Symtable : {a=RefValue{adress=1, locationType=IntType}, v=Type:IntType Value:10}
+ *Output log : []
+ *ExecutionStack:[NopStatement, (ForkStmt{statement=(HeapWriteStmt{referenceName='a', expression=ValueExpression{value=Type:IntType Value:30}},(AssigmentStatemnet v=ValueExpression{value=Type:IntType Value:32},(PrintStatement{VariableExpression{key='v'}},PrintStatement{ReadHeapExp{expression=VariableExpression{key='a'}}})))},(PrintStatement{VariableExpression{key='v'}},PrintStatement{ReadHeapExp{expression=VariableExpression{key='a'}}}))]
+ *FileTable: {}
+ *Heap: {1=Type:IntType Value:22}
+
+id 0 
+ *Symtable : {a=RefValue{adress=1, locationType=IntType}, v=Type:IntType Value:10}
+ *Output log : []
+ *ExecutionStack:[NopStatement, (PrintStatement{VariableExpression{key='v'}},PrintStatement{ReadHeapExp{expression=VariableExpression{key='a'}}}), ForkStmt{statement=(HeapWriteStmt{referenceName='a', expression=ValueExpression{value=Type:IntType Value:30}},(AssigmentStatemnet v=ValueExpression{value=Type:IntType Value:32},(PrintStatement{VariableExpression{key='v'}},PrintStatement{ReadHeapExp{expression=VariableExpression{key='a'}}})))}]
+ *FileTable: {}
+ *Heap: {1=Type:IntType Value:22}
+
+id 0 
+ *Symtable : {a=RefValue{adress=1, locationType=IntType}, v=Type:IntType Value:10}
+ *Output log : []
+ *ExecutionStack:[NopStatement, (PrintStatement{VariableExpression{key='v'}},PrintStatement{ReadHeapExp{expression=VariableExpression{key='a'}}}), ForkStmt{statement=(HeapWriteStmt{referenceName='a', expression=ValueExpression{value=Type:IntType Value:30}},(AssigmentStatemnet v=ValueExpression{value=Type:IntType Value:32},(PrintStatement{VariableExpression{key='v'}},PrintStatement{ReadHeapExp{expression=VariableExpression{key='a'}}})))}]
+ *FileTable: {}
+ *Heap: {1=Type:IntType Value:22}
+
+id 0 
+ *Symtable : {a=RefValue{adress=1, locationType=IntType}, v=Type:IntType Value:10}
+ *Output log : []
+ *ExecutionStack:[NopStatement, (PrintStatement{VariableExpression{key='v'}},PrintStatement{ReadHeapExp{expression=VariableExpression{key='a'}}})]
+ *FileTable: {}
+ *Heap: {1=Type:IntType Value:22}
+
+id 1 
+ *Symtable : {a=RefValue{adress=1, locationType=IntType}, v=Type:IntType Value:10}
+ *Output log : []
+ *ExecutionStack:[(HeapWriteStmt{referenceName='a', expression=ValueExpression{value=Type:IntType Value:30}},(AssigmentStatemnet v=ValueExpression{value=Type:IntType Value:32},(PrintStatement{VariableExpression{key='v'}},PrintStatement{ReadHeapExp{expression=VariableExpression{key='a'}}})))]
+ *FileTable: {}
+ *Heap: {1=Type:IntType Value:22}
+
+id 0 
+ *Symtable : {a=RefValue{adress=1, locationType=IntType}, v=Type:IntType Value:10}
+ *Output log : []
+ *ExecutionStack:[NopStatement, (PrintStatement{VariableExpression{key='v'}},PrintStatement{ReadHeapExp{expression=VariableExpression{key='a'}}})]
+ *FileTable: {}
+ *Heap: {1=Type:IntType Value:22}
+
+id 1 
+ *Symtable : {a=RefValue{adress=1, locationType=IntType}, v=Type:IntType Value:10}
+ *Output log : []
+ *ExecutionStack:[(HeapWriteStmt{referenceName='a', expression=ValueExpression{value=Type:IntType Value:30}},(AssigmentStatemnet v=ValueExpression{value=Type:IntType Value:32},(PrintStatement{VariableExpression{key='v'}},PrintStatement{ReadHeapExp{expression=VariableExpression{key='a'}}})))]
+ *FileTable: {}
+ *Heap: {1=Type:IntType Value:22}
+
+id 0 
+ *Symtable : {a=RefValue{adress=1, locationType=IntType}, v=Type:IntType Value:10}
+ *Output log : []
+ *ExecutionStack:[NopStatement, PrintStatement{ReadHeapExp{expression=VariableExpression{key='a'}}}, PrintStatement{VariableExpression{key='v'}}]
+ *FileTable: {}
+ *Heap: {1=Type:IntType Value:22}
+
+id 1 
+ *Symtable : {a=RefValue{adress=1, locationType=IntType}, v=Type:IntType Value:10}
+ *Output log : []
+ *ExecutionStack:[(AssigmentStatemnet v=ValueExpression{value=Type:IntType Value:32},(PrintStatement{VariableExpression{key='v'}},PrintStatement{ReadHeapExp{expression=VariableExpression{key='a'}}})), HeapWriteStmt{referenceName='a', expression=ValueExpression{value=Type:IntType Value:30}}]
+ *FileTable: {}
+ *Heap: {1=Type:IntType Value:22}
+
+id 0 
+ *Symtable : {a=RefValue{adress=1, locationType=IntType}, v=Type:IntType Value:10}
+ *Output log : []
+ *ExecutionStack:[NopStatement, PrintStatement{ReadHeapExp{expression=VariableExpression{key='a'}}}, PrintStatement{VariableExpression{key='v'}}]
+ *FileTable: {}
+ *Heap: {1=Type:IntType Value:22}
+
+id 1 
+ *Symtable : {a=RefValue{adress=1, locationType=IntType}, v=Type:IntType Value:10}
+ *Output log : []
+ *ExecutionStack:[(AssigmentStatemnet v=ValueExpression{value=Type:IntType Value:32},(PrintStatement{VariableExpression{key='v'}},PrintStatement{ReadHeapExp{expression=VariableExpression{key='a'}}})), HeapWriteStmt{referenceName='a', expression=ValueExpression{value=Type:IntType Value:30}}]
+ *FileTable: {}
+ *Heap: {1=Type:IntType Value:22}
+
+id 0 
+ *Symtable : {a=RefValue{adress=1, locationType=IntType}, v=Type:IntType Value:10}
+ *Output log : [Type:IntType Value:10
+]
+ *ExecutionStack:[NopStatement, PrintStatement{ReadHeapExp{expression=VariableExpression{key='a'}}}]
+ *FileTable: {}
+ *Heap: {1=Type:IntType Value:30}
+
+id 1 
+ *Symtable : {a=RefValue{adress=1, locationType=IntType}, v=Type:IntType Value:10}
+ *Output log : [Type:IntType Value:10
+]
+ *ExecutionStack:[(AssigmentStatemnet v=ValueExpression{value=Type:IntType Value:32},(PrintStatement{VariableExpression{key='v'}},PrintStatement{ReadHeapExp{expression=VariableExpression{key='a'}}}))]
+ *FileTable: {}
+ *Heap: {1=Type:IntType Value:30}
+
+id 0 
+ *Symtable : {a=RefValue{adress=1, locationType=IntType}, v=Type:IntType Value:10}
+ *Output log : [Type:IntType Value:10
+]
+ *ExecutionStack:[NopStatement, PrintStatement{ReadHeapExp{expression=VariableExpression{key='a'}}}]
+ *FileTable: {}
+ *Heap: {1=Type:IntType Value:30}
+
+id 1 
+ *Symtable : {a=RefValue{adress=1, locationType=IntType}, v=Type:IntType Value:10}
+ *Output log : [Type:IntType Value:10
+]
+ *ExecutionStack:[(AssigmentStatemnet v=ValueExpression{value=Type:IntType Value:32},(PrintStatement{VariableExpression{key='v'}},PrintStatement{ReadHeapExp{expression=VariableExpression{key='a'}}}))]
+ *FileTable: {}
+ *Heap: {1=Type:IntType Value:30}
+
+id 0 
+ *Symtable : {a=RefValue{adress=1, locationType=IntType}, v=Type:IntType Value:10}
+ *Output log : [Type:IntType Value:10
+, Type:IntType Value:30
+]
  *ExecutionStack:[NopStatement]
  *FileTable: {}
- *Heap: {2=Type:IntType Value:8, 1=Type:IntType Value:7}
+ *Heap: {1=Type:IntType Value:30}
 
-id 2 
- *Symtable : {b=RefValue{adress=2, locationType=IntType}, a=RefValue{adress=1, locationType=IntType}}
- *Output log : []
+id 1 
+ *Symtable : {a=RefValue{adress=1, locationType=IntType}, v=Type:IntType Value:10}
+ *Output log : [Type:IntType Value:10
+, Type:IntType Value:30
+]
+ *ExecutionStack:[(PrintStatement{VariableExpression{key='v'}},PrintStatement{ReadHeapExp{expression=VariableExpression{key='a'}}}), AssigmentStatemnet v=ValueExpression{value=Type:IntType Value:32}]
+ *FileTable: {}
+ *Heap: {1=Type:IntType Value:30}
+
+id 0 
+ *Symtable : {a=RefValue{adress=1, locationType=IntType}, v=Type:IntType Value:10}
+ *Output log : [Type:IntType Value:10
+, Type:IntType Value:30
+]
  *ExecutionStack:[NopStatement]
  *FileTable: {}
- *Heap: {2=Type:IntType Value:8, 1=Type:IntType Value:7}
+ *Heap: {1=Type:IntType Value:30}
 
-id 2 
- *Symtable : {b=RefValue{adress=2, locationType=IntType}, a=RefValue{adress=1, locationType=IntType}}
- *Output log : []
+id 1 
+ *Symtable : {a=RefValue{adress=1, locationType=IntType}, v=Type:IntType Value:10}
+ *Output log : [Type:IntType Value:10
+, Type:IntType Value:30
+]
+ *ExecutionStack:[(PrintStatement{VariableExpression{key='v'}},PrintStatement{ReadHeapExp{expression=VariableExpression{key='a'}}}), AssigmentStatemnet v=ValueExpression{value=Type:IntType Value:32}]
+ *FileTable: {}
+ *Heap: {1=Type:IntType Value:30}
+
+id 0 
+ *Symtable : {a=RefValue{adress=1, locationType=IntType}, v=Type:IntType Value:10}
+ *Output log : [Type:IntType Value:10
+, Type:IntType Value:30
+]
  *ExecutionStack:[]
  *FileTable: {}
- *Heap: {2=Type:IntType Value:8, 1=Type:IntType Value:7}
+ *Heap: {1=Type:IntType Value:30}
+
+id 1 
+ *Symtable : {a=RefValue{adress=1, locationType=IntType}, v=Type:IntType Value:32}
+ *Output log : [Type:IntType Value:10
+, Type:IntType Value:30
+]
+ *ExecutionStack:[(PrintStatement{VariableExpression{key='v'}},PrintStatement{ReadHeapExp{expression=VariableExpression{key='a'}}})]
+ *FileTable: {}
+ *Heap: {1=Type:IntType Value:30}
+
+id 1 
+ *Symtable : {a=RefValue{adress=1, locationType=IntType}, v=Type:IntType Value:32}
+ *Output log : [Type:IntType Value:10
+, Type:IntType Value:30
+]
+ *ExecutionStack:[(PrintStatement{VariableExpression{key='v'}},PrintStatement{ReadHeapExp{expression=VariableExpression{key='a'}}})]
+ *FileTable: {}
+ *Heap: {1=Type:IntType Value:30}
+
+id 1 
+ *Symtable : {a=RefValue{adress=1, locationType=IntType}, v=Type:IntType Value:32}
+ *Output log : [Type:IntType Value:10
+, Type:IntType Value:30
+]
+ *ExecutionStack:[PrintStatement{ReadHeapExp{expression=VariableExpression{key='a'}}}, PrintStatement{VariableExpression{key='v'}}]
+ *FileTable: {}
+ *Heap: {1=Type:IntType Value:30}
+
+id 1 
+ *Symtable : {a=RefValue{adress=1, locationType=IntType}, v=Type:IntType Value:32}
+ *Output log : [Type:IntType Value:10
+, Type:IntType Value:30
+]
+ *ExecutionStack:[PrintStatement{ReadHeapExp{expression=VariableExpression{key='a'}}}, PrintStatement{VariableExpression{key='v'}}]
+ *FileTable: {}
+ *Heap: {1=Type:IntType Value:30}
+
+id 1 
+ *Symtable : {a=RefValue{adress=1, locationType=IntType}, v=Type:IntType Value:32}
+ *Output log : [Type:IntType Value:10
+, Type:IntType Value:30
+, Type:IntType Value:32
+]
+ *ExecutionStack:[PrintStatement{ReadHeapExp{expression=VariableExpression{key='a'}}}]
+ *FileTable: {}
+ *Heap: {1=Type:IntType Value:30}
+
+id 1 
+ *Symtable : {a=RefValue{adress=1, locationType=IntType}, v=Type:IntType Value:32}
+ *Output log : [Type:IntType Value:10
+, Type:IntType Value:30
+, Type:IntType Value:32
+]
+ *ExecutionStack:[PrintStatement{ReadHeapExp{expression=VariableExpression{key='a'}}}]
+ *FileTable: {}
+ *Heap: {1=Type:IntType Value:30}
+
+id 1 
+ *Symtable : {a=RefValue{adress=1, locationType=IntType}, v=Type:IntType Value:32}
+ *Output log : [Type:IntType Value:10
+, Type:IntType Value:30
+, Type:IntType Value:32
+, Type:IntType Value:30
+]
+ *ExecutionStack:[]
+ *FileTable: {}
+ *Heap: {1=Type:IntType Value:30}
 

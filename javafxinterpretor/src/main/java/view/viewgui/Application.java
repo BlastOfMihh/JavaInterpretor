@@ -11,8 +11,8 @@ public class Application extends javafx.application.Application {
     public void start(Stage stage) throws IOException {
         Stage executionStage = new Stage();
         FXMLLoader fxmlLoader2 = new FXMLLoader(Application.class.getResource("mihh-execute-program.fxml"));
-        Scene scene2 = new Scene(fxmlLoader2.load(), 1200 , 700);
-        executionStage.setTitle("Program selector!");
+        Scene scene2 = new Scene(fxmlLoader2.load(), 1420 , 700);
+        executionStage.setTitle("Executioner!");
         executionStage.setScene(scene2);
         executionStage.show();
 

@@ -5,9 +5,9 @@
 
 <AnchorPane prefHeight="679.0" prefWidth="1105.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.viewgui.ExecuteProgramController">
     <children>
-        <VBox prefHeight="679.0" prefWidth="1105.0">
+        <VBox prefHeight="591.0" prefWidth="1438.0">
             <children>
-                <GridPane prefHeight="475.0" prefWidth="871.0">
+                <GridPane prefHeight="808.0" prefWidth="1465.0">
                     <columnConstraints>
                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
@@ -23,8 +23,8 @@
                                 <Label text="Heap Table" />
                                 <TableView fx:id="heapTableView" prefHeight="200.0" prefWidth="200.0">
                                     <columns>
-                                        <TableColumn fx:id="heapAddressColumn" prefWidth="100.0" text="Address" />
-                                        <TableColumn fx:id="heapValueColumn" prefWidth="100.0" text="Value" />
+                                        <TableColumn fx:id="heapAddressColumn" prefWidth="111.0" text="Address" />
+                                        <TableColumn fx:id="heapValueColumn" prefWidth="368.0" text="Value" />
                                     </columns>
                                 </TableView>
                             </children>
@@ -58,8 +58,8 @@
                                 <Label text="Symbol table" />
                                 <TableView fx:id="symbolTableView" prefHeight="200.0" prefWidth="200.0">
                                     <columns>
-                                        <TableColumn fx:id="symbolTableVariableNameColumn" prefWidth="100.0" text="Variable name" />
-                                        <TableColumn fx:id="symbolTableValueColumn" prefWidth="100.0" text="Value" />
+                                        <TableColumn fx:id="symbolTableVariableNameColumn" prefWidth="109.0" text="Variable name" />
+                                        <TableColumn fx:id="symbolTableValueColumn" prefWidth="349.0" text="Value" />
                                     </columns>
                                 </TableView>
                             </children>
@@ -70,7 +70,7 @@
                     <children>
                         <Label text="Number of program states" />
                         <TextField fx:id="numberOfProgramStates" editable="false" />
-                        <Button fx:id="executeOneStepButton" onAction="#onExecuteButton" prefHeight="36.0" prefWidth="810.0" text="Execute one step" />
+                        <Button fx:id="executeOneStepButton" onAction="#onExecuteButton" prefHeight="26.0" prefWidth="1443.0" text="Execute one step" />
                     </children>
                 </VBox>
             <Label fx:id="programStateLabel" text="Label" />
