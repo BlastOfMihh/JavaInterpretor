@@ -1,5 +1,6 @@
 package view.viewgui;
 
+import com.almasb.fxgl.core.collection.Array;
 import controller.ProgramController;
 import domain.FileDesc;
 import domain.expression.*;
@@ -9,12 +10,15 @@ import domain.my_data_structures.my_table.MyTable;
 import domain.program_state.ProgramState;
 import domain.program_state.heap.Heap;
 import domain.statement.*;
+import domain.statement.switch_statement.CaseSwitch;
+import domain.statement.switch_statement.SwitchStmt;
 import domain.type.IntType;
 import domain.type.RefType;
 import domain.value.IValue;
 import domain.value.IntValue;
 import domain.value.StringValue;
 import exceptions.MyException;
+import javafx.beans.binding.IntegerExpression;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -25,6 +29,9 @@ import repository.FileRepo;
 import repository.Repository;
 import view.viewcli.RunExampleCommand;
 import view.viewcli.TextMenu;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class SelectProgramController {
     ExecuteProgramController executeWindow;
@@ -101,6 +108,45 @@ public class SelectProgramController {
         );
         return ex;
     }
+    IStmt addSwitchStatementEx(){
+        //int a; int b; int c;
+        //a=1;b=2;c=5;
+        //(switch(a*10)
+        //(case (b*c) : print(a);print(b))
+        //(case (10) : print(100);print(200))
+        //(default : print(300)));
+        //print(300)
+        IStmt ex=new CompStmt(
+                new VarDeclStmt("a", new IntType()), new CompStmt(
+                new VarDeclStmt("b", new IntType()), new CompStmt(
+                new VarDeclStmt("c", new IntType()), new CompStmt(
+                new AssignStmt("a", new ValueExp(new IntValue(1))), new CompStmt(
+                new AssignStmt("b", new ValueExp(new IntValue(2))), new CompStmt(
+                new AssignStmt("c", new ValueExp(new IntValue(5))), new CompStmt(
+                new SwitchStmt(new ArithExp(BinaryExpression.OperationTypes.multiplication ,
+                        new VarExp("a"), new ValueExp(new IntValue(10))),
+                        new ArrayList<>(Arrays.asList(
+                                new CaseSwitch(
+                                        new ArithExp(ArithExp.OperationTypes.multiplication, new VarExp("b"), new VarExp("c")),
+                                        new CompStmt(new PrintStmt(new VarExp("a")), new PrintStmt(new VarExp("b")))
+                                ),
+                                new CaseSwitch(
+                                        new ValueExp(new IntValue(10)),
+                                        new CompStmt(new PrintStmt(new ValueExp(new IntValue(100))), new PrintStmt(new ValueExp(new IntValue(200))))
+                                )
+                        )),
+                        new PrintStmt(new ValueExp(new IntValue(300)))
+                ),
+                new PrintStmt(new ValueExp(new IntValue(300)))
+            )
+        )
+        )
+        )
+        )
+        )
+        );
+        return ex;
+    }
     private IStmt addNop(IStmt stmt){
         return new CompStmt(stmt, new NopStmt());
     }
@@ -108,7 +154,8 @@ public class SelectProgramController {
         programList.setItems(FXCollections.observableArrayList(
                addNop( getRelationalExample()),
                addNop( addNimrodExamples()),
-               addNop( addThreadsExample())
+               addNop( addThreadsExample()),
+                addNop(addSwitchStatementEx())
         ));
     }
     @FXML

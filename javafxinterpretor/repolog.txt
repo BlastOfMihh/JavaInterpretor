@@ -1,126 +1,281 @@
-id 2 
+id 0 
  *Symtable : {}
  *Output log : []
- *ExecutionStack:[(((VarDeclarationStatement:a with type=RefType,NewStatement{varName='a', expression=ValueExpression{value=Type:IntType Value:7}}),(VarDeclarationStatement:b with type=RefType,NewStatement{varName='b', expression=ValueExpression{value=Type:IntType Value:8}})),NopStatement)]
+ *ExecutionStack:[((VarDeclarationStatement:a with type=IntType,(VarDeclarationStatement:b with type=IntType,(VarDeclarationStatement:c with type=IntType,(AssigmentStatemnet a=ValueExpression{value=Type:IntType Value:1},(AssigmentStatemnet b=ValueExpression{value=Type:IntType Value:2},(AssigmentStatemnet c=ValueExpression{value=Type:IntType Value:5},(SwitchStmt{mainExpression=Expression multiplication between VariableExpression{key='a'} and ValueExpression{value=Type:IntType Value:10}, casesList=[CaseSwitch{expression=Expression multiplication between VariableExpression{key='b'} and VariableExpression{key='c'}, statement=(PrintStatement{VariableExpression{key='a'}},PrintStatement{VariableExpression{key='b'}})}, CaseSwitch{expression=ValueExpression{value=Type:IntType Value:10}, statement=(PrintStatement{ValueExpression{value=Type:IntType Value:100}},PrintStatement{ValueExpression{value=Type:IntType Value:200}})}], defaultStmt=PrintStatement{ValueExpression{value=Type:IntType Value:300}}},PrintStatement{ValueExpression{value=Type:IntType Value:300}}))))))),NopStatement)]
  *FileTable: {}
  *Heap: {}
 
-id 2 
+id 0 
  *Symtable : {}
  *Output log : []
- *ExecutionStack:[NopStatement, ((VarDeclarationStatement:a with type=RefType,NewStatement{varName='a', expression=ValueExpression{value=Type:IntType Value:7}}),(VarDeclarationStatement:b with type=RefType,NewStatement{varName='b', expression=ValueExpression{value=Type:IntType Value:8}}))]
+ *ExecutionStack:[NopStatement, (VarDeclarationStatement:a with type=IntType,(VarDeclarationStatement:b with type=IntType,(VarDeclarationStatement:c with type=IntType,(AssigmentStatemnet a=ValueExpression{value=Type:IntType Value:1},(AssigmentStatemnet b=ValueExpression{value=Type:IntType Value:2},(AssigmentStatemnet c=ValueExpression{value=Type:IntType Value:5},(SwitchStmt{mainExpression=Expression multiplication between VariableExpression{key='a'} and ValueExpression{value=Type:IntType Value:10}, casesList=[CaseSwitch{expression=Expression multiplication between VariableExpression{key='b'} and VariableExpression{key='c'}, statement=(PrintStatement{VariableExpression{key='a'}},PrintStatement{VariableExpression{key='b'}})}, CaseSwitch{expression=ValueExpression{value=Type:IntType Value:10}, statement=(PrintStatement{ValueExpression{value=Type:IntType Value:100}},PrintStatement{ValueExpression{value=Type:IntType Value:200}})}], defaultStmt=PrintStatement{ValueExpression{value=Type:IntType Value:300}}},PrintStatement{ValueExpression{value=Type:IntType Value:300}})))))))]
  *FileTable: {}
  *Heap: {}
 
-id 2 
+id 0 
  *Symtable : {}
  *Output log : []
- *ExecutionStack:[NopStatement, ((VarDeclarationStatement:a with type=RefType,NewStatement{varName='a', expression=ValueExpression{value=Type:IntType Value:7}}),(VarDeclarationStatement:b with type=RefType,NewStatement{varName='b', expression=ValueExpression{value=Type:IntType Value:8}}))]
+ *ExecutionStack:[NopStatement, (VarDeclarationStatement:a with type=IntType,(VarDeclarationStatement:b with type=IntType,(VarDeclarationStatement:c with type=IntType,(AssigmentStatemnet a=ValueExpression{value=Type:IntType Value:1},(AssigmentStatemnet b=ValueExpression{value=Type:IntType Value:2},(AssigmentStatemnet c=ValueExpression{value=Type:IntType Value:5},(SwitchStmt{mainExpression=Expression multiplication between VariableExpression{key='a'} and ValueExpression{value=Type:IntType Value:10}, casesList=[CaseSwitch{expression=Expression multiplication between VariableExpression{key='b'} and VariableExpression{key='c'}, statement=(PrintStatement{VariableExpression{key='a'}},PrintStatement{VariableExpression{key='b'}})}, CaseSwitch{expression=ValueExpression{value=Type:IntType Value:10}, statement=(PrintStatement{ValueExpression{value=Type:IntType Value:100}},PrintStatement{ValueExpression{value=Type:IntType Value:200}})}], defaultStmt=PrintStatement{ValueExpression{value=Type:IntType Value:300}}},PrintStatement{ValueExpression{value=Type:IntType Value:300}})))))))]
  *FileTable: {}
  *Heap: {}
 
-id 2 
+id 0 
  *Symtable : {}
  *Output log : []
- *ExecutionStack:[NopStatement, (VarDeclarationStatement:b with type=RefType,NewStatement{varName='b', expression=ValueExpression{value=Type:IntType Value:8}}), (VarDeclarationStatement:a with type=RefType,NewStatement{varName='a', expression=ValueExpression{value=Type:IntType Value:7}})]
+ *ExecutionStack:[NopStatement, (VarDeclarationStatement:b with type=IntType,(VarDeclarationStatement:c with type=IntType,(AssigmentStatemnet a=ValueExpression{value=Type:IntType Value:1},(AssigmentStatemnet b=ValueExpression{value=Type:IntType Value:2},(AssigmentStatemnet c=ValueExpression{value=Type:IntType Value:5},(SwitchStmt{mainExpression=Expression multiplication between VariableExpression{key='a'} and ValueExpression{value=Type:IntType Value:10}, casesList=[CaseSwitch{expression=Expression multiplication between VariableExpression{key='b'} and VariableExpression{key='c'}, statement=(PrintStatement{VariableExpression{key='a'}},PrintStatement{VariableExpression{key='b'}})}, CaseSwitch{expression=ValueExpression{value=Type:IntType Value:10}, statement=(PrintStatement{ValueExpression{value=Type:IntType Value:100}},PrintStatement{ValueExpression{value=Type:IntType Value:200}})}], defaultStmt=PrintStatement{ValueExpression{value=Type:IntType Value:300}}},PrintStatement{ValueExpression{value=Type:IntType Value:300}})))))), VarDeclarationStatement:a with type=IntType]
  *FileTable: {}
  *Heap: {}
 
-id 2 
+id 0 
  *Symtable : {}
  *Output log : []
- *ExecutionStack:[NopStatement, (VarDeclarationStatement:b with type=RefType,NewStatement{varName='b', expression=ValueExpression{value=Type:IntType Value:8}}), (VarDeclarationStatement:a with type=RefType,NewStatement{varName='a', expression=ValueExpression{value=Type:IntType Value:7}})]
+ *ExecutionStack:[NopStatement, (VarDeclarationStatement:b with type=IntType,(VarDeclarationStatement:c with type=IntType,(AssigmentStatemnet a=ValueExpression{value=Type:IntType Value:1},(AssigmentStatemnet b=ValueExpression{value=Type:IntType Value:2},(AssigmentStatemnet c=ValueExpression{value=Type:IntType Value:5},(SwitchStmt{mainExpression=Expression multiplication between VariableExpression{key='a'} and ValueExpression{value=Type:IntType Value:10}, casesList=[CaseSwitch{expression=Expression multiplication between VariableExpression{key='b'} and VariableExpression{key='c'}, statement=(PrintStatement{VariableExpression{key='a'}},PrintStatement{VariableExpression{key='b'}})}, CaseSwitch{expression=ValueExpression{value=Type:IntType Value:10}, statement=(PrintStatement{ValueExpression{value=Type:IntType Value:100}},PrintStatement{ValueExpression{value=Type:IntType Value:200}})}], defaultStmt=PrintStatement{ValueExpression{value=Type:IntType Value:300}}},PrintStatement{ValueExpression{value=Type:IntType Value:300}})))))), VarDeclarationStatement:a with type=IntType]
  *FileTable: {}
  *Heap: {}
 
-id 2 
- *Symtable : {}
+id 0 
+ *Symtable : {a=Type:IntType Value:0}
  *Output log : []
- *ExecutionStack:[NopStatement, (VarDeclarationStatement:b with type=RefType,NewStatement{varName='b', expression=ValueExpression{value=Type:IntType Value:8}}), NewStatement{varName='a', expression=ValueExpression{value=Type:IntType Value:7}}, VarDeclarationStatement:a with type=RefType]
+ *ExecutionStack:[NopStatement, (VarDeclarationStatement:b with type=IntType,(VarDeclarationStatement:c with type=IntType,(AssigmentStatemnet a=ValueExpression{value=Type:IntType Value:1},(AssigmentStatemnet b=ValueExpression{value=Type:IntType Value:2},(AssigmentStatemnet c=ValueExpression{value=Type:IntType Value:5},(SwitchStmt{mainExpression=Expression multiplication between VariableExpression{key='a'} and ValueExpression{value=Type:IntType Value:10}, casesList=[CaseSwitch{expression=Expression multiplication between VariableExpression{key='b'} and VariableExpression{key='c'}, statement=(PrintStatement{VariableExpression{key='a'}},PrintStatement{VariableExpression{key='b'}})}, CaseSwitch{expression=ValueExpression{value=Type:IntType Value:10}, statement=(PrintStatement{ValueExpression{value=Type:IntType Value:100}},PrintStatement{ValueExpression{value=Type:IntType Value:200}})}], defaultStmt=PrintStatement{ValueExpression{value=Type:IntType Value:300}}},PrintStatement{ValueExpression{value=Type:IntType Value:300}}))))))]
  *FileTable: {}
  *Heap: {}
 
-id 2 
- *Symtable : {}
+id 0 
+ *Symtable : {a=Type:IntType Value:0}
  *Output log : []
- *ExecutionStack:[NopStatement, (VarDeclarationStatement:b with type=RefType,NewStatement{varName='b', expression=ValueExpression{value=Type:IntType Value:8}}), NewStatement{varName='a', expression=ValueExpression{value=Type:IntType Value:7}}, VarDeclarationStatement:a with type=RefType]
+ *ExecutionStack:[NopStatement, (VarDeclarationStatement:b with type=IntType,(VarDeclarationStatement:c with type=IntType,(AssigmentStatemnet a=ValueExpression{value=Type:IntType Value:1},(AssigmentStatemnet b=ValueExpression{value=Type:IntType Value:2},(AssigmentStatemnet c=ValueExpression{value=Type:IntType Value:5},(SwitchStmt{mainExpression=Expression multiplication between VariableExpression{key='a'} and ValueExpression{value=Type:IntType Value:10}, casesList=[CaseSwitch{expression=Expression multiplication between VariableExpression{key='b'} and VariableExpression{key='c'}, statement=(PrintStatement{VariableExpression{key='a'}},PrintStatement{VariableExpression{key='b'}})}, CaseSwitch{expression=ValueExpression{value=Type:IntType Value:10}, statement=(PrintStatement{ValueExpression{value=Type:IntType Value:100}},PrintStatement{ValueExpression{value=Type:IntType Value:200}})}], defaultStmt=PrintStatement{ValueExpression{value=Type:IntType Value:300}}},PrintStatement{ValueExpression{value=Type:IntType Value:300}}))))))]
  *FileTable: {}
  *Heap: {}
 
-id 2 
- *Symtable : {a=RefValue{adress=0, locationType=IntType}}
+id 0 
+ *Symtable : {a=Type:IntType Value:0}
  *Output log : []
- *ExecutionStack:[NopStatement, (VarDeclarationStatement:b with type=RefType,NewStatement{varName='b', expression=ValueExpression{value=Type:IntType Value:8}}), NewStatement{varName='a', expression=ValueExpression{value=Type:IntType Value:7}}]
+ *ExecutionStack:[NopStatement, (VarDeclarationStatement:c with type=IntType,(AssigmentStatemnet a=ValueExpression{value=Type:IntType Value:1},(AssigmentStatemnet b=ValueExpression{value=Type:IntType Value:2},(AssigmentStatemnet c=ValueExpression{value=Type:IntType Value:5},(SwitchStmt{mainExpression=Expression multiplication between VariableExpression{key='a'} and ValueExpression{value=Type:IntType Value:10}, casesList=[CaseSwitch{expression=Expression multiplication between VariableExpression{key='b'} and VariableExpression{key='c'}, statement=(PrintStatement{VariableExpression{key='a'}},PrintStatement{VariableExpression{key='b'}})}, CaseSwitch{expression=ValueExpression{value=Type:IntType Value:10}, statement=(PrintStatement{ValueExpression{value=Type:IntType Value:100}},PrintStatement{ValueExpression{value=Type:IntType Value:200}})}], defaultStmt=PrintStatement{ValueExpression{value=Type:IntType Value:300}}},PrintStatement{ValueExpression{value=Type:IntType Value:300}}))))), VarDeclarationStatement:b with type=IntType]
  *FileTable: {}
  *Heap: {}
 
-id 2 
- *Symtable : {a=RefValue{adress=0, locationType=IntType}}
+id 0 
+ *Symtable : {a=Type:IntType Value:0}
  *Output log : []
- *ExecutionStack:[NopStatement, (VarDeclarationStatement:b with type=RefType,NewStatement{varName='b', expression=ValueExpression{value=Type:IntType Value:8}}), NewStatement{varName='a', expression=ValueExpression{value=Type:IntType Value:7}}]
+ *ExecutionStack:[NopStatement, (VarDeclarationStatement:c with type=IntType,(AssigmentStatemnet a=ValueExpression{value=Type:IntType Value:1},(AssigmentStatemnet b=ValueExpression{value=Type:IntType Value:2},(AssigmentStatemnet c=ValueExpression{value=Type:IntType Value:5},(SwitchStmt{mainExpression=Expression multiplication between VariableExpression{key='a'} and ValueExpression{value=Type:IntType Value:10}, casesList=[CaseSwitch{expression=Expression multiplication between VariableExpression{key='b'} and VariableExpression{key='c'}, statement=(PrintStatement{VariableExpression{key='a'}},PrintStatement{VariableExpression{key='b'}})}, CaseSwitch{expression=ValueExpression{value=Type:IntType Value:10}, statement=(PrintStatement{ValueExpression{value=Type:IntType Value:100}},PrintStatement{ValueExpression{value=Type:IntType Value:200}})}], defaultStmt=PrintStatement{ValueExpression{value=Type:IntType Value:300}}},PrintStatement{ValueExpression{value=Type:IntType Value:300}}))))), VarDeclarationStatement:b with type=IntType]
  *FileTable: {}
  *Heap: {}
 
-id 2 
- *Symtable : {a=RefValue{adress=1, locationType=IntType}}
+id 0 
+ *Symtable : {b=Type:IntType Value:0, a=Type:IntType Value:0}
  *Output log : []
- *ExecutionStack:[NopStatement, (VarDeclarationStatement:b with type=RefType,NewStatement{varName='b', expression=ValueExpression{value=Type:IntType Value:8}})]
+ *ExecutionStack:[NopStatement, (VarDeclarationStatement:c with type=IntType,(AssigmentStatemnet a=ValueExpression{value=Type:IntType Value:1},(AssigmentStatemnet b=ValueExpression{value=Type:IntType Value:2},(AssigmentStatemnet c=ValueExpression{value=Type:IntType Value:5},(SwitchStmt{mainExpression=Expression multiplication between VariableExpression{key='a'} and ValueExpression{value=Type:IntType Value:10}, casesList=[CaseSwitch{expression=Expression multiplication between VariableExpression{key='b'} and VariableExpression{key='c'}, statement=(PrintStatement{VariableExpression{key='a'}},PrintStatement{VariableExpression{key='b'}})}, CaseSwitch{expression=ValueExpression{value=Type:IntType Value:10}, statement=(PrintStatement{ValueExpression{value=Type:IntType Value:100}},PrintStatement{ValueExpression{value=Type:IntType Value:200}})}], defaultStmt=PrintStatement{ValueExpression{value=Type:IntType Value:300}}},PrintStatement{ValueExpression{value=Type:IntType Value:300}})))))]
  *FileTable: {}
- *Heap: {1=Type:IntType Value:7}
+ *Heap: {}
 
-id 2 
- *Symtable : {a=RefValue{adress=1, locationType=IntType}}
+id 0 
+ *Symtable : {b=Type:IntType Value:0, a=Type:IntType Value:0}
  *Output log : []
- *ExecutionStack:[NopStatement, (VarDeclarationStatement:b with type=RefType,NewStatement{varName='b', expression=ValueExpression{value=Type:IntType Value:8}})]
+ *ExecutionStack:[NopStatement, (VarDeclarationStatement:c with type=IntType,(AssigmentStatemnet a=ValueExpression{value=Type:IntType Value:1},(AssigmentStatemnet b=ValueExpression{value=Type:IntType Value:2},(AssigmentStatemnet c=ValueExpression{value=Type:IntType Value:5},(SwitchStmt{mainExpression=Expression multiplication between VariableExpression{key='a'} and ValueExpression{value=Type:IntType Value:10}, casesList=[CaseSwitch{expression=Expression multiplication between VariableExpression{key='b'} and VariableExpression{key='c'}, statement=(PrintStatement{VariableExpression{key='a'}},PrintStatement{VariableExpression{key='b'}})}, CaseSwitch{expression=ValueExpression{value=Type:IntType Value:10}, statement=(PrintStatement{ValueExpression{value=Type:IntType Value:100}},PrintStatement{ValueExpression{value=Type:IntType Value:200}})}], defaultStmt=PrintStatement{ValueExpression{value=Type:IntType Value:300}}},PrintStatement{ValueExpression{value=Type:IntType Value:300}})))))]
  *FileTable: {}
- *Heap: {1=Type:IntType Value:7}
+ *Heap: {}
 
-id 2 
- *Symtable : {a=RefValue{adress=1, locationType=IntType}}
+id 0 
+ *Symtable : {b=Type:IntType Value:0, a=Type:IntType Value:0}
  *Output log : []
- *ExecutionStack:[NopStatement, NewStatement{varName='b', expression=ValueExpression{value=Type:IntType Value:8}}, VarDeclarationStatement:b with type=RefType]
+ *ExecutionStack:[NopStatement, (AssigmentStatemnet a=ValueExpression{value=Type:IntType Value:1},(AssigmentStatemnet b=ValueExpression{value=Type:IntType Value:2},(AssigmentStatemnet c=ValueExpression{value=Type:IntType Value:5},(SwitchStmt{mainExpression=Expression multiplication between VariableExpression{key='a'} and ValueExpression{value=Type:IntType Value:10}, casesList=[CaseSwitch{expression=Expression multiplication between VariableExpression{key='b'} and VariableExpression{key='c'}, statement=(PrintStatement{VariableExpression{key='a'}},PrintStatement{VariableExpression{key='b'}})}, CaseSwitch{expression=ValueExpression{value=Type:IntType Value:10}, statement=(PrintStatement{ValueExpression{value=Type:IntType Value:100}},PrintStatement{ValueExpression{value=Type:IntType Value:200}})}], defaultStmt=PrintStatement{ValueExpression{value=Type:IntType Value:300}}},PrintStatement{ValueExpression{value=Type:IntType Value:300}})))), VarDeclarationStatement:c with type=IntType]
  *FileTable: {}
- *Heap: {1=Type:IntType Value:7}
+ *Heap: {}
 
-id 2 
- *Symtable : {a=RefValue{adress=1, locationType=IntType}}
+id 0 
+ *Symtable : {b=Type:IntType Value:0, a=Type:IntType Value:0}
  *Output log : []
- *ExecutionStack:[NopStatement, NewStatement{varName='b', expression=ValueExpression{value=Type:IntType Value:8}}, VarDeclarationStatement:b with type=RefType]
+ *ExecutionStack:[NopStatement, (AssigmentStatemnet a=ValueExpression{value=Type:IntType Value:1},(AssigmentStatemnet b=ValueExpression{value=Type:IntType Value:2},(AssigmentStatemnet c=ValueExpression{value=Type:IntType Value:5},(SwitchStmt{mainExpression=Expression multiplication between VariableExpression{key='a'} and ValueExpression{value=Type:IntType Value:10}, casesList=[CaseSwitch{expression=Expression multiplication between VariableExpression{key='b'} and VariableExpression{key='c'}, statement=(PrintStatement{VariableExpression{key='a'}},PrintStatement{VariableExpression{key='b'}})}, CaseSwitch{expression=ValueExpression{value=Type:IntType Value:10}, statement=(PrintStatement{ValueExpression{value=Type:IntType Value:100}},PrintStatement{ValueExpression{value=Type:IntType Value:200}})}], defaultStmt=PrintStatement{ValueExpression{value=Type:IntType Value:300}}},PrintStatement{ValueExpression{value=Type:IntType Value:300}})))), VarDeclarationStatement:c with type=IntType]
  *FileTable: {}
- *Heap: {1=Type:IntType Value:7}
+ *Heap: {}
 
-id 2 
- *Symtable : {b=RefValue{adress=0, locationType=IntType}, a=RefValue{adress=1, locationType=IntType}}
+id 0 
+ *Symtable : {b=Type:IntType Value:0, a=Type:IntType Value:0, c=Type:IntType Value:0}
  *Output log : []
- *ExecutionStack:[NopStatement, NewStatement{varName='b', expression=ValueExpression{value=Type:IntType Value:8}}]
+ *ExecutionStack:[NopStatement, (AssigmentStatemnet a=ValueExpression{value=Type:IntType Value:1},(AssigmentStatemnet b=ValueExpression{value=Type:IntType Value:2},(AssigmentStatemnet c=ValueExpression{value=Type:IntType Value:5},(SwitchStmt{mainExpression=Expression multiplication between VariableExpression{key='a'} and ValueExpression{value=Type:IntType Value:10}, casesList=[CaseSwitch{expression=Expression multiplication between VariableExpression{key='b'} and VariableExpression{key='c'}, statement=(PrintStatement{VariableExpression{key='a'}},PrintStatement{VariableExpression{key='b'}})}, CaseSwitch{expression=ValueExpression{value=Type:IntType Value:10}, statement=(PrintStatement{ValueExpression{value=Type:IntType Value:100}},PrintStatement{ValueExpression{value=Type:IntType Value:200}})}], defaultStmt=PrintStatement{ValueExpression{value=Type:IntType Value:300}}},PrintStatement{ValueExpression{value=Type:IntType Value:300}}))))]
  *FileTable: {}
- *Heap: {1=Type:IntType Value:7}
+ *Heap: {}
 
-id 2 
- *Symtable : {b=RefValue{adress=0, locationType=IntType}, a=RefValue{adress=1, locationType=IntType}}
+id 0 
+ *Symtable : {b=Type:IntType Value:0, a=Type:IntType Value:0, c=Type:IntType Value:0}
  *Output log : []
- *ExecutionStack:[NopStatement, NewStatement{varName='b', expression=ValueExpression{value=Type:IntType Value:8}}]
+ *ExecutionStack:[NopStatement, (AssigmentStatemnet a=ValueExpression{value=Type:IntType Value:1},(AssigmentStatemnet b=ValueExpression{value=Type:IntType Value:2},(AssigmentStatemnet c=ValueExpression{value=Type:IntType Value:5},(SwitchStmt{mainExpression=Expression multiplication between VariableExpression{key='a'} and ValueExpression{value=Type:IntType Value:10}, casesList=[CaseSwitch{expression=Expression multiplication between VariableExpression{key='b'} and VariableExpression{key='c'}, statement=(PrintStatement{VariableExpression{key='a'}},PrintStatement{VariableExpression{key='b'}})}, CaseSwitch{expression=ValueExpression{value=Type:IntType Value:10}, statement=(PrintStatement{ValueExpression{value=Type:IntType Value:100}},PrintStatement{ValueExpression{value=Type:IntType Value:200}})}], defaultStmt=PrintStatement{ValueExpression{value=Type:IntType Value:300}}},PrintStatement{ValueExpression{value=Type:IntType Value:300}}))))]
  *FileTable: {}
- *Heap: {1=Type:IntType Value:7}
+ *Heap: {}
 
-id 2 
- *Symtable : {b=RefValue{adress=2, locationType=IntType}, a=RefValue{adress=1, locationType=IntType}}
+id 0 
+ *Symtable : {b=Type:IntType Value:0, a=Type:IntType Value:0, c=Type:IntType Value:0}
  *Output log : []
+ *ExecutionStack:[NopStatement, (AssigmentStatemnet b=ValueExpression{value=Type:IntType Value:2},(AssigmentStatemnet c=ValueExpression{value=Type:IntType Value:5},(SwitchStmt{mainExpression=Expression multiplication between VariableExpression{key='a'} and ValueExpression{value=Type:IntType Value:10}, casesList=[CaseSwitch{expression=Expression multiplication between VariableExpression{key='b'} and VariableExpression{key='c'}, statement=(PrintStatement{VariableExpression{key='a'}},PrintStatement{VariableExpression{key='b'}})}, CaseSwitch{expression=ValueExpression{value=Type:IntType Value:10}, statement=(PrintStatement{ValueExpression{value=Type:IntType Value:100}},PrintStatement{ValueExpression{value=Type:IntType Value:200}})}], defaultStmt=PrintStatement{ValueExpression{value=Type:IntType Value:300}}},PrintStatement{ValueExpression{value=Type:IntType Value:300}}))), AssigmentStatemnet a=ValueExpression{value=Type:IntType Value:1}]
+ *FileTable: {}
+ *Heap: {}
+
+id 0 
+ *Symtable : {b=Type:IntType Value:0, a=Type:IntType Value:0, c=Type:IntType Value:0}
+ *Output log : []
+ *ExecutionStack:[NopStatement, (AssigmentStatemnet b=ValueExpression{value=Type:IntType Value:2},(AssigmentStatemnet c=ValueExpression{value=Type:IntType Value:5},(SwitchStmt{mainExpression=Expression multiplication between VariableExpression{key='a'} and ValueExpression{value=Type:IntType Value:10}, casesList=[CaseSwitch{expression=Expression multiplication between VariableExpression{key='b'} and VariableExpression{key='c'}, statement=(PrintStatement{VariableExpression{key='a'}},PrintStatement{VariableExpression{key='b'}})}, CaseSwitch{expression=ValueExpression{value=Type:IntType Value:10}, statement=(PrintStatement{ValueExpression{value=Type:IntType Value:100}},PrintStatement{ValueExpression{value=Type:IntType Value:200}})}], defaultStmt=PrintStatement{ValueExpression{value=Type:IntType Value:300}}},PrintStatement{ValueExpression{value=Type:IntType Value:300}}))), AssigmentStatemnet a=ValueExpression{value=Type:IntType Value:1}]
+ *FileTable: {}
+ *Heap: {}
+
+id 0 
+ *Symtable : {b=Type:IntType Value:0, a=Type:IntType Value:1, c=Type:IntType Value:0}
+ *Output log : []
+ *ExecutionStack:[NopStatement, (AssigmentStatemnet b=ValueExpression{value=Type:IntType Value:2},(AssigmentStatemnet c=ValueExpression{value=Type:IntType Value:5},(SwitchStmt{mainExpression=Expression multiplication between VariableExpression{key='a'} and ValueExpression{value=Type:IntType Value:10}, casesList=[CaseSwitch{expression=Expression multiplication between VariableExpression{key='b'} and VariableExpression{key='c'}, statement=(PrintStatement{VariableExpression{key='a'}},PrintStatement{VariableExpression{key='b'}})}, CaseSwitch{expression=ValueExpression{value=Type:IntType Value:10}, statement=(PrintStatement{ValueExpression{value=Type:IntType Value:100}},PrintStatement{ValueExpression{value=Type:IntType Value:200}})}], defaultStmt=PrintStatement{ValueExpression{value=Type:IntType Value:300}}},PrintStatement{ValueExpression{value=Type:IntType Value:300}})))]
+ *FileTable: {}
+ *Heap: {}
+
+id 0 
+ *Symtable : {b=Type:IntType Value:0, a=Type:IntType Value:1, c=Type:IntType Value:0}
+ *Output log : []
+ *ExecutionStack:[NopStatement, (AssigmentStatemnet b=ValueExpression{value=Type:IntType Value:2},(AssigmentStatemnet c=ValueExpression{value=Type:IntType Value:5},(SwitchStmt{mainExpression=Expression multiplication between VariableExpression{key='a'} and ValueExpression{value=Type:IntType Value:10}, casesList=[CaseSwitch{expression=Expression multiplication between VariableExpression{key='b'} and VariableExpression{key='c'}, statement=(PrintStatement{VariableExpression{key='a'}},PrintStatement{VariableExpression{key='b'}})}, CaseSwitch{expression=ValueExpression{value=Type:IntType Value:10}, statement=(PrintStatement{ValueExpression{value=Type:IntType Value:100}},PrintStatement{ValueExpression{value=Type:IntType Value:200}})}], defaultStmt=PrintStatement{ValueExpression{value=Type:IntType Value:300}}},PrintStatement{ValueExpression{value=Type:IntType Value:300}})))]
+ *FileTable: {}
+ *Heap: {}
+
+id 0 
+ *Symtable : {b=Type:IntType Value:0, a=Type:IntType Value:1, c=Type:IntType Value:0}
+ *Output log : []
+ *ExecutionStack:[NopStatement, (AssigmentStatemnet c=ValueExpression{value=Type:IntType Value:5},(SwitchStmt{mainExpression=Expression multiplication between VariableExpression{key='a'} and ValueExpression{value=Type:IntType Value:10}, casesList=[CaseSwitch{expression=Expression multiplication between VariableExpression{key='b'} and VariableExpression{key='c'}, statement=(PrintStatement{VariableExpression{key='a'}},PrintStatement{VariableExpression{key='b'}})}, CaseSwitch{expression=ValueExpression{value=Type:IntType Value:10}, statement=(PrintStatement{ValueExpression{value=Type:IntType Value:100}},PrintStatement{ValueExpression{value=Type:IntType Value:200}})}], defaultStmt=PrintStatement{ValueExpression{value=Type:IntType Value:300}}},PrintStatement{ValueExpression{value=Type:IntType Value:300}})), AssigmentStatemnet b=ValueExpression{value=Type:IntType Value:2}]
+ *FileTable: {}
+ *Heap: {}
+
+id 0 
+ *Symtable : {b=Type:IntType Value:0, a=Type:IntType Value:1, c=Type:IntType Value:0}
+ *Output log : []
+ *ExecutionStack:[NopStatement, (AssigmentStatemnet c=ValueExpression{value=Type:IntType Value:5},(SwitchStmt{mainExpression=Expression multiplication between VariableExpression{key='a'} and ValueExpression{value=Type:IntType Value:10}, casesList=[CaseSwitch{expression=Expression multiplication between VariableExpression{key='b'} and VariableExpression{key='c'}, statement=(PrintStatement{VariableExpression{key='a'}},PrintStatement{VariableExpression{key='b'}})}, CaseSwitch{expression=ValueExpression{value=Type:IntType Value:10}, statement=(PrintStatement{ValueExpression{value=Type:IntType Value:100}},PrintStatement{ValueExpression{value=Type:IntType Value:200}})}], defaultStmt=PrintStatement{ValueExpression{value=Type:IntType Value:300}}},PrintStatement{ValueExpression{value=Type:IntType Value:300}})), AssigmentStatemnet b=ValueExpression{value=Type:IntType Value:2}]
+ *FileTable: {}
+ *Heap: {}
+
+id 0 
+ *Symtable : {b=Type:IntType Value:2, a=Type:IntType Value:1, c=Type:IntType Value:0}
+ *Output log : []
+ *ExecutionStack:[NopStatement, (AssigmentStatemnet c=ValueExpression{value=Type:IntType Value:5},(SwitchStmt{mainExpression=Expression multiplication between VariableExpression{key='a'} and ValueExpression{value=Type:IntType Value:10}, casesList=[CaseSwitch{expression=Expression multiplication between VariableExpression{key='b'} and VariableExpression{key='c'}, statement=(PrintStatement{VariableExpression{key='a'}},PrintStatement{VariableExpression{key='b'}})}, CaseSwitch{expression=ValueExpression{value=Type:IntType Value:10}, statement=(PrintStatement{ValueExpression{value=Type:IntType Value:100}},PrintStatement{ValueExpression{value=Type:IntType Value:200}})}], defaultStmt=PrintStatement{ValueExpression{value=Type:IntType Value:300}}},PrintStatement{ValueExpression{value=Type:IntType Value:300}}))]
+ *FileTable: {}
+ *Heap: {}
+
+id 0 
+ *Symtable : {b=Type:IntType Value:2, a=Type:IntType Value:1, c=Type:IntType Value:0}
+ *Output log : []
+ *ExecutionStack:[NopStatement, (AssigmentStatemnet c=ValueExpression{value=Type:IntType Value:5},(SwitchStmt{mainExpression=Expression multiplication between VariableExpression{key='a'} and ValueExpression{value=Type:IntType Value:10}, casesList=[CaseSwitch{expression=Expression multiplication between VariableExpression{key='b'} and VariableExpression{key='c'}, statement=(PrintStatement{VariableExpression{key='a'}},PrintStatement{VariableExpression{key='b'}})}, CaseSwitch{expression=ValueExpression{value=Type:IntType Value:10}, statement=(PrintStatement{ValueExpression{value=Type:IntType Value:100}},PrintStatement{ValueExpression{value=Type:IntType Value:200}})}], defaultStmt=PrintStatement{ValueExpression{value=Type:IntType Value:300}}},PrintStatement{ValueExpression{value=Type:IntType Value:300}}))]
+ *FileTable: {}
+ *Heap: {}
+
+id 0 
+ *Symtable : {b=Type:IntType Value:2, a=Type:IntType Value:1, c=Type:IntType Value:0}
+ *Output log : []
+ *ExecutionStack:[NopStatement, (SwitchStmt{mainExpression=Expression multiplication between VariableExpression{key='a'} and ValueExpression{value=Type:IntType Value:10}, casesList=[CaseSwitch{expression=Expression multiplication between VariableExpression{key='b'} and VariableExpression{key='c'}, statement=(PrintStatement{VariableExpression{key='a'}},PrintStatement{VariableExpression{key='b'}})}, CaseSwitch{expression=ValueExpression{value=Type:IntType Value:10}, statement=(PrintStatement{ValueExpression{value=Type:IntType Value:100}},PrintStatement{ValueExpression{value=Type:IntType Value:200}})}], defaultStmt=PrintStatement{ValueExpression{value=Type:IntType Value:300}}},PrintStatement{ValueExpression{value=Type:IntType Value:300}}), AssigmentStatemnet c=ValueExpression{value=Type:IntType Value:5}]
+ *FileTable: {}
+ *Heap: {}
+
+id 0 
+ *Symtable : {b=Type:IntType Value:2, a=Type:IntType Value:1, c=Type:IntType Value:0}
+ *Output log : []
+ *ExecutionStack:[NopStatement, (SwitchStmt{mainExpression=Expression multiplication between VariableExpression{key='a'} and ValueExpression{value=Type:IntType Value:10}, casesList=[CaseSwitch{expression=Expression multiplication between VariableExpression{key='b'} and VariableExpression{key='c'}, statement=(PrintStatement{VariableExpression{key='a'}},PrintStatement{VariableExpression{key='b'}})}, CaseSwitch{expression=ValueExpression{value=Type:IntType Value:10}, statement=(PrintStatement{ValueExpression{value=Type:IntType Value:100}},PrintStatement{ValueExpression{value=Type:IntType Value:200}})}], defaultStmt=PrintStatement{ValueExpression{value=Type:IntType Value:300}}},PrintStatement{ValueExpression{value=Type:IntType Value:300}}), AssigmentStatemnet c=ValueExpression{value=Type:IntType Value:5}]
+ *FileTable: {}
+ *Heap: {}
+
+id 0 
+ *Symtable : {b=Type:IntType Value:2, a=Type:IntType Value:1, c=Type:IntType Value:5}
+ *Output log : []
+ *ExecutionStack:[NopStatement, (SwitchStmt{mainExpression=Expression multiplication between VariableExpression{key='a'} and ValueExpression{value=Type:IntType Value:10}, casesList=[CaseSwitch{expression=Expression multiplication between VariableExpression{key='b'} and VariableExpression{key='c'}, statement=(PrintStatement{VariableExpression{key='a'}},PrintStatement{VariableExpression{key='b'}})}, CaseSwitch{expression=ValueExpression{value=Type:IntType Value:10}, statement=(PrintStatement{ValueExpression{value=Type:IntType Value:100}},PrintStatement{ValueExpression{value=Type:IntType Value:200}})}], defaultStmt=PrintStatement{ValueExpression{value=Type:IntType Value:300}}},PrintStatement{ValueExpression{value=Type:IntType Value:300}})]
+ *FileTable: {}
+ *Heap: {}
+
+id 0 
+ *Symtable : {b=Type:IntType Value:2, a=Type:IntType Value:1, c=Type:IntType Value:5}
+ *Output log : []
+ *ExecutionStack:[NopStatement, (SwitchStmt{mainExpression=Expression multiplication between VariableExpression{key='a'} and ValueExpression{value=Type:IntType Value:10}, casesList=[CaseSwitch{expression=Expression multiplication between VariableExpression{key='b'} and VariableExpression{key='c'}, statement=(PrintStatement{VariableExpression{key='a'}},PrintStatement{VariableExpression{key='b'}})}, CaseSwitch{expression=ValueExpression{value=Type:IntType Value:10}, statement=(PrintStatement{ValueExpression{value=Type:IntType Value:100}},PrintStatement{ValueExpression{value=Type:IntType Value:200}})}], defaultStmt=PrintStatement{ValueExpression{value=Type:IntType Value:300}}},PrintStatement{ValueExpression{value=Type:IntType Value:300}})]
+ *FileTable: {}
+ *Heap: {}
+
+id 0 
+ *Symtable : {b=Type:IntType Value:2, a=Type:IntType Value:1, c=Type:IntType Value:5}
+ *Output log : []
+ *ExecutionStack:[NopStatement, PrintStatement{ValueExpression{value=Type:IntType Value:300}}, SwitchStmt{mainExpression=Expression multiplication between VariableExpression{key='a'} and ValueExpression{value=Type:IntType Value:10}, casesList=[CaseSwitch{expression=Expression multiplication between VariableExpression{key='b'} and VariableExpression{key='c'}, statement=(PrintStatement{VariableExpression{key='a'}},PrintStatement{VariableExpression{key='b'}})}, CaseSwitch{expression=ValueExpression{value=Type:IntType Value:10}, statement=(PrintStatement{ValueExpression{value=Type:IntType Value:100}},PrintStatement{ValueExpression{value=Type:IntType Value:200}})}], defaultStmt=PrintStatement{ValueExpression{value=Type:IntType Value:300}}}]
+ *FileTable: {}
+ *Heap: {}
+
+id 0 
+ *Symtable : {b=Type:IntType Value:2, a=Type:IntType Value:1, c=Type:IntType Value:5}
+ *Output log : []
+ *ExecutionStack:[NopStatement, PrintStatement{ValueExpression{value=Type:IntType Value:300}}, SwitchStmt{mainExpression=Expression multiplication between VariableExpression{key='a'} and ValueExpression{value=Type:IntType Value:10}, casesList=[CaseSwitch{expression=Expression multiplication between VariableExpression{key='b'} and VariableExpression{key='c'}, statement=(PrintStatement{VariableExpression{key='a'}},PrintStatement{VariableExpression{key='b'}})}, CaseSwitch{expression=ValueExpression{value=Type:IntType Value:10}, statement=(PrintStatement{ValueExpression{value=Type:IntType Value:100}},PrintStatement{ValueExpression{value=Type:IntType Value:200}})}], defaultStmt=PrintStatement{ValueExpression{value=Type:IntType Value:300}}}]
+ *FileTable: {}
+ *Heap: {}
+
+id 0 
+ *Symtable : {b=Type:IntType Value:2, a=Type:IntType Value:1, c=Type:IntType Value:5}
+ *Output log : []
+ *ExecutionStack:[NopStatement, PrintStatement{ValueExpression{value=Type:IntType Value:300}}, PrintStatement{VariableExpression{key='b'}}, PrintStatement{VariableExpression{key='a'}}]
+ *FileTable: {}
+ *Heap: {}
+
+id 0 
+ *Symtable : {b=Type:IntType Value:2, a=Type:IntType Value:1, c=Type:IntType Value:5}
+ *Output log : []
+ *ExecutionStack:[NopStatement, PrintStatement{ValueExpression{value=Type:IntType Value:300}}, PrintStatement{VariableExpression{key='b'}}, PrintStatement{VariableExpression{key='a'}}]
+ *FileTable: {}
+ *Heap: {}
+
+id 0 
+ *Symtable : {b=Type:IntType Value:2, a=Type:IntType Value:1, c=Type:IntType Value:5}
+ *Output log : [Type:IntType Value:1
+]
+ *ExecutionStack:[NopStatement, PrintStatement{ValueExpression{value=Type:IntType Value:300}}, PrintStatement{VariableExpression{key='b'}}]
+ *FileTable: {}
+ *Heap: {}
+
+id 0 
+ *Symtable : {b=Type:IntType Value:2, a=Type:IntType Value:1, c=Type:IntType Value:5}
+ *Output log : [Type:IntType Value:1
+]
+ *ExecutionStack:[NopStatement, PrintStatement{ValueExpression{value=Type:IntType Value:300}}, PrintStatement{VariableExpression{key='b'}}]
+ *FileTable: {}
+ *Heap: {}
+
+id 0 
+ *Symtable : {b=Type:IntType Value:2, a=Type:IntType Value:1, c=Type:IntType Value:5}
+ *Output log : [Type:IntType Value:1
+, Type:IntType Value:2
+]
+ *ExecutionStack:[NopStatement, PrintStatement{ValueExpression{value=Type:IntType Value:300}}]
+ *FileTable: {}
+ *Heap: {}
+
+id 0 
+ *Symtable : {b=Type:IntType Value:2, a=Type:IntType Value:1, c=Type:IntType Value:5}
+ *Output log : [Type:IntType Value:1
+, Type:IntType Value:2
+]
+ *ExecutionStack:[NopStatement, PrintStatement{ValueExpression{value=Type:IntType Value:300}}]
+ *FileTable: {}
+ *Heap: {}
+
+id 0 
+ *Symtable : {b=Type:IntType Value:2, a=Type:IntType Value:1, c=Type:IntType Value:5}
+ *Output log : [Type:IntType Value:1
+, Type:IntType Value:2
+, Type:IntType Value:300
+]
  *ExecutionStack:[NopStatement]
  *FileTable: {}
- *Heap: {2=Type:IntType Value:8, 1=Type:IntType Value:7}
+ *Heap: {}
 
-id 2 
- *Symtable : {b=RefValue{adress=2, locationType=IntType}, a=RefValue{adress=1, locationType=IntType}}
- *Output log : []
+id 0 
+ *Symtable : {b=Type:IntType Value:2, a=Type:IntType Value:1, c=Type:IntType Value:5}
+ *Output log : [Type:IntType Value:1
+, Type:IntType Value:2
+, Type:IntType Value:300
+]
  *ExecutionStack:[NopStatement]
  *FileTable: {}
- *Heap: {2=Type:IntType Value:8, 1=Type:IntType Value:7}
+ *Heap: {}
 
-id 2 
- *Symtable : {b=RefValue{adress=2, locationType=IntType}, a=RefValue{adress=1, locationType=IntType}}
- *Output log : []
+id 0 
+ *Symtable : {b=Type:IntType Value:2, a=Type:IntType Value:1, c=Type:IntType Value:5}
+ *Output log : [Type:IntType Value:1
+, Type:IntType Value:2
+, Type:IntType Value:300
+]
  *ExecutionStack:[]
  *FileTable: {}
- *Heap: {2=Type:IntType Value:8, 1=Type:IntType Value:7}
+ *Heap: {}
 
