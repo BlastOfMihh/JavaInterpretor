@@ -20,9 +20,11 @@ public class ReadHeapExp implements IExpression{
             throw new MyException(String.format("%s is NOT a reference value in this %s", evaluatedExpression, this));
         } // redundant
         var reference = (RefValue)evaluatedExpression;
-        if (! heap.containsKey(reference.getAdress()))
-            throw new MyException(String.format("Adress not found! in %s", this));
-        return heap.get(reference.getAdress());
+        synchronized (heap){
+            if (! heap.containsKey(reference.getAdress()))
+                throw new MyException(String.format("Adress not found! in %s", this));
+            return heap.get(reference.getAdress());
+        }
     }
 
     @Override

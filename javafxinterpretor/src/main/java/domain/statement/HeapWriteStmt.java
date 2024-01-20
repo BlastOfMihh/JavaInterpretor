@@ -20,20 +20,22 @@ public class HeapWriteStmt implements IStmt{
     @Override
     public ProgramState execute(ProgramState state) throws MyException {
         Heap heap=state.getHeap();
-        var symTable= state.getSymTable();
-        var referenceIValue=symTable.get(referenceName);
-        if (!referenceIValue.getClass().equals(RefValue.class)){
-            throw new MyException(String.format("%s is NOT a reference value", referenceIValue));
+        synchronized (heap){
+            var symTable= state.getSymTable();
+            var referenceIValue=symTable.get(referenceName);
+            if (!referenceIValue.getClass().equals(RefValue.class)){
+                throw new MyException(String.format("%s is NOT a reference value", referenceIValue));
+            }
+            var reference = (RefValue)(referenceIValue);
+            if (reference == null)
+                throw new MyException("reference is nullll!!! in: "+this);
+            if (! heap.containsKey(reference.getAdress()))
+                throw new MyException("Adress not found!");
+            IValue evaluatedExpression=expression.eval(symTable, heap);
+            if (! reference.getLocationType().getClass().equals(evaluatedExpression.getType().getClass()))
+                throw new MyException(String.format("Expression ins't of type %s", reference.getLocationType()));
+            heap.put(reference.getAdress(), evaluatedExpression);
         }
-        var reference = (RefValue)(referenceIValue);
-        if (reference == null)
-            throw new MyException("reference is nullll!!! in: "+this);
-        if (! heap.containsKey(reference.getAdress()))
-            throw new MyException("Adress not found!");
-        IValue evaluatedExpression=expression.eval(symTable, heap);
-        if (! reference.getLocationType().getClass().equals(evaluatedExpression.getType().getClass()))
-            throw new MyException(String.format("Expression ins't of type %s", reference.getLocationType()));
-        heap.put(reference.getAdress(), evaluatedExpression);
         return null;
     }
 
