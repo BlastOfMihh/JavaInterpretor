@@ -8,6 +8,7 @@ import domain.program_state.heap.Heap;
 import domain.my_data_structures.my_list.MyList;
 import domain.my_data_structures.my_stack.MyStack;
 import domain.my_data_structures.my_table.MyTable;
+import domain.program_state.semaphore_table.SemaphoreTable;
 import domain.statement.*;
 import domain.statement.file_statements.CloseRFile;
 import domain.statement.file_statements.OpenRfSmt;
@@ -30,7 +31,14 @@ public class InterpreterMain {
         MyStack<IStmt> executionStack=new MyStack<IStmt>();
         MyTable<String, FileDesc> fileTable=new MyTable<String,FileDesc>();
         executionStack.push(ex);
-        ProgramState program=new ProgramState(symTable,heap, outputLog, executionStack, fileTable);
+        ProgramState program=new ProgramState(
+                symTable,
+                heap,
+                outputLog,
+                executionStack,
+                fileTable,
+                new SemaphoreTable()
+        );
         controller.addProgramToExecution(program);
     }
     static protected void addFileExample(TextMenu menu) throws MyException {

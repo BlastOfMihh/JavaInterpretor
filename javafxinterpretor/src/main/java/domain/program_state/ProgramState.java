@@ -6,6 +6,7 @@ import domain.program_state.heap.Heap;
 import domain.my_data_structures.my_stack.IMyStack;
 import domain.my_data_structures.my_list.IMyList;
 import domain.my_data_structures.my_table.IMyTable;
+import domain.program_state.semaphore_table.SemaphoreTable;
 import domain.statement.IStmt;
 import domain.value.IValue;
 import exceptions.MyException;
@@ -19,10 +20,11 @@ public class ProgramState {
     IMyStack<IStmt> executionStack;
     GarbageCollector garbageCollector;
     Heap heap;
+    SemaphoreTable semaphoreTable;
     private int id;
     static int availableId=0;
 
-    public ProgramState(IMyTable<String,IValue> symTable, Heap heap, IMyList<String> outputLog, IMyStack<IStmt> executionStack, IMyTable<String,FileDesc> fileTable){
+    public ProgramState(IMyTable<String,IValue> symTable, Heap heap, IMyList<String> outputLog, IMyStack<IStmt> executionStack, IMyTable<String,FileDesc> fileTable, SemaphoreTable semaphoreTable){
         this.heap=heap;
         this.symTable=symTable;
         this.outputLog=outputLog;
@@ -30,6 +32,7 @@ public class ProgramState {
         this.fileTable=fileTable;
         this.garbageCollector=new GarbageCollector(heap, symTable);
         this.id=availableId++;
+        this.semaphoreTable=semaphoreTable;
         //availableId++;
     }
     public int getId(){
@@ -50,6 +53,10 @@ public class ProgramState {
     public Heap getHeap(){
         return heap;
     }
+    public SemaphoreTable getSemaphoreTable() {
+        return semaphoreTable;
+    }
+
     public ProgramState executeOneStep()throws MyException {
         if (executionStack.empty()){
             throw new MyException("No more elements in the execution Stack");

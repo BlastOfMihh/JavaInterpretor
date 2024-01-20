@@ -1,6 +1,5 @@
 package view.viewgui;
 
-import com.almasb.fxgl.core.collection.Array;
 import controller.ProgramController;
 import domain.FileDesc;
 import domain.expression.*;
@@ -9,16 +8,19 @@ import domain.my_data_structures.my_stack.MyStack;
 import domain.my_data_structures.my_table.MyTable;
 import domain.program_state.ProgramState;
 import domain.program_state.heap.Heap;
+import domain.program_state.semaphore_table.SemaphoreTable;
 import domain.statement.*;
 import domain.statement.switch_statement.CaseSwitch;
 import domain.statement.switch_statement.SwitchStmt;
+import domain.statement.sync.AquireStmt;
+import domain.statement.sync.CreateSemaphoreStmt;
+import domain.statement.sync.ReleaseStmt;
 import domain.type.IntType;
 import domain.type.RefType;
 import domain.value.IValue;
 import domain.value.IntValue;
 import domain.value.StringValue;
 import exceptions.MyException;
-import javafx.beans.binding.IntegerExpression;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -27,8 +29,6 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.ListView;
 import repository.FileRepo;
 import repository.Repository;
-import view.viewcli.RunExampleCommand;
-import view.viewcli.TextMenu;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -51,8 +51,9 @@ public class SelectProgramController {
         MyList<String> outputLog=new MyList<String>();
         MyStack<IStmt> executionStack=new MyStack<IStmt>();
         MyTable<String, FileDesc> fileTable=new MyTable<String,FileDesc>();
+        SemaphoreTable semaphoreTable=new SemaphoreTable();
         executionStack.push(ex);
-        ProgramState program=new ProgramState(symTable,heap, outputLog, executionStack, fileTable);
+        ProgramState program=new ProgramState(symTable,heap, outputLog, executionStack, fileTable, semaphoreTable);
         controller.addProgramToExecution(program);
         return controller;
     }
@@ -147,16 +148,55 @@ public class SelectProgramController {
         );
         return ex;
     }
+    IStmt addSemaphoreEx(){
+        // Ref int v1; int cnt;
+        // new(v1,1);createSemaphore(cnt,rH(v1));
+        // fork(acquire(cnt);wh(v1,rh(v1)*10));print(rh(v1));release(cnt));
+        // fork(acquire(cnt);wh(v1,rh(v1)*10));wh(v1,rh(v1)*2));print(rh(v1));release(cnt
+        // ));
+        // acquire(cnt);
+        // print(rh(v1)-1);
+        // release(cnt)
+        return new CompStmt(
+                new VarDeclStmt("v1", new RefType(new IntType())),new CompStmt(
+                new VarDeclStmt("cnt", new IntType()), new CompStmt(
+                new NewStatement("v1", new ValueExp(new IntValue(1))), new CompStmt(
+                new CreateSemaphoreStmt("cnt", new ReadHeapExp(new VarExp("v1"))), new CompStmt(
+                new ForkStmt(new CompStmt(
+                        new AquireStmt("cnt"), new CompStmt(
+                        new HeapWriteStmt("v1", new ArithExp(BinaryExpression.OperationTypes.multiplication, new ReadHeapExp(new VarExp("v1")), new ValueExp(new IntValue(10)))),new CompStmt(
+                        new PrintStmt(new ReadHeapExp(new VarExp("v1"))),
+                        new ReleaseStmt("cnt")
+                )) )), new CompStmt(
+                new ForkStmt(new CompStmt(
+                        new AquireStmt("cnt"), new CompStmt(
+                        new HeapWriteStmt("v1", new ArithExp(BinaryExpression.OperationTypes.multiplication, new ReadHeapExp(new VarExp("v1")), new ValueExp(new IntValue(10)))),new CompStmt(
+                        new HeapWriteStmt("v1", new ArithExp(BinaryExpression.OperationTypes.multiplication, new ReadHeapExp(new VarExp("v1")), new ValueExp(new IntValue(2)))),new CompStmt(
+                        new PrintStmt(new ReadHeapExp(new VarExp("v1"))),
+                        new ReleaseStmt("cnt")
+                ) ) ))), new CompStmt(
+                new AquireStmt("cnt"), new CompStmt(
+                new PrintStmt(new ArithExp(BinaryExpression.OperationTypes.minus, new ReadHeapExp(new VarExp("v1")), new ValueExp(new IntValue(1)))),
+                new ReleaseStmt("cnt")
+                )
+        )
+        )
+        ))
+        )
+        ));
+    }
     private IStmt addNop(IStmt stmt){
         return new CompStmt(stmt, new NopStmt());
     }
     private void addExamples(){
         programList.setItems(FXCollections.observableArrayList(
-               addNop( getRelationalExample()),
-               addNop( addNimrodExamples()),
-               addNop( addThreadsExample()),
-                addNop(addSwitchStatementEx())
-        ));
+            addNop( getRelationalExample()),
+            addNop( addNimrodExamples()),
+            addNop( addThreadsExample()),
+            addNop(addSwitchStatementEx()),
+            addNop(addSemaphoreEx()))
+
+        );
     }
     @FXML
     public void initialize(){

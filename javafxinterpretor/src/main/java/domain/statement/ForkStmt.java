@@ -22,18 +22,14 @@ public class ForkStmt implements IStmt{
     }
     @Override
     public ProgramState execute(ProgramState state) throws MyException {
-        IMyTable<String, IValue> newSymTable= new MyTable<String, IValue>();
-        //newSymTable.putAll(state.getSymTable());
+        IMyTable<String, IValue> clonedSymTable= new MyTable<String, IValue>();
         state.getSymTable().entrySet().stream()
-                .forEach(entry -> newSymTable.put(entry.getKey(), entry.getValue().deepCopy()));
-        Heap newHeap = state.getHeap();
-        //IMyList<String> newOutputLog=new MyList<String>(); // ?
-        IMyList<String> newOutputLog=state.getOutputLog();
+                .forEach(entry -> clonedSymTable.put(entry.getKey(), entry.getValue().deepCopy()));
         IMyStack<IStmt> newExecutionStack=new MyStack<IStmt>();
         newExecutionStack.push(statement);
-        IMyTable<String, FileDesc > newFileTable=state.getFileTable();
-        ProgramState newProgramState=new ProgramState(newSymTable, newHeap, newOutputLog, newExecutionStack, newFileTable);
-        return newProgramState;
+        return new ProgramState(
+                clonedSymTable, state.getHeap(), state.getOutputLog(), newExecutionStack, state.getFileTable(), state.getSemaphoreTable()
+        );
     }
 
     @Override

@@ -29,7 +29,7 @@ public class NewStatement implements IStmt{
         if (! reference.getLocationType().getClass().equals(evaluatedExpression.getType().getClass())){
             throw new MyException(String.format("Inner type not equal "+this.toString(), varName));
         }
-        int newAddress=heap.addEntry(evaluatedExpression.deepCopy());
+        int newAddress=heap.putWithAdress(evaluatedExpression.deepCopy());
         reference.setAdress(newAddress);
         return null;
     }
