@@ -178,12 +178,12 @@ public class SelectProgramController {
                 new AquireStmt("cnt"), new CompStmt(
                 new PrintStmt(new ArithExp(BinaryExpression.OperationTypes.minus, new ReadHeapExp(new VarExp("v1")), new ValueExp(new IntValue(1)))),
                 new ReleaseStmt("cnt")
-                )
+                ))
         )
         )
         ))
         )
-        ));
+        );
     }
     private IStmt addNop(IStmt stmt){
         return new CompStmt(stmt, new NopStmt());
@@ -195,7 +195,6 @@ public class SelectProgramController {
             addNop( addThreadsExample()),
             addNop(addSwitchStatementEx()),
             addNop(addSemaphoreEx()))
-
         );
     }
     @FXML

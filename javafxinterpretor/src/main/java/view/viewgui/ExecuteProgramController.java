@@ -7,10 +7,14 @@ import domain.program_state.heap.Heap;
 import domain.value.IValue;
 import exceptions.MyException;
 import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleListProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.VBox;
 import javafx.util.Pair;
 
 import java.util.ArrayList;
@@ -19,6 +23,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 public class ExecuteProgramController extends StatedEPC {
+    static boolean showSemaphore=false;
     public TableView<Pair<Integer, IValue>> heapTableView;
     public TableColumn<Pair<Integer, IValue>, Integer> heapAddressColumn;
     public TableColumn<Pair<Integer, IValue>, String> heapValueColumn;
@@ -36,6 +41,15 @@ public class ExecuteProgramController extends StatedEPC {
         this.programController=programController;
     }
     @FXML Label programStateLabel;
+
+
+    public VBox semaphorePane;
+    public TableView<Pair<Integer, Pair<Integer, List<Integer>>>> semaphoreView;
+    public TableColumn<Pair<Integer, Pair<Integer, List<Integer>>>, Integer> semaphoreIndexColumn;
+    public TableColumn<Pair<Integer, Pair<Integer, List<Integer>>>, Integer> semaphoreValueColumn;
+    public TableColumn<Pair<Integer, Pair<Integer, List<Integer>>>, String> semaphoreListIntColumn;
+
+
 
     @Override
     protected void enterExecuting() {
@@ -57,6 +71,18 @@ public class ExecuteProgramController extends StatedEPC {
         symbolTableVariableNameColumn.setCellValueFactory(p -> new SimpleStringProperty(p.getValue().getKey()));
         symbolTableValueColumn.setCellValueFactory(p -> new SimpleStringProperty(p.getValue().getValue().toString()));
         programStatesListView.setOnMouseClicked(mouseEvent -> updateGui());
+
+        semaphoreIndexColumn.setCellValueFactory(p -> new SimpleIntegerProperty(p.getValue().getKey()).asObject());
+        semaphoreValueColumn.setCellValueFactory(p -> new SimpleIntegerProperty(   p.getValue().getKey()  ).asObject());
+        semaphoreListIntColumn.setCellValueFactory(
+                p -> new SimpleStringProperty(
+                        p.getValue().getValue().getValue().stream().map(x->x.toString()).reduce(new String(), (ac, elem)->ac+" "+elem)
+                )
+        );
+        if (showSemaphore)
+            semaphorePane.setVisible(true);
+        else
+            semaphorePane.setVisible(false);
     }
 
     private void updateProgramIDsView() {
@@ -122,6 +148,15 @@ public class ExecuteProgramController extends StatedEPC {
         symbolTableView.setItems(FXCollections.observableList(symbolTableList));
         symbolTableView.refresh();
     }
+    protected void updateSemaphore(){
+        ProgramState currentProgram = getCurrentProgram();
+        List<Pair<Integer, Pair<Integer, List<Integer>>>> semTableList = new ArrayList<>();
+        if (currentProgram!=null)
+            for (Map.Entry<Integer, kotlin.Pair<Integer, List<Integer>>> entry : currentProgram.getSemaphoreTable().entrySet())
+                semTableList.add(new Pair<>(entry.getKey(), new Pair<>(entry.getValue().getFirst(), entry.getValue().getSecond())));
+        semaphoreView.setItems(FXCollections.observableList(semTableList));
+        semaphoreView.refresh();
+    }
     protected void updateGui(){
         updateExecutionStackView();
         updateSymbolTableView();
@@ -129,6 +164,8 @@ public class ExecuteProgramController extends StatedEPC {
         updateFileTableView();
         updateProgramIDsView();
         updateHeap();
+        if (showSemaphore)
+            updateSemaphore();
     }
 
     @FXML

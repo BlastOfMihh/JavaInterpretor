@@ -22,8 +22,6 @@ public class ReleaseStmt implements IStmt {
     @Override
     public ProgramState execute(ProgramState state) throws MyException {
         IMyTable<String, IValue> symTable=state.getSymTable();
-        Heap heap=state.getHeap();
-        var executionStack=state.getExecutionStack();
         SemaphoreTable semaphoreTable= state.getSemaphoreTable();
         if (!symTable.containsKey(varName))
             throw new MyException(String.format("RUNTIME ERROR: %s is not in the symTable in %s",varName, this));
