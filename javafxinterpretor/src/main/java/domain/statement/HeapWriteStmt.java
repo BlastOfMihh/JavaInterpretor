@@ -3,7 +3,7 @@ package domain.statement;
 import domain.my_data_structures.my_table.IMyTable;
 import domain.program_state.ProgramState;
 import domain.expression.IExpression;
-import domain.program_state.heap.Heap;
+import domain.program_state.heap.IHeap;
 import domain.type.IType;
 import domain.type.RefType;
 import domain.value.IValue;
@@ -19,7 +19,7 @@ public class HeapWriteStmt implements IStmt{
     }
     @Override
     public ProgramState execute(ProgramState state) throws MyException {
-        Heap heap=state.getHeap();
+        IHeap heap=state.getHeap();
         synchronized (heap){
             var symTable= state.getSymTable();
             var referenceIValue=symTable.get(referenceName);

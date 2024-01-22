@@ -77,6 +77,19 @@
                                 </TableView>
                             </children>
                         </VBox>
+
+                        <VBox fx:id="latchPane" GridPane.rowIndex="2" GridPane.columnIndex="1" >
+                            <children>
+                                <Label text="Latch" />
+                                <TableView fx:id="latchView" prefHeight="200.0" prefWidth="200.0">
+                                    <columns>
+                                        <TableColumn fx:id="latchAddressColumn" prefWidth="111.0" text="Address" />
+                                        <TableColumn fx:id="latchValueColumn" prefWidth="368.0" text="Value" />
+                                    </columns>
+                                </TableView>
+                            </children>
+                        </VBox>
+
                     </children>
                 </GridPane>
                 <VBox>

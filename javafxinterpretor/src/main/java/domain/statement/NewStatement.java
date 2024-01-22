@@ -8,7 +8,7 @@ import domain.type.RefType;
 import domain.value.IValue;
 import domain.value.RefValue;
 import exceptions.MyException;
-import domain.program_state.heap.Heap;
+import domain.program_state.heap.IHeap;
 
 public class NewStatement implements IStmt{
     String varName;
@@ -19,7 +19,7 @@ public class NewStatement implements IStmt{
     }
     @Override
     public ProgramState execute(ProgramState state) throws MyException {
-        Heap heap = state.getHeap();
+        IHeap heap = state.getHeap();
         IMyTable<String, IValue> symTable=state.getSymTable();
         if (!(symTable.containsKey(varName)))
             throw new MyException(String.format("%s does not exist!!"+this, varName));
@@ -29,13 +29,15 @@ public class NewStatement implements IStmt{
         if (! reference.getLocationType().getClass().equals(evaluatedExpression.getType().getClass())){
             throw new MyException(String.format("Inner type not equal "+this.toString(), varName));
         }
-        int newAddress=heap.putWithAdress(evaluatedExpression.deepCopy());
+        int newAddress=heap.putWithAddress(evaluatedExpression.deepCopy());
         reference.setAdress(newAddress);
         return null;
     }
 
     @Override
     public IMyTable<String, IType> typeCheck(IMyTable<String, IType> typeEnvironment) throws MyException {
+        if (!typeEnvironment.containsKey(varName))
+            throw new MyException("Variable not declared in "+this);
         IType variableType=typeEnvironment.get(varName);
         IType expressionType=expression.typecheck(typeEnvironment);
         if (!variableType.getClass().equals(RefType.class))

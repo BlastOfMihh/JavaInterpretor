@@ -1,19 +1,13 @@
 package domain.statement;
 
-import domain.FileDesc;
-import domain.my_data_structures.my_list.IMyList;
-import domain.my_data_structures.my_list.MyList;
 import domain.my_data_structures.my_stack.IMyStack;
 import domain.my_data_structures.my_stack.MyStack;
 import domain.my_data_structures.my_table.IMyTable;
 import domain.my_data_structures.my_table.MyTable;
 import domain.program_state.ProgramState;
-import domain.program_state.heap.Heap;
 import domain.type.IType;
 import domain.value.IValue;
 import exceptions.MyException;
-
-import java.util.Map;
 
 public class ForkStmt implements IStmt{
     private final IStmt statement;
@@ -28,7 +22,7 @@ public class ForkStmt implements IStmt{
         IMyStack<IStmt> newExecutionStack=new MyStack<IStmt>();
         newExecutionStack.push(statement);
         return new ProgramState(
-                clonedSymTable, state.getHeap(), state.getOutputLog(), newExecutionStack, state.getFileTable(), state.getSemaphoreTable()
+                clonedSymTable, state.getHeap(), state.getOutputLog(), newExecutionStack, state.getFileTable(), state.getSemaphoreTable(), state.getLatchTable()
         );
     }
 

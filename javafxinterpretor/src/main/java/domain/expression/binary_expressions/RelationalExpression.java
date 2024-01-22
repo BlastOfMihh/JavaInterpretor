@@ -1,5 +1,6 @@
-package domain.expression;
-import domain.program_state.heap.Heap;
+package domain.expression.binary_expressions;
+import domain.expression.IExpression;
+import domain.program_state.heap.IHeap;
 import domain.my_data_structures.my_table.IMyTable;
 import domain.type.BoolType;
 import domain.type.IType;
@@ -15,7 +16,7 @@ public class RelationalExpression extends BinaryExpression {
         super(operationType, leftExp, rightExp);
     }
     @Override
-    public IValue eval(IMyTable<String, IValue> symTable, Heap heap) throws MyException {
+    public IValue eval(IMyTable<String, IValue> symTable, IHeap heap) throws MyException {
         IValue leftEval= leftExp.eval(symTable, heap), rightEval= rightExp.eval(symTable, heap);
         if(!(leftEval.sameType(rightEval) && leftEval.sameType(new IntType()))){
             throw new MyException("ERROR: invalid operands"); // not neccesary anymore

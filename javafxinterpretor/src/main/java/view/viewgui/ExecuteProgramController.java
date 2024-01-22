@@ -3,17 +3,15 @@ package view.viewgui;
 
 import controller.ProgramController;
 import domain.program_state.ProgramState;
-import domain.program_state.heap.Heap;
+import domain.program_state.heap.IHeap;
+import domain.program_state.latch_table.ILatchTable;
 import domain.value.IValue;
 import exceptions.MyException;
 import javafx.beans.property.SimpleIntegerProperty;
-import javafx.beans.property.SimpleListProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.util.Pair;
 
@@ -23,7 +21,6 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 public class ExecuteProgramController extends StatedEPC {
-    static boolean showSemaphore=false;
     public TableView<Pair<Integer, IValue>> heapTableView;
     public TableColumn<Pair<Integer, IValue>, Integer> heapAddressColumn;
     public TableColumn<Pair<Integer, IValue>, String> heapValueColumn;
@@ -43,6 +40,7 @@ public class ExecuteProgramController extends StatedEPC {
     @FXML Label programStateLabel;
 
 
+    static boolean showSemaphore=true;
     public VBox semaphorePane;
     public TableView<Pair<Integer, Pair<Integer, List<Integer>>>> semaphoreView;
     public TableColumn<Pair<Integer, Pair<Integer, List<Integer>>>, Integer> semaphoreIndexColumn;
@@ -50,6 +48,11 @@ public class ExecuteProgramController extends StatedEPC {
     public TableColumn<Pair<Integer, Pair<Integer, List<Integer>>>, String> semaphoreListIntColumn;
 
 
+    boolean showLatchPane=false;
+    public VBox latchPane;
+    public TableView<Pair<Integer,Integer>> latchView;
+    public TableColumn<Pair<Integer, Integer>, Integer> latchAddressColumn;
+    public TableColumn<Pair<Integer, Integer>, Integer> latchValueColumn;
 
     @Override
     protected void enterExecuting() {
@@ -72,17 +75,18 @@ public class ExecuteProgramController extends StatedEPC {
         symbolTableValueColumn.setCellValueFactory(p -> new SimpleStringProperty(p.getValue().getValue().toString()));
         programStatesListView.setOnMouseClicked(mouseEvent -> updateGui());
 
+        semaphorePane.setVisible(showSemaphore);
         semaphoreIndexColumn.setCellValueFactory(p -> new SimpleIntegerProperty(p.getValue().getKey()).asObject());
-        semaphoreValueColumn.setCellValueFactory(p -> new SimpleIntegerProperty(   p.getValue().getKey()  ).asObject());
+        semaphoreValueColumn.setCellValueFactory(p -> new SimpleIntegerProperty(   p.getValue().getValue().getKey()  ).asObject());
         semaphoreListIntColumn.setCellValueFactory(
                 p -> new SimpleStringProperty(
                         p.getValue().getValue().getValue().stream().map(x->x.toString()).reduce(new String(), (ac, elem)->ac+" "+elem)
                 )
         );
-        if (showSemaphore)
-            semaphorePane.setVisible(true);
-        else
-            semaphorePane.setVisible(false);
+
+        latchAddressColumn.setCellValueFactory(p -> new SimpleIntegerProperty(p.getValue().getKey()).asObject());
+        latchValueColumn.setCellValueFactory(p -> new SimpleIntegerProperty(   p.getValue().getValue()  ).asObject());
+        latchPane.setVisible(showLatchPane);
     }
 
     private void updateProgramIDsView() {
@@ -97,7 +101,7 @@ public class ExecuteProgramController extends StatedEPC {
         //dummy.add(2);
         //dummy.add(2);
         //heapAddressColumn.set
-        Heap heap = new Heap();
+        IHeap heap = new IHeap();
         if (!programController.getListOfPrograms().isEmpty())
             heap = programController.getListOfPrograms().get(0).getHeap();
             //heap = programController.getHeap();
@@ -157,6 +161,15 @@ public class ExecuteProgramController extends StatedEPC {
         semaphoreView.setItems(FXCollections.observableList(semTableList));
         semaphoreView.refresh();
     }
+    private void updateLatch() {
+        ProgramState currentProgram = getCurrentProgram();
+        List<Pair<Integer, Integer>> latchTableList = new ArrayList<>();
+        if (currentProgram!=null)
+            for (Map.Entry<Integer, Integer> entry : currentProgram.getLatchTable().entrySet())
+                latchTableList.add(new Pair<>(entry.getKey(), entry.getValue()));
+        latchView.setItems(FXCollections.observableList(latchTableList));
+        latchView.refresh();
+    }
     protected void updateGui(){
         updateExecutionStackView();
         updateSymbolTableView();
@@ -166,6 +179,8 @@ public class ExecuteProgramController extends StatedEPC {
         updateHeap();
         if (showSemaphore)
             updateSemaphore();
+        if (showLatchPane)
+            updateLatch();
     }
 
     @FXML

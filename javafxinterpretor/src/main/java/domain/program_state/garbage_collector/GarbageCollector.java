@@ -1,22 +1,20 @@
 package domain.program_state.garbage_collector;
 
 import domain.my_data_structures.my_table.IMyTable;
-import domain.program_state.heap.Heap;
-import domain.program_state.sym_table.SymTable;
+import domain.program_state.heap.IHeap;
 import domain.value.IValue;
 import domain.value.RefValue;
 
 import java.util.Collection;
-import java.util.Hashtable;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class GarbageCollector {
-    Heap heap;
+    IHeap heap;
     IMyTable<String, IValue> symTable;
-    public GarbageCollector (Heap heap, IMyTable<String, IValue> symTable){
+    public GarbageCollector (IHeap heap, IMyTable<String, IValue> symTable){
         this.heap=heap;
         this.symTable=symTable;
     }
@@ -27,7 +25,7 @@ public class GarbageCollector {
                 .map(element -> ((RefValue) element).getAdress())
                 .collect(Collectors.toList());
     }
-    static Map<Integer, IValue> getCleanHeap(List<Integer> adressesList, Heap heap){
+    static Map<Integer, IValue> getCleanHeap(List<Integer> adressesList, IHeap heap){
         return heap.entrySet()
                 .stream()
                 .filter(element -> adressesList.contains(element.getKey()))
@@ -55,7 +53,7 @@ public class GarbageCollector {
         //heap.clear();
         //newHeap.entrySet().stream().forEach(element->heap.put(element.getKey(), element.getValue()));
     }
-    public void setHeap(Heap heap){
+    public void setHeap(IHeap heap){
         this.heap=heap;
     }
 }

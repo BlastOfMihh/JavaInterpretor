@@ -2,8 +2,7 @@ package domain.statement.sync;
 
 import domain.my_data_structures.my_table.IMyTable;
 import domain.program_state.ProgramState;
-import domain.program_state.heap.Heap;
-import domain.program_state.semaphore_table.SemaphoreTable;
+import domain.program_state.semaphore_table.ISemaphoreTable;
 import domain.statement.IStmt;
 import domain.type.IType;
 import domain.type.IntType;
@@ -22,7 +21,7 @@ public class ReleaseStmt implements IStmt {
     @Override
     public ProgramState execute(ProgramState state) throws MyException {
         IMyTable<String, IValue> symTable=state.getSymTable();
-        SemaphoreTable semaphoreTable= state.getSemaphoreTable();
+        ISemaphoreTable semaphoreTable= state.getSemaphoreTable();
         if (!symTable.containsKey(varName))
             throw new MyException(String.format("RUNTIME ERROR: %s is not in the symTable in %s",varName, this));
         Integer semIndex=((IntValue)symTable.get(varName)).getValue();

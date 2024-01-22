@@ -2,13 +2,13 @@ package domain.program_state;
 
 import domain.my_data_structures.my_table.MyTable;
 
-public class AddressedTable<T> extends MyTable<Integer, T> {
+public class AddressedTable<T> extends MyTable<Integer, T> implements IAddressedTable<T>{
     private int availableAdress;
     public AddressedTable(){
         super();
         availableAdress=1;
     }
-    public int putWithAdress(T newEntry){
+    public int putWithAddress(T newEntry){
         this.put(availableAdress++, newEntry);
         return availableAdress-1;
     }

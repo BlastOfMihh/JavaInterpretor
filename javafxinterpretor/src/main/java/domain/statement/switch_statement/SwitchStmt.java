@@ -1,10 +1,9 @@
 package domain.statement.switch_statement;
 
-import domain.expression.ArithExp;
 import domain.expression.IExpression;
 import domain.my_data_structures.my_table.IMyTable;
 import domain.program_state.ProgramState;
-import domain.program_state.heap.Heap;
+import domain.program_state.heap.IHeap;
 import domain.statement.IStmt;
 import domain.type.IType;
 import domain.value.IValue;
@@ -23,7 +22,7 @@ public class SwitchStmt implements IStmt{
     }
     @Override
     public ProgramState execute(ProgramState state) throws MyException {
-        Heap heap = state.getHeap();
+        IHeap heap = state.getHeap();
         IMyTable<String, IValue> symTable=state.getSymTable();
         IValue evaluatedMainExp=mainExpression.eval(symTable, heap);
         for (CaseSwitch caseSwitch:casesList){

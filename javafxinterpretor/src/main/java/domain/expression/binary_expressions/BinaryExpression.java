@@ -1,6 +1,8 @@
-package domain.expression;
+package domain.expression.binary_expressions;
 
-public abstract class BinaryExpression implements IExpression{
+import domain.expression.IExpression;
+
+public abstract class BinaryExpression implements IExpression {
     static public enum OperationTypes{
         plus, minus, multiplication, division,
         or, and,

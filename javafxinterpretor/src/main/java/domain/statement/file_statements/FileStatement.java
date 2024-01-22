@@ -2,7 +2,7 @@ package domain.statement.file_statements;
 
 import domain.FileDesc;
 import domain.expression.IExpression;
-import domain.program_state.heap.Heap;
+import domain.program_state.heap.IHeap;
 import domain.my_data_structures.my_table.IMyTable;
 import domain.statement.IStmt;
 import domain.type.IType;
@@ -13,7 +13,7 @@ import exceptions.MyException;
 
 public abstract class FileStatement implements IStmt {
     protected IExpression expression;
-    protected StringValue getExpressionStringValue(IMyTable<String, FileDesc> fileTable, IMyTable<String, IValue> symTable, Heap heap) throws MyException {
+    protected StringValue getExpressionStringValue(IMyTable<String, FileDesc> fileTable, IMyTable<String, IValue> symTable, IHeap heap) throws MyException {
         IValue expressionValue=expression.eval(symTable, heap);
         if (!expressionValue.sameType(new StringType())){
             throw new MyException(String.format("Expression %s should evaluate to string!!!", expressionValue.toString()));

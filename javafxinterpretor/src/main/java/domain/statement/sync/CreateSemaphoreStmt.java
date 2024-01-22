@@ -3,8 +3,8 @@ package domain.statement.sync;
 import domain.expression.IExpression;
 import domain.my_data_structures.my_table.IMyTable;
 import domain.program_state.ProgramState;
-import domain.program_state.heap.Heap;
-import domain.program_state.semaphore_table.SemaphoreTable;
+import domain.program_state.heap.IHeap;
+import domain.program_state.semaphore_table.ISemaphoreTable;
 import domain.statement.IStmt;
 import domain.type.IType;
 import domain.type.IntType;
@@ -25,11 +25,11 @@ public class CreateSemaphoreStmt implements IStmt {
     @Override
     public ProgramState execute(ProgramState state) throws MyException {
         IMyTable<String,IValue> symTable=state.getSymTable();
-        Heap heap=state.getHeap();
-        SemaphoreTable semaphoreTable= state.getSemaphoreTable();
+        IHeap heap=state.getHeap();
+        ISemaphoreTable semaphoreTable= state.getSemaphoreTable();
         Integer number=((IntValue)expression.eval(symTable, heap)).getValue();
         synchronized (semaphoreTable){
-            Integer address=semaphoreTable.putWithAdress(new Pair<>(number, new ArrayList<>()));
+            Integer address=semaphoreTable.putWithAddress(new Pair<>(number, new ArrayList<>()));
             if (symTable.containsKey(varName))
                 symTable.put(varName, new IntValue(address));
             else throw new MyException(String.format("Runtime error: %s does not exist in symTable", varName));

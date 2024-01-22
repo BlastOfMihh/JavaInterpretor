@@ -1,6 +1,6 @@
 package domain.expression;
 
-import domain.program_state.heap.Heap;
+import domain.program_state.heap.IHeap;
 import domain.my_data_structures.my_table.IMyTable;
 import domain.type.IType;
 import domain.type.RefType;
@@ -14,7 +14,7 @@ public class ReadHeapExp implements IExpression{
         this.expression=expression;
     }
     @Override
-    public IValue eval(IMyTable<String, IValue> symTable, Heap heap) throws MyException {
+    public IValue eval(IMyTable<String, IValue> symTable, IHeap heap) throws MyException {
         IValue evaluatedExpression=expression.eval(symTable, heap);
         if (! evaluatedExpression.getClass().equals(RefValue.class)){
             throw new MyException(String.format("%s is NOT a reference value in this %s", evaluatedExpression, this));

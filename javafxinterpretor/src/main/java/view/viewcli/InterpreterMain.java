@@ -3,11 +3,19 @@ package view.viewcli;
 import controller.ProgramController;
 import domain.FileDesc;
 import domain.expression.*;
+import domain.expression.binary_expressions.ArithExp;
+import domain.expression.binary_expressions.BinaryExpression;
+import domain.expression.binary_expressions.RelationalExpression;
+import domain.my_data_structures.my_list.IMyList;
+import domain.my_data_structures.my_stack.IMyStack;
+import domain.my_data_structures.my_table.IMyTable;
 import domain.program_state.ProgramState;
-import domain.program_state.heap.Heap;
+import domain.program_state.heap.IHeap;
 import domain.my_data_structures.my_list.MyList;
 import domain.my_data_structures.my_stack.MyStack;
 import domain.my_data_structures.my_table.MyTable;
+import domain.program_state.latch_table.LatchTable;
+import domain.program_state.semaphore_table.ISemaphoreTable;
 import domain.program_state.semaphore_table.SemaphoreTable;
 import domain.statement.*;
 import domain.statement.file_statements.CloseRFile;
@@ -25,7 +33,7 @@ public class InterpreterMain {
 
     public static void addState(ProgramController controller, IStmt ex) throws MyException{
         ex.typeCheck(new MyTable<>());
-        Heap heap=new Heap();
+        IHeap heap=new IHeap();
         MyTable<String, IValue> symTable=new MyTable<String,IValue>();
         MyList<String> outputLog=new MyList<String>();
         MyStack<IStmt> executionStack=new MyStack<IStmt>();
@@ -37,7 +45,8 @@ public class InterpreterMain {
                 outputLog,
                 executionStack,
                 fileTable,
-                new SemaphoreTable()
+                new SemaphoreTable(),
+                new LatchTable()
         );
         controller.addProgramToExecution(program);
     }

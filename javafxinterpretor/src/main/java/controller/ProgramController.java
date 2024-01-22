@@ -2,7 +2,7 @@ package controller;
 
 import domain.my_data_structures.my_list.IMyList;
 import domain.program_state.ProgramState;
-import domain.program_state.heap.Heap;
+import domain.program_state.heap.IHeap;
 import domain.value.IValue;
 import exceptions.MyException;
 import repository.IRepository;
@@ -18,7 +18,7 @@ import java.util.stream.Collectors;
 public class ProgramController {
     private final IRepository<ProgramState> repository;
     IMyList<String> outputLog;
-    Heap heap;
+    IHeap heap;
     boolean displayExecution;
     ExecutorService executor;
     public ProgramController(IRepository<ProgramState> repository) {
@@ -34,7 +34,7 @@ public class ProgramController {
                 .collect(Collectors.toList());
     }
     public List<ProgramState> cleanHeaps(List<ProgramState> programs){
-        Heap newOverallHeap= new Heap();
+        IHeap newOverallHeap= new IHeap();
         programs.forEach(program-> {
             newOverallHeap.setMinAvailableAdress(program.getHeap().getAvailableAdress());
             Map<Integer, IValue> newCurrHeap=program.getNewCleanedHeap();
@@ -97,7 +97,7 @@ public class ProgramController {
     public List<String> getOutputLog(){
         return (List<String>) outputLog;
     }
-    public Heap getHeap() {
+    public IHeap getHeap() {
         return heap;
     }
 }
