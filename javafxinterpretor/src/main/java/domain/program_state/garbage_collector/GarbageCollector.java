@@ -1,10 +1,12 @@
 package domain.program_state.garbage_collector;
 
+import domain.my_data_structures.my_stack.IMyStack;
 import domain.my_data_structures.my_table.IMyTable;
 import domain.program_state.heap.IHeap;
 import domain.value.IValue;
 import domain.value.RefValue;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
@@ -13,10 +15,10 @@ import java.util.stream.Stream;
 
 public class GarbageCollector {
     IHeap heap;
-    IMyTable<String, IValue> symTable;
-    public GarbageCollector (IHeap heap, IMyTable<String, IValue> symTable){
+    IMyStack<IMyTable<String, IValue>> symTableStack;
+    public GarbageCollector (IHeap heap, IMyStack<IMyTable<String, IValue>> symTableStack){
         this.heap=heap;
-        this.symTable=symTable;
+        this.symTableStack =symTableStack;
     }
     static List<Integer> getAddressesFromCollection(Collection<IValue> collection){
         return collection
@@ -31,27 +33,19 @@ public class GarbageCollector {
                 .filter(element -> adressesList.contains(element.getKey()))
                 .collect(Collectors.toMap(Map.Entry::getKey, element->element.getValue()));
     }
-    // static Heap constructCleanHeap()
-    //public void cleanHeap(){
-    //    //if(true) return; //disable it please do not forget to re-enable it
-    //    Map<Integer, IValue> newHeap=getCleanHeap(
-    //            Stream.concat(getAddressesFromCollection(symTable.values()).stream(),
-    //                getAddressesFromCollection(heap.values()).stream()).toList()
-    //            , heap
-    //        );
-    //    heap.clear();
-    //    newHeap.entrySet().stream().forEach(element->heap.put(element.getKey(), element.getValue()));
-    //}
     public  Map<Integer, IValue> getNewCleanedHeap(){
-        //if(true) return; //disable it please do not forget to re-enable it
+        var addressesListStream= getAddressesFromCollection(heap.values()).stream();
+        for(var symTable:symTableStack){
+            addressesListStream=Stream.concat(
+                    addressesListStream,
+                    getAddressesFromCollection(symTable.values()).stream()
+            );
+        }
         Map<Integer, IValue> newHeap=getCleanHeap(
-                Stream.concat(getAddressesFromCollection(symTable.values()).stream(),
-                        getAddressesFromCollection(heap.values()).stream()).toList()
-                , heap
+                addressesListStream.toList(),
+                heap
         );
         return newHeap;
-        //heap.clear();
-        //newHeap.entrySet().stream().forEach(element->heap.put(element.getKey(), element.getValue()));
     }
     public void setHeap(IHeap heap){
         this.heap=heap;

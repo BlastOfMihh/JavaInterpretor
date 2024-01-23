@@ -12,12 +12,15 @@ import domain.my_data_structures.my_table.MyTable;
 import domain.program_state.ProgramState;
 import domain.program_state.heap.IHeap;
 import domain.program_state.latch_table.LatchTable;
+import domain.program_state.proc_table.ProcTable;
 import domain.program_state.semaphore_table.ISemaphoreTable;
 import domain.program_state.semaphore_table.SemaphoreTable;
 import domain.statement.*;
 import domain.statement.latch.AwaitStmt;
 import domain.statement.latch.CountDown;
 import domain.statement.latch.NewLatchStmt;
+import domain.statement.procedure.DefineProcedure;
+import domain.statement.procedure.ExecuteProcStmt;
 import domain.statement.switch_statement.CaseSwitch;
 import domain.statement.switch_statement.SwitchStmt;
 import domain.statement.sync.AquireStmt;
@@ -40,6 +43,7 @@ import repository.Repository;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class SelectProgramController {
     ExecuteProgramController executeWindow;
@@ -61,7 +65,7 @@ public class SelectProgramController {
         MyTable<String, FileDesc> fileTable=new MyTable<String,FileDesc>();
         ISemaphoreTable semaphoreTable=new SemaphoreTable();
         executionStack.push(ex);
-        ProgramState program=new ProgramState(symTable,heap, outputLog, executionStack, fileTable, semaphoreTable, new LatchTable());
+        ProgramState program=new ProgramState(symTable,heap, outputLog, executionStack, fileTable, semaphoreTable, new LatchTable(), new ProcTable());
         controller.addProgramToExecution(program);
         return controller;
     }
@@ -271,6 +275,41 @@ public class SelectProgramController {
     private IStmt addNop(IStmt stmt){
         return new CompStmt(stmt, new NopStmt());
     }
+    private IStmt addProcExample(){
+        IStmt sumProc = new CompStmt(
+                new VarDeclStmt("v", new IntType()),
+                new CompStmt(
+                        new AssignStmt("v", new ArithExp(BinaryExpression.OperationTypes.plus, new VarExp("a"), new VarExp("b"))),
+                        new PrintStmt(new VarExp("v"))
+                )
+        );
+        List<String> varSum = Arrays.asList("a","b");
+
+        IStmt prodProc = new CompStmt(
+                new VarDeclStmt("v" , new IntType()),
+                new CompStmt(
+                        new AssignStmt("v", new ArithExp(BinaryExpression.OperationTypes.multiplication, new VarExp("a"), new VarExp("b"))),
+                        new PrintStmt(new VarExp("v"))
+                )
+        );
+        List<String> varProd = Arrays.asList("a", "b");
+
+        return new CompStmt(
+                new DefineProcedure("sum", varSum, sumProc),new CompStmt(
+                new DefineProcedure("product", varProd, prodProc),new CompStmt(
+                new VarDeclStmt("v", new IntType()), new CompStmt(
+                new VarDeclStmt("w", new IntType()), new CompStmt(
+                new AssignStmt("v", new ValueExp(new IntValue(2))), new CompStmt(
+                new AssignStmt("w", new ValueExp(new IntValue(5))), new CompStmt(
+                new ExecuteProcStmt("sum", new ArrayList<>(Arrays.asList(new ArithExp(BinaryExpression.OperationTypes.multiplication, new VarExp("v"), new ValueExp(new IntValue(10))), new VarExp("w")))), new CompStmt(
+                new PrintStmt(new VarExp("v")),
+                new ForkStmt(
+                new CompStmt(
+                new ExecuteProcStmt("product", new ArrayList<>(Arrays.asList(new VarExp("v"), new VarExp("w")))),
+                new ForkStmt(
+                        new ExecuteProcStmt("sum", new ArrayList<>(Arrays.asList(new VarExp("v"), new VarExp("w"))))
+        ) ) ) ) ) ) ) ) )));
+}
     private void addExamples(){
         programList.setItems(FXCollections.observableArrayList(
                 addNop( getRelationalExample()),
@@ -279,7 +318,8 @@ public class SelectProgramController {
                 addNop(addSwitchStatementEx()),
                 addNop(addSemaphoreEx()),
                 addNop(addConditionalExamples()),
-                addNop(addLatchExample())
+                addNop(addLatchExample()),
+                addNop(addProcExample())
         ) );
     }
     @FXML

@@ -1,6 +1,8 @@
 package domain.my_data_structures.my_list;
 
-public interface IMyList<E> {
+import java.util.List;
+
+public interface IMyList<E> extends List<E> {
     boolean add(E e);
     void add(int index, E element);
     int size();

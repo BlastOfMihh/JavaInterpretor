@@ -36,4 +36,11 @@ public class CountDown implements IStmt {
             throw new MyException("Variable not of type INT in "+this);
         return typeEnvironment;
     }
+
+    @Override
+    public String toString() {
+        return "CountDown{" +
+                "varName='" + varName + '\'' +
+                '}';
+    }
 }

@@ -6,16 +6,13 @@ import domain.expression.*;
 import domain.expression.binary_expressions.ArithExp;
 import domain.expression.binary_expressions.BinaryExpression;
 import domain.expression.binary_expressions.RelationalExpression;
-import domain.my_data_structures.my_list.IMyList;
-import domain.my_data_structures.my_stack.IMyStack;
-import domain.my_data_structures.my_table.IMyTable;
 import domain.program_state.ProgramState;
 import domain.program_state.heap.IHeap;
 import domain.my_data_structures.my_list.MyList;
 import domain.my_data_structures.my_stack.MyStack;
 import domain.my_data_structures.my_table.MyTable;
 import domain.program_state.latch_table.LatchTable;
-import domain.program_state.semaphore_table.ISemaphoreTable;
+import domain.program_state.proc_table.ProcTable;
 import domain.program_state.semaphore_table.SemaphoreTable;
 import domain.statement.*;
 import domain.statement.file_statements.CloseRFile;
@@ -46,7 +43,8 @@ public class InterpreterMain {
                 executionStack,
                 fileTable,
                 new SemaphoreTable(),
-                new LatchTable()
+                new LatchTable(),
+                new ProcTable()
         );
         controller.addProgramToExecution(program);
     }

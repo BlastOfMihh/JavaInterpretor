@@ -1,12 +1,14 @@
 package domain.program_state;
 
 import domain.FileDesc;
+import domain.my_data_structures.my_stack.MyStack;
 import domain.program_state.garbage_collector.GarbageCollector;
 import domain.program_state.heap.IHeap;
 import domain.my_data_structures.my_stack.IMyStack;
 import domain.my_data_structures.my_list.IMyList;
 import domain.my_data_structures.my_table.IMyTable;
 import domain.program_state.latch_table.ILatchTable;
+import domain.program_state.proc_table.IProcTable;
 import domain.program_state.semaphore_table.ISemaphoreTable;
 import domain.statement.IStmt;
 import domain.value.IValue;
@@ -16,27 +18,33 @@ import java.util.Map;
 
 public class ProgramState {
     IMyTable<String, FileDesc> fileTable;
-    IMyTable<String, IValue> symTable;
+    IMyStack<IMyTable<String, IValue>> symTableStack;
     IMyList<String> outputLog;
     IMyStack<IStmt> executionStack;
     GarbageCollector garbageCollector;
     IHeap heap;
     ISemaphoreTable semaphoreTable;
     ILatchTable latchTable;
-    private int id;
+    IProcTable procTable;
+    private final int id;
     static int availableId=0;
 
-    public ProgramState(IMyTable<String,IValue> symTable, IHeap heap, IMyList<String> outputLog, IMyStack<IStmt> executionStack, IMyTable<String,FileDesc> fileTable, ISemaphoreTable semaphoreTable, ILatchTable latchTable){
+    public ProgramState(IMyTable<String,IValue> symTable, IHeap heap, IMyList<String> outputLog, IMyStack<IStmt> executionStack, IMyTable<String,FileDesc> fileTable, ISemaphoreTable semaphoreTable, ILatchTable latchTable, IProcTable procTable){
         this.heap=heap;
-        this.symTable=symTable;
+        this.symTableStack=new MyStack<>();
+        this.symTableStack.push(symTable);
         this.outputLog=outputLog;
         this.executionStack=executionStack;
         this.fileTable=fileTable;
-        this.garbageCollector=new GarbageCollector(heap, symTable);
+        this.garbageCollector=new GarbageCollector(heap, symTableStack);
         this.id=availableId++;
         this.semaphoreTable=semaphoreTable;
         this.latchTable=latchTable;
-        //availableId++;
+        this.procTable=procTable;
+    }
+    public ProgramState(IMyStack<IMyTable<String,IValue>> symTableStack, IHeap heap, IMyList<String> outputLog, IMyStack<IStmt> executionStack, IMyTable<String,FileDesc> fileTable, ISemaphoreTable semaphoreTable, ILatchTable latchTable, IProcTable procTable){
+        this(symTableStack.getLast(), heap,outputLog,executionStack,fileTable,semaphoreTable,latchTable, procTable);
+        this.symTableStack=symTableStack;
     }
     public int getId(){
         return id;
@@ -51,7 +59,10 @@ public class ProgramState {
         return executionStack;
     }
     public IMyTable<String,IValue> getSymTable() {
-        return symTable;
+        return symTableStack.getLast();
+    }
+    public IMyStack<IMyTable<String, IValue>> getSymTableStack(){
+        return symTableStack;
     }
     public IHeap getHeap(){
         return heap;
@@ -62,6 +73,10 @@ public class ProgramState {
     public ILatchTable getLatchTable() {
         return latchTable;
     }
+    public IProcTable getProcTable() {
+        return procTable;
+    }
+
     public ProgramState executeOneStep()throws MyException {
         if (executionStack.empty()){
             throw new MyException("No more elements in the execution Stack");
@@ -75,7 +90,7 @@ public class ProgramState {
     public String getOutput(){
         StringBuilder answer=new StringBuilder();
         for (int i=0; i<outputLog.size();++i){
-            answer.append(outputLog.get(i).toString());
+            answer.append(outputLog.get(i));
         }
         return answer.toString();
     }
@@ -88,11 +103,9 @@ public class ProgramState {
     }
     @Override
     public String toString() {// good enough might change later
-        //String sep=new String("\n");
-        //return String.format("id %s -> Symtable : %s\n--------\nOutput log : %s\n----\nExecutionStack:%s\n----\nFileTable: %s\n============\nHeap: %s\n============\n\n",
-        return String.format("id %s \n *Symtable : %s\n *Output log : %s\n *ExecutionStack:%s\n *FileTable: %s\n *Heap: %s\n\n",
+        return String.format("id %s \n *SymtableStack : %s\n *Output log : %s\n *ExecutionStack:%s\n *FileTable: %s\n *Heap: %s\n\n",
                 id,
-                symTable.toString(),
+                symTableStack.toString(),
                 outputLog.toString(),
                 executionStack.toString(),
                 fileTable.toString(),
