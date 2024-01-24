@@ -1,747 +1,1058 @@
 id 0 
  *SymtableStack : [{}]
  *Output log : []
- *ExecutionStack:[((DefineProcedure{funcName='sum', varNames=[a, b], functionBody=(VarDeclarationStatement:v with type=IntType,(AssigmentStatemnet v=Expression plus between VariableExpression{key='a'} and VariableExpression{key='b'},PrintStatement{VariableExpression{key='v'}}))},(DefineProcedure{funcName='product', varNames=[a, b], functionBody=(VarDeclarationStatement:v with type=IntType,(AssigmentStatemnet v=Expression multiplication between VariableExpression{key='a'} and VariableExpression{key='b'},PrintStatement{VariableExpression{key='v'}}))},(VarDeclarationStatement:v with type=IntType,(VarDeclarationStatement:w with type=IntType,(AssigmentStatemnet v=ValueExpression{value=Type:IntType Value:2},(AssigmentStatemnet w=ValueExpression{value=Type:IntType Value:5},(ExecuteProc{procName='sum', procArguments=[Expression multiplication between VariableExpression{key='v'} and ValueExpression{value=Type:IntType Value:10}, VariableExpression{key='w'}]},(PrintStatement{VariableExpression{key='v'}},ForkStmt{statement=(ExecuteProc{procName='product', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]},ForkStmt{statement=ExecuteProc{procName='sum', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]}})})))))))),NopStatement)]
+ *ExecutionStack:[((VarDeclarationStatement:v1 with type=RefType,(VarDeclarationStatement:v2 with type=RefType,(VarDeclarationStatement:x with type=IntType,(VarDeclarationStatement:q with type=IntType,(NewStatement{varName='v1', expression=ValueExpression{value=Type:IntType Value:20}},(NewStatement{varName='v2', expression=ValueExpression{value=Type:IntType Value:30}},(domain.statement.lock.NewLockStmt@a7397d3,(ForkStmt{statement=(ForkStmt{statement=(LockStmt{varName='x'},(HeapWriteStmt{referenceName='v1', expression=Expression minus between ReadHeapExp{expression=VariableExpression{key='v1'}} and ValueExpression{value=Type:IntType Value:1}},UnLockStmt{varName='x'}))},(LockStmt{varName='x'},(HeapWriteStmt{referenceName='v1', expression=Expression multiplication between ReadHeapExp{expression=VariableExpression{key='v1'}} and ValueExpression{value=Type:IntType Value:10}},UnLockStmt{varName='x'})))},(domain.statement.lock.NewLockStmt@62fe79f0,(ForkStmt{statement=(ForkStmt{statement=(LockStmt{varName='q'},(HeapWriteStmt{referenceName='v2', expression=Expression plus between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:5}},UnLockStmt{varName='q'}))},(LockStmt{varName='q'},(HeapWriteStmt{referenceName='v2', expression=Expression multiplication between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:10}},UnLockStmt{varName='q'})))},(NopStatement,(NopStatement,(NopStatement,(NopStatement,(LockStmt{varName='x'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v1'}}},(UnLockStmt{varName='x'},(LockStmt{varName='q'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v2'}}},UnLockStmt{varName='q'}))))))))))))))))))),NopStatement)]
  *FileTable: {}
  *Heap: {}
 
 id 0 
  *SymtableStack : [{}]
  *Output log : []
- *ExecutionStack:[NopStatement, (DefineProcedure{funcName='sum', varNames=[a, b], functionBody=(VarDeclarationStatement:v with type=IntType,(AssigmentStatemnet v=Expression plus between VariableExpression{key='a'} and VariableExpression{key='b'},PrintStatement{VariableExpression{key='v'}}))},(DefineProcedure{funcName='product', varNames=[a, b], functionBody=(VarDeclarationStatement:v with type=IntType,(AssigmentStatemnet v=Expression multiplication between VariableExpression{key='a'} and VariableExpression{key='b'},PrintStatement{VariableExpression{key='v'}}))},(VarDeclarationStatement:v with type=IntType,(VarDeclarationStatement:w with type=IntType,(AssigmentStatemnet v=ValueExpression{value=Type:IntType Value:2},(AssigmentStatemnet w=ValueExpression{value=Type:IntType Value:5},(ExecuteProc{procName='sum', procArguments=[Expression multiplication between VariableExpression{key='v'} and ValueExpression{value=Type:IntType Value:10}, VariableExpression{key='w'}]},(PrintStatement{VariableExpression{key='v'}},ForkStmt{statement=(ExecuteProc{procName='product', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]},ForkStmt{statement=ExecuteProc{procName='sum', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]}})}))))))))]
+ *ExecutionStack:[NopStatement, (VarDeclarationStatement:v1 with type=RefType,(VarDeclarationStatement:v2 with type=RefType,(VarDeclarationStatement:x with type=IntType,(VarDeclarationStatement:q with type=IntType,(NewStatement{varName='v1', expression=ValueExpression{value=Type:IntType Value:20}},(NewStatement{varName='v2', expression=ValueExpression{value=Type:IntType Value:30}},(domain.statement.lock.NewLockStmt@a7397d3,(ForkStmt{statement=(ForkStmt{statement=(LockStmt{varName='x'},(HeapWriteStmt{referenceName='v1', expression=Expression minus between ReadHeapExp{expression=VariableExpression{key='v1'}} and ValueExpression{value=Type:IntType Value:1}},UnLockStmt{varName='x'}))},(LockStmt{varName='x'},(HeapWriteStmt{referenceName='v1', expression=Expression multiplication between ReadHeapExp{expression=VariableExpression{key='v1'}} and ValueExpression{value=Type:IntType Value:10}},UnLockStmt{varName='x'})))},(domain.statement.lock.NewLockStmt@62fe79f0,(ForkStmt{statement=(ForkStmt{statement=(LockStmt{varName='q'},(HeapWriteStmt{referenceName='v2', expression=Expression plus between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:5}},UnLockStmt{varName='q'}))},(LockStmt{varName='q'},(HeapWriteStmt{referenceName='v2', expression=Expression multiplication between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:10}},UnLockStmt{varName='q'})))},(NopStatement,(NopStatement,(NopStatement,(NopStatement,(LockStmt{varName='x'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v1'}}},(UnLockStmt{varName='x'},(LockStmt{varName='q'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v2'}}},UnLockStmt{varName='q'})))))))))))))))))))]
  *FileTable: {}
  *Heap: {}
 
 id 0 
  *SymtableStack : [{}]
  *Output log : []
- *ExecutionStack:[NopStatement, (DefineProcedure{funcName='sum', varNames=[a, b], functionBody=(VarDeclarationStatement:v with type=IntType,(AssigmentStatemnet v=Expression plus between VariableExpression{key='a'} and VariableExpression{key='b'},PrintStatement{VariableExpression{key='v'}}))},(DefineProcedure{funcName='product', varNames=[a, b], functionBody=(VarDeclarationStatement:v with type=IntType,(AssigmentStatemnet v=Expression multiplication between VariableExpression{key='a'} and VariableExpression{key='b'},PrintStatement{VariableExpression{key='v'}}))},(VarDeclarationStatement:v with type=IntType,(VarDeclarationStatement:w with type=IntType,(AssigmentStatemnet v=ValueExpression{value=Type:IntType Value:2},(AssigmentStatemnet w=ValueExpression{value=Type:IntType Value:5},(ExecuteProc{procName='sum', procArguments=[Expression multiplication between VariableExpression{key='v'} and ValueExpression{value=Type:IntType Value:10}, VariableExpression{key='w'}]},(PrintStatement{VariableExpression{key='v'}},ForkStmt{statement=(ExecuteProc{procName='product', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]},ForkStmt{statement=ExecuteProc{procName='sum', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]}})}))))))))]
+ *ExecutionStack:[NopStatement, (VarDeclarationStatement:v1 with type=RefType,(VarDeclarationStatement:v2 with type=RefType,(VarDeclarationStatement:x with type=IntType,(VarDeclarationStatement:q with type=IntType,(NewStatement{varName='v1', expression=ValueExpression{value=Type:IntType Value:20}},(NewStatement{varName='v2', expression=ValueExpression{value=Type:IntType Value:30}},(domain.statement.lock.NewLockStmt@a7397d3,(ForkStmt{statement=(ForkStmt{statement=(LockStmt{varName='x'},(HeapWriteStmt{referenceName='v1', expression=Expression minus between ReadHeapExp{expression=VariableExpression{key='v1'}} and ValueExpression{value=Type:IntType Value:1}},UnLockStmt{varName='x'}))},(LockStmt{varName='x'},(HeapWriteStmt{referenceName='v1', expression=Expression multiplication between ReadHeapExp{expression=VariableExpression{key='v1'}} and ValueExpression{value=Type:IntType Value:10}},UnLockStmt{varName='x'})))},(domain.statement.lock.NewLockStmt@62fe79f0,(ForkStmt{statement=(ForkStmt{statement=(LockStmt{varName='q'},(HeapWriteStmt{referenceName='v2', expression=Expression plus between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:5}},UnLockStmt{varName='q'}))},(LockStmt{varName='q'},(HeapWriteStmt{referenceName='v2', expression=Expression multiplication between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:10}},UnLockStmt{varName='q'})))},(NopStatement,(NopStatement,(NopStatement,(NopStatement,(LockStmt{varName='x'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v1'}}},(UnLockStmt{varName='x'},(LockStmt{varName='q'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v2'}}},UnLockStmt{varName='q'})))))))))))))))))))]
  *FileTable: {}
  *Heap: {}
 
 id 0 
  *SymtableStack : [{}]
  *Output log : []
- *ExecutionStack:[NopStatement, (DefineProcedure{funcName='product', varNames=[a, b], functionBody=(VarDeclarationStatement:v with type=IntType,(AssigmentStatemnet v=Expression multiplication between VariableExpression{key='a'} and VariableExpression{key='b'},PrintStatement{VariableExpression{key='v'}}))},(VarDeclarationStatement:v with type=IntType,(VarDeclarationStatement:w with type=IntType,(AssigmentStatemnet v=ValueExpression{value=Type:IntType Value:2},(AssigmentStatemnet w=ValueExpression{value=Type:IntType Value:5},(ExecuteProc{procName='sum', procArguments=[Expression multiplication between VariableExpression{key='v'} and ValueExpression{value=Type:IntType Value:10}, VariableExpression{key='w'}]},(PrintStatement{VariableExpression{key='v'}},ForkStmt{statement=(ExecuteProc{procName='product', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]},ForkStmt{statement=ExecuteProc{procName='sum', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]}})}))))))), DefineProcedure{funcName='sum', varNames=[a, b], functionBody=(VarDeclarationStatement:v with type=IntType,(AssigmentStatemnet v=Expression plus between VariableExpression{key='a'} and VariableExpression{key='b'},PrintStatement{VariableExpression{key='v'}}))}]
+ *ExecutionStack:[NopStatement, (VarDeclarationStatement:v2 with type=RefType,(VarDeclarationStatement:x with type=IntType,(VarDeclarationStatement:q with type=IntType,(NewStatement{varName='v1', expression=ValueExpression{value=Type:IntType Value:20}},(NewStatement{varName='v2', expression=ValueExpression{value=Type:IntType Value:30}},(domain.statement.lock.NewLockStmt@a7397d3,(ForkStmt{statement=(ForkStmt{statement=(LockStmt{varName='x'},(HeapWriteStmt{referenceName='v1', expression=Expression minus between ReadHeapExp{expression=VariableExpression{key='v1'}} and ValueExpression{value=Type:IntType Value:1}},UnLockStmt{varName='x'}))},(LockStmt{varName='x'},(HeapWriteStmt{referenceName='v1', expression=Expression multiplication between ReadHeapExp{expression=VariableExpression{key='v1'}} and ValueExpression{value=Type:IntType Value:10}},UnLockStmt{varName='x'})))},(domain.statement.lock.NewLockStmt@62fe79f0,(ForkStmt{statement=(ForkStmt{statement=(LockStmt{varName='q'},(HeapWriteStmt{referenceName='v2', expression=Expression plus between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:5}},UnLockStmt{varName='q'}))},(LockStmt{varName='q'},(HeapWriteStmt{referenceName='v2', expression=Expression multiplication between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:10}},UnLockStmt{varName='q'})))},(NopStatement,(NopStatement,(NopStatement,(NopStatement,(LockStmt{varName='x'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v1'}}},(UnLockStmt{varName='x'},(LockStmt{varName='q'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v2'}}},UnLockStmt{varName='q'})))))))))))))))))), VarDeclarationStatement:v1 with type=RefType]
  *FileTable: {}
  *Heap: {}
 
 id 0 
  *SymtableStack : [{}]
  *Output log : []
- *ExecutionStack:[NopStatement, (DefineProcedure{funcName='product', varNames=[a, b], functionBody=(VarDeclarationStatement:v with type=IntType,(AssigmentStatemnet v=Expression multiplication between VariableExpression{key='a'} and VariableExpression{key='b'},PrintStatement{VariableExpression{key='v'}}))},(VarDeclarationStatement:v with type=IntType,(VarDeclarationStatement:w with type=IntType,(AssigmentStatemnet v=ValueExpression{value=Type:IntType Value:2},(AssigmentStatemnet w=ValueExpression{value=Type:IntType Value:5},(ExecuteProc{procName='sum', procArguments=[Expression multiplication between VariableExpression{key='v'} and ValueExpression{value=Type:IntType Value:10}, VariableExpression{key='w'}]},(PrintStatement{VariableExpression{key='v'}},ForkStmt{statement=(ExecuteProc{procName='product', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]},ForkStmt{statement=ExecuteProc{procName='sum', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]}})}))))))), DefineProcedure{funcName='sum', varNames=[a, b], functionBody=(VarDeclarationStatement:v with type=IntType,(AssigmentStatemnet v=Expression plus between VariableExpression{key='a'} and VariableExpression{key='b'},PrintStatement{VariableExpression{key='v'}}))}]
+ *ExecutionStack:[NopStatement, (VarDeclarationStatement:v2 with type=RefType,(VarDeclarationStatement:x with type=IntType,(VarDeclarationStatement:q with type=IntType,(NewStatement{varName='v1', expression=ValueExpression{value=Type:IntType Value:20}},(NewStatement{varName='v2', expression=ValueExpression{value=Type:IntType Value:30}},(domain.statement.lock.NewLockStmt@a7397d3,(ForkStmt{statement=(ForkStmt{statement=(LockStmt{varName='x'},(HeapWriteStmt{referenceName='v1', expression=Expression minus between ReadHeapExp{expression=VariableExpression{key='v1'}} and ValueExpression{value=Type:IntType Value:1}},UnLockStmt{varName='x'}))},(LockStmt{varName='x'},(HeapWriteStmt{referenceName='v1', expression=Expression multiplication between ReadHeapExp{expression=VariableExpression{key='v1'}} and ValueExpression{value=Type:IntType Value:10}},UnLockStmt{varName='x'})))},(domain.statement.lock.NewLockStmt@62fe79f0,(ForkStmt{statement=(ForkStmt{statement=(LockStmt{varName='q'},(HeapWriteStmt{referenceName='v2', expression=Expression plus between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:5}},UnLockStmt{varName='q'}))},(LockStmt{varName='q'},(HeapWriteStmt{referenceName='v2', expression=Expression multiplication between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:10}},UnLockStmt{varName='q'})))},(NopStatement,(NopStatement,(NopStatement,(NopStatement,(LockStmt{varName='x'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v1'}}},(UnLockStmt{varName='x'},(LockStmt{varName='q'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v2'}}},UnLockStmt{varName='q'})))))))))))))))))), VarDeclarationStatement:v1 with type=RefType]
  *FileTable: {}
  *Heap: {}
 
 id 0 
- *SymtableStack : [{}]
+ *SymtableStack : [{v1=RefValue{adress=0, locationType=IntType}}]
  *Output log : []
- *ExecutionStack:[NopStatement, (DefineProcedure{funcName='product', varNames=[a, b], functionBody=(VarDeclarationStatement:v with type=IntType,(AssigmentStatemnet v=Expression multiplication between VariableExpression{key='a'} and VariableExpression{key='b'},PrintStatement{VariableExpression{key='v'}}))},(VarDeclarationStatement:v with type=IntType,(VarDeclarationStatement:w with type=IntType,(AssigmentStatemnet v=ValueExpression{value=Type:IntType Value:2},(AssigmentStatemnet w=ValueExpression{value=Type:IntType Value:5},(ExecuteProc{procName='sum', procArguments=[Expression multiplication between VariableExpression{key='v'} and ValueExpression{value=Type:IntType Value:10}, VariableExpression{key='w'}]},(PrintStatement{VariableExpression{key='v'}},ForkStmt{statement=(ExecuteProc{procName='product', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]},ForkStmt{statement=ExecuteProc{procName='sum', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]}})})))))))]
+ *ExecutionStack:[NopStatement, (VarDeclarationStatement:v2 with type=RefType,(VarDeclarationStatement:x with type=IntType,(VarDeclarationStatement:q with type=IntType,(NewStatement{varName='v1', expression=ValueExpression{value=Type:IntType Value:20}},(NewStatement{varName='v2', expression=ValueExpression{value=Type:IntType Value:30}},(domain.statement.lock.NewLockStmt@a7397d3,(ForkStmt{statement=(ForkStmt{statement=(LockStmt{varName='x'},(HeapWriteStmt{referenceName='v1', expression=Expression minus between ReadHeapExp{expression=VariableExpression{key='v1'}} and ValueExpression{value=Type:IntType Value:1}},UnLockStmt{varName='x'}))},(LockStmt{varName='x'},(HeapWriteStmt{referenceName='v1', expression=Expression multiplication between ReadHeapExp{expression=VariableExpression{key='v1'}} and ValueExpression{value=Type:IntType Value:10}},UnLockStmt{varName='x'})))},(domain.statement.lock.NewLockStmt@62fe79f0,(ForkStmt{statement=(ForkStmt{statement=(LockStmt{varName='q'},(HeapWriteStmt{referenceName='v2', expression=Expression plus between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:5}},UnLockStmt{varName='q'}))},(LockStmt{varName='q'},(HeapWriteStmt{referenceName='v2', expression=Expression multiplication between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:10}},UnLockStmt{varName='q'})))},(NopStatement,(NopStatement,(NopStatement,(NopStatement,(LockStmt{varName='x'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v1'}}},(UnLockStmt{varName='x'},(LockStmt{varName='q'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v2'}}},UnLockStmt{varName='q'}))))))))))))))))))]
  *FileTable: {}
  *Heap: {}
 
 id 0 
- *SymtableStack : [{}]
+ *SymtableStack : [{v1=RefValue{adress=0, locationType=IntType}}]
  *Output log : []
- *ExecutionStack:[NopStatement, (DefineProcedure{funcName='product', varNames=[a, b], functionBody=(VarDeclarationStatement:v with type=IntType,(AssigmentStatemnet v=Expression multiplication between VariableExpression{key='a'} and VariableExpression{key='b'},PrintStatement{VariableExpression{key='v'}}))},(VarDeclarationStatement:v with type=IntType,(VarDeclarationStatement:w with type=IntType,(AssigmentStatemnet v=ValueExpression{value=Type:IntType Value:2},(AssigmentStatemnet w=ValueExpression{value=Type:IntType Value:5},(ExecuteProc{procName='sum', procArguments=[Expression multiplication between VariableExpression{key='v'} and ValueExpression{value=Type:IntType Value:10}, VariableExpression{key='w'}]},(PrintStatement{VariableExpression{key='v'}},ForkStmt{statement=(ExecuteProc{procName='product', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]},ForkStmt{statement=ExecuteProc{procName='sum', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]}})})))))))]
+ *ExecutionStack:[NopStatement, (VarDeclarationStatement:v2 with type=RefType,(VarDeclarationStatement:x with type=IntType,(VarDeclarationStatement:q with type=IntType,(NewStatement{varName='v1', expression=ValueExpression{value=Type:IntType Value:20}},(NewStatement{varName='v2', expression=ValueExpression{value=Type:IntType Value:30}},(domain.statement.lock.NewLockStmt@a7397d3,(ForkStmt{statement=(ForkStmt{statement=(LockStmt{varName='x'},(HeapWriteStmt{referenceName='v1', expression=Expression minus between ReadHeapExp{expression=VariableExpression{key='v1'}} and ValueExpression{value=Type:IntType Value:1}},UnLockStmt{varName='x'}))},(LockStmt{varName='x'},(HeapWriteStmt{referenceName='v1', expression=Expression multiplication between ReadHeapExp{expression=VariableExpression{key='v1'}} and ValueExpression{value=Type:IntType Value:10}},UnLockStmt{varName='x'})))},(domain.statement.lock.NewLockStmt@62fe79f0,(ForkStmt{statement=(ForkStmt{statement=(LockStmt{varName='q'},(HeapWriteStmt{referenceName='v2', expression=Expression plus between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:5}},UnLockStmt{varName='q'}))},(LockStmt{varName='q'},(HeapWriteStmt{referenceName='v2', expression=Expression multiplication between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:10}},UnLockStmt{varName='q'})))},(NopStatement,(NopStatement,(NopStatement,(NopStatement,(LockStmt{varName='x'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v1'}}},(UnLockStmt{varName='x'},(LockStmt{varName='q'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v2'}}},UnLockStmt{varName='q'}))))))))))))))))))]
  *FileTable: {}
  *Heap: {}
 
 id 0 
- *SymtableStack : [{}]
+ *SymtableStack : [{v1=RefValue{adress=0, locationType=IntType}}]
  *Output log : []
- *ExecutionStack:[NopStatement, (VarDeclarationStatement:v with type=IntType,(VarDeclarationStatement:w with type=IntType,(AssigmentStatemnet v=ValueExpression{value=Type:IntType Value:2},(AssigmentStatemnet w=ValueExpression{value=Type:IntType Value:5},(ExecuteProc{procName='sum', procArguments=[Expression multiplication between VariableExpression{key='v'} and ValueExpression{value=Type:IntType Value:10}, VariableExpression{key='w'}]},(PrintStatement{VariableExpression{key='v'}},ForkStmt{statement=(ExecuteProc{procName='product', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]},ForkStmt{statement=ExecuteProc{procName='sum', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]}})})))))), DefineProcedure{funcName='product', varNames=[a, b], functionBody=(VarDeclarationStatement:v with type=IntType,(AssigmentStatemnet v=Expression multiplication between VariableExpression{key='a'} and VariableExpression{key='b'},PrintStatement{VariableExpression{key='v'}}))}]
+ *ExecutionStack:[NopStatement, (VarDeclarationStatement:x with type=IntType,(VarDeclarationStatement:q with type=IntType,(NewStatement{varName='v1', expression=ValueExpression{value=Type:IntType Value:20}},(NewStatement{varName='v2', expression=ValueExpression{value=Type:IntType Value:30}},(domain.statement.lock.NewLockStmt@a7397d3,(ForkStmt{statement=(ForkStmt{statement=(LockStmt{varName='x'},(HeapWriteStmt{referenceName='v1', expression=Expression minus between ReadHeapExp{expression=VariableExpression{key='v1'}} and ValueExpression{value=Type:IntType Value:1}},UnLockStmt{varName='x'}))},(LockStmt{varName='x'},(HeapWriteStmt{referenceName='v1', expression=Expression multiplication between ReadHeapExp{expression=VariableExpression{key='v1'}} and ValueExpression{value=Type:IntType Value:10}},UnLockStmt{varName='x'})))},(domain.statement.lock.NewLockStmt@62fe79f0,(ForkStmt{statement=(ForkStmt{statement=(LockStmt{varName='q'},(HeapWriteStmt{referenceName='v2', expression=Expression plus between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:5}},UnLockStmt{varName='q'}))},(LockStmt{varName='q'},(HeapWriteStmt{referenceName='v2', expression=Expression multiplication between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:10}},UnLockStmt{varName='q'})))},(NopStatement,(NopStatement,(NopStatement,(NopStatement,(LockStmt{varName='x'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v1'}}},(UnLockStmt{varName='x'},(LockStmt{varName='q'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v2'}}},UnLockStmt{varName='q'}))))))))))))))))), VarDeclarationStatement:v2 with type=RefType]
  *FileTable: {}
  *Heap: {}
 
 id 0 
- *SymtableStack : [{}]
+ *SymtableStack : [{v1=RefValue{adress=0, locationType=IntType}}]
  *Output log : []
- *ExecutionStack:[NopStatement, (VarDeclarationStatement:v with type=IntType,(VarDeclarationStatement:w with type=IntType,(AssigmentStatemnet v=ValueExpression{value=Type:IntType Value:2},(AssigmentStatemnet w=ValueExpression{value=Type:IntType Value:5},(ExecuteProc{procName='sum', procArguments=[Expression multiplication between VariableExpression{key='v'} and ValueExpression{value=Type:IntType Value:10}, VariableExpression{key='w'}]},(PrintStatement{VariableExpression{key='v'}},ForkStmt{statement=(ExecuteProc{procName='product', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]},ForkStmt{statement=ExecuteProc{procName='sum', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]}})})))))), DefineProcedure{funcName='product', varNames=[a, b], functionBody=(VarDeclarationStatement:v with type=IntType,(AssigmentStatemnet v=Expression multiplication between VariableExpression{key='a'} and VariableExpression{key='b'},PrintStatement{VariableExpression{key='v'}}))}]
+ *ExecutionStack:[NopStatement, (VarDeclarationStatement:x with type=IntType,(VarDeclarationStatement:q with type=IntType,(NewStatement{varName='v1', expression=ValueExpression{value=Type:IntType Value:20}},(NewStatement{varName='v2', expression=ValueExpression{value=Type:IntType Value:30}},(domain.statement.lock.NewLockStmt@a7397d3,(ForkStmt{statement=(ForkStmt{statement=(LockStmt{varName='x'},(HeapWriteStmt{referenceName='v1', expression=Expression minus between ReadHeapExp{expression=VariableExpression{key='v1'}} and ValueExpression{value=Type:IntType Value:1}},UnLockStmt{varName='x'}))},(LockStmt{varName='x'},(HeapWriteStmt{referenceName='v1', expression=Expression multiplication between ReadHeapExp{expression=VariableExpression{key='v1'}} and ValueExpression{value=Type:IntType Value:10}},UnLockStmt{varName='x'})))},(domain.statement.lock.NewLockStmt@62fe79f0,(ForkStmt{statement=(ForkStmt{statement=(LockStmt{varName='q'},(HeapWriteStmt{referenceName='v2', expression=Expression plus between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:5}},UnLockStmt{varName='q'}))},(LockStmt{varName='q'},(HeapWriteStmt{referenceName='v2', expression=Expression multiplication between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:10}},UnLockStmt{varName='q'})))},(NopStatement,(NopStatement,(NopStatement,(NopStatement,(LockStmt{varName='x'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v1'}}},(UnLockStmt{varName='x'},(LockStmt{varName='q'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v2'}}},UnLockStmt{varName='q'}))))))))))))))))), VarDeclarationStatement:v2 with type=RefType]
  *FileTable: {}
  *Heap: {}
 
 id 0 
- *SymtableStack : [{}]
+ *SymtableStack : [{v2=RefValue{adress=0, locationType=IntType}, v1=RefValue{adress=0, locationType=IntType}}]
  *Output log : []
- *ExecutionStack:[NopStatement, (VarDeclarationStatement:v with type=IntType,(VarDeclarationStatement:w with type=IntType,(AssigmentStatemnet v=ValueExpression{value=Type:IntType Value:2},(AssigmentStatemnet w=ValueExpression{value=Type:IntType Value:5},(ExecuteProc{procName='sum', procArguments=[Expression multiplication between VariableExpression{key='v'} and ValueExpression{value=Type:IntType Value:10}, VariableExpression{key='w'}]},(PrintStatement{VariableExpression{key='v'}},ForkStmt{statement=(ExecuteProc{procName='product', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]},ForkStmt{statement=ExecuteProc{procName='sum', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]}})}))))))]
+ *ExecutionStack:[NopStatement, (VarDeclarationStatement:x with type=IntType,(VarDeclarationStatement:q with type=IntType,(NewStatement{varName='v1', expression=ValueExpression{value=Type:IntType Value:20}},(NewStatement{varName='v2', expression=ValueExpression{value=Type:IntType Value:30}},(domain.statement.lock.NewLockStmt@a7397d3,(ForkStmt{statement=(ForkStmt{statement=(LockStmt{varName='x'},(HeapWriteStmt{referenceName='v1', expression=Expression minus between ReadHeapExp{expression=VariableExpression{key='v1'}} and ValueExpression{value=Type:IntType Value:1}},UnLockStmt{varName='x'}))},(LockStmt{varName='x'},(HeapWriteStmt{referenceName='v1', expression=Expression multiplication between ReadHeapExp{expression=VariableExpression{key='v1'}} and ValueExpression{value=Type:IntType Value:10}},UnLockStmt{varName='x'})))},(domain.statement.lock.NewLockStmt@62fe79f0,(ForkStmt{statement=(ForkStmt{statement=(LockStmt{varName='q'},(HeapWriteStmt{referenceName='v2', expression=Expression plus between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:5}},UnLockStmt{varName='q'}))},(LockStmt{varName='q'},(HeapWriteStmt{referenceName='v2', expression=Expression multiplication between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:10}},UnLockStmt{varName='q'})))},(NopStatement,(NopStatement,(NopStatement,(NopStatement,(LockStmt{varName='x'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v1'}}},(UnLockStmt{varName='x'},(LockStmt{varName='q'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v2'}}},UnLockStmt{varName='q'})))))))))))))))))]
  *FileTable: {}
  *Heap: {}
 
 id 0 
- *SymtableStack : [{}]
+ *SymtableStack : [{v2=RefValue{adress=0, locationType=IntType}, v1=RefValue{adress=0, locationType=IntType}}]
  *Output log : []
- *ExecutionStack:[NopStatement, (VarDeclarationStatement:v with type=IntType,(VarDeclarationStatement:w with type=IntType,(AssigmentStatemnet v=ValueExpression{value=Type:IntType Value:2},(AssigmentStatemnet w=ValueExpression{value=Type:IntType Value:5},(ExecuteProc{procName='sum', procArguments=[Expression multiplication between VariableExpression{key='v'} and ValueExpression{value=Type:IntType Value:10}, VariableExpression{key='w'}]},(PrintStatement{VariableExpression{key='v'}},ForkStmt{statement=(ExecuteProc{procName='product', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]},ForkStmt{statement=ExecuteProc{procName='sum', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]}})}))))))]
+ *ExecutionStack:[NopStatement, (VarDeclarationStatement:x with type=IntType,(VarDeclarationStatement:q with type=IntType,(NewStatement{varName='v1', expression=ValueExpression{value=Type:IntType Value:20}},(NewStatement{varName='v2', expression=ValueExpression{value=Type:IntType Value:30}},(domain.statement.lock.NewLockStmt@a7397d3,(ForkStmt{statement=(ForkStmt{statement=(LockStmt{varName='x'},(HeapWriteStmt{referenceName='v1', expression=Expression minus between ReadHeapExp{expression=VariableExpression{key='v1'}} and ValueExpression{value=Type:IntType Value:1}},UnLockStmt{varName='x'}))},(LockStmt{varName='x'},(HeapWriteStmt{referenceName='v1', expression=Expression multiplication between ReadHeapExp{expression=VariableExpression{key='v1'}} and ValueExpression{value=Type:IntType Value:10}},UnLockStmt{varName='x'})))},(domain.statement.lock.NewLockStmt@62fe79f0,(ForkStmt{statement=(ForkStmt{statement=(LockStmt{varName='q'},(HeapWriteStmt{referenceName='v2', expression=Expression plus between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:5}},UnLockStmt{varName='q'}))},(LockStmt{varName='q'},(HeapWriteStmt{referenceName='v2', expression=Expression multiplication between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:10}},UnLockStmt{varName='q'})))},(NopStatement,(NopStatement,(NopStatement,(NopStatement,(LockStmt{varName='x'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v1'}}},(UnLockStmt{varName='x'},(LockStmt{varName='q'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v2'}}},UnLockStmt{varName='q'})))))))))))))))))]
  *FileTable: {}
  *Heap: {}
 
 id 0 
- *SymtableStack : [{}]
+ *SymtableStack : [{v2=RefValue{adress=0, locationType=IntType}, v1=RefValue{adress=0, locationType=IntType}}]
  *Output log : []
- *ExecutionStack:[NopStatement, (VarDeclarationStatement:w with type=IntType,(AssigmentStatemnet v=ValueExpression{value=Type:IntType Value:2},(AssigmentStatemnet w=ValueExpression{value=Type:IntType Value:5},(ExecuteProc{procName='sum', procArguments=[Expression multiplication between VariableExpression{key='v'} and ValueExpression{value=Type:IntType Value:10}, VariableExpression{key='w'}]},(PrintStatement{VariableExpression{key='v'}},ForkStmt{statement=(ExecuteProc{procName='product', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]},ForkStmt{statement=ExecuteProc{procName='sum', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]}})}))))), VarDeclarationStatement:v with type=IntType]
+ *ExecutionStack:[NopStatement, (VarDeclarationStatement:q with type=IntType,(NewStatement{varName='v1', expression=ValueExpression{value=Type:IntType Value:20}},(NewStatement{varName='v2', expression=ValueExpression{value=Type:IntType Value:30}},(domain.statement.lock.NewLockStmt@a7397d3,(ForkStmt{statement=(ForkStmt{statement=(LockStmt{varName='x'},(HeapWriteStmt{referenceName='v1', expression=Expression minus between ReadHeapExp{expression=VariableExpression{key='v1'}} and ValueExpression{value=Type:IntType Value:1}},UnLockStmt{varName='x'}))},(LockStmt{varName='x'},(HeapWriteStmt{referenceName='v1', expression=Expression multiplication between ReadHeapExp{expression=VariableExpression{key='v1'}} and ValueExpression{value=Type:IntType Value:10}},UnLockStmt{varName='x'})))},(domain.statement.lock.NewLockStmt@62fe79f0,(ForkStmt{statement=(ForkStmt{statement=(LockStmt{varName='q'},(HeapWriteStmt{referenceName='v2', expression=Expression plus between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:5}},UnLockStmt{varName='q'}))},(LockStmt{varName='q'},(HeapWriteStmt{referenceName='v2', expression=Expression multiplication between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:10}},UnLockStmt{varName='q'})))},(NopStatement,(NopStatement,(NopStatement,(NopStatement,(LockStmt{varName='x'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v1'}}},(UnLockStmt{varName='x'},(LockStmt{varName='q'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v2'}}},UnLockStmt{varName='q'})))))))))))))))), VarDeclarationStatement:x with type=IntType]
  *FileTable: {}
  *Heap: {}
 
 id 0 
- *SymtableStack : [{}]
+ *SymtableStack : [{v2=RefValue{adress=0, locationType=IntType}, v1=RefValue{adress=0, locationType=IntType}}]
  *Output log : []
- *ExecutionStack:[NopStatement, (VarDeclarationStatement:w with type=IntType,(AssigmentStatemnet v=ValueExpression{value=Type:IntType Value:2},(AssigmentStatemnet w=ValueExpression{value=Type:IntType Value:5},(ExecuteProc{procName='sum', procArguments=[Expression multiplication between VariableExpression{key='v'} and ValueExpression{value=Type:IntType Value:10}, VariableExpression{key='w'}]},(PrintStatement{VariableExpression{key='v'}},ForkStmt{statement=(ExecuteProc{procName='product', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]},ForkStmt{statement=ExecuteProc{procName='sum', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]}})}))))), VarDeclarationStatement:v with type=IntType]
+ *ExecutionStack:[NopStatement, (VarDeclarationStatement:q with type=IntType,(NewStatement{varName='v1', expression=ValueExpression{value=Type:IntType Value:20}},(NewStatement{varName='v2', expression=ValueExpression{value=Type:IntType Value:30}},(domain.statement.lock.NewLockStmt@a7397d3,(ForkStmt{statement=(ForkStmt{statement=(LockStmt{varName='x'},(HeapWriteStmt{referenceName='v1', expression=Expression minus between ReadHeapExp{expression=VariableExpression{key='v1'}} and ValueExpression{value=Type:IntType Value:1}},UnLockStmt{varName='x'}))},(LockStmt{varName='x'},(HeapWriteStmt{referenceName='v1', expression=Expression multiplication between ReadHeapExp{expression=VariableExpression{key='v1'}} and ValueExpression{value=Type:IntType Value:10}},UnLockStmt{varName='x'})))},(domain.statement.lock.NewLockStmt@62fe79f0,(ForkStmt{statement=(ForkStmt{statement=(LockStmt{varName='q'},(HeapWriteStmt{referenceName='v2', expression=Expression plus between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:5}},UnLockStmt{varName='q'}))},(LockStmt{varName='q'},(HeapWriteStmt{referenceName='v2', expression=Expression multiplication between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:10}},UnLockStmt{varName='q'})))},(NopStatement,(NopStatement,(NopStatement,(NopStatement,(LockStmt{varName='x'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v1'}}},(UnLockStmt{varName='x'},(LockStmt{varName='q'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v2'}}},UnLockStmt{varName='q'})))))))))))))))), VarDeclarationStatement:x with type=IntType]
  *FileTable: {}
  *Heap: {}
 
 id 0 
- *SymtableStack : [{v=Type:IntType Value:0}]
+ *SymtableStack : [{x=Type:IntType Value:0, v2=RefValue{adress=0, locationType=IntType}, v1=RefValue{adress=0, locationType=IntType}}]
  *Output log : []
- *ExecutionStack:[NopStatement, (VarDeclarationStatement:w with type=IntType,(AssigmentStatemnet v=ValueExpression{value=Type:IntType Value:2},(AssigmentStatemnet w=ValueExpression{value=Type:IntType Value:5},(ExecuteProc{procName='sum', procArguments=[Expression multiplication between VariableExpression{key='v'} and ValueExpression{value=Type:IntType Value:10}, VariableExpression{key='w'}]},(PrintStatement{VariableExpression{key='v'}},ForkStmt{statement=(ExecuteProc{procName='product', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]},ForkStmt{statement=ExecuteProc{procName='sum', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]}})})))))]
+ *ExecutionStack:[NopStatement, (VarDeclarationStatement:q with type=IntType,(NewStatement{varName='v1', expression=ValueExpression{value=Type:IntType Value:20}},(NewStatement{varName='v2', expression=ValueExpression{value=Type:IntType Value:30}},(domain.statement.lock.NewLockStmt@a7397d3,(ForkStmt{statement=(ForkStmt{statement=(LockStmt{varName='x'},(HeapWriteStmt{referenceName='v1', expression=Expression minus between ReadHeapExp{expression=VariableExpression{key='v1'}} and ValueExpression{value=Type:IntType Value:1}},UnLockStmt{varName='x'}))},(LockStmt{varName='x'},(HeapWriteStmt{referenceName='v1', expression=Expression multiplication between ReadHeapExp{expression=VariableExpression{key='v1'}} and ValueExpression{value=Type:IntType Value:10}},UnLockStmt{varName='x'})))},(domain.statement.lock.NewLockStmt@62fe79f0,(ForkStmt{statement=(ForkStmt{statement=(LockStmt{varName='q'},(HeapWriteStmt{referenceName='v2', expression=Expression plus between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:5}},UnLockStmt{varName='q'}))},(LockStmt{varName='q'},(HeapWriteStmt{referenceName='v2', expression=Expression multiplication between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:10}},UnLockStmt{varName='q'})))},(NopStatement,(NopStatement,(NopStatement,(NopStatement,(LockStmt{varName='x'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v1'}}},(UnLockStmt{varName='x'},(LockStmt{varName='q'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v2'}}},UnLockStmt{varName='q'}))))))))))))))))]
  *FileTable: {}
  *Heap: {}
 
 id 0 
- *SymtableStack : [{v=Type:IntType Value:0}]
+ *SymtableStack : [{x=Type:IntType Value:0, v2=RefValue{adress=0, locationType=IntType}, v1=RefValue{adress=0, locationType=IntType}}]
  *Output log : []
- *ExecutionStack:[NopStatement, (VarDeclarationStatement:w with type=IntType,(AssigmentStatemnet v=ValueExpression{value=Type:IntType Value:2},(AssigmentStatemnet w=ValueExpression{value=Type:IntType Value:5},(ExecuteProc{procName='sum', procArguments=[Expression multiplication between VariableExpression{key='v'} and ValueExpression{value=Type:IntType Value:10}, VariableExpression{key='w'}]},(PrintStatement{VariableExpression{key='v'}},ForkStmt{statement=(ExecuteProc{procName='product', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]},ForkStmt{statement=ExecuteProc{procName='sum', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]}})})))))]
+ *ExecutionStack:[NopStatement, (VarDeclarationStatement:q with type=IntType,(NewStatement{varName='v1', expression=ValueExpression{value=Type:IntType Value:20}},(NewStatement{varName='v2', expression=ValueExpression{value=Type:IntType Value:30}},(domain.statement.lock.NewLockStmt@a7397d3,(ForkStmt{statement=(ForkStmt{statement=(LockStmt{varName='x'},(HeapWriteStmt{referenceName='v1', expression=Expression minus between ReadHeapExp{expression=VariableExpression{key='v1'}} and ValueExpression{value=Type:IntType Value:1}},UnLockStmt{varName='x'}))},(LockStmt{varName='x'},(HeapWriteStmt{referenceName='v1', expression=Expression multiplication between ReadHeapExp{expression=VariableExpression{key='v1'}} and ValueExpression{value=Type:IntType Value:10}},UnLockStmt{varName='x'})))},(domain.statement.lock.NewLockStmt@62fe79f0,(ForkStmt{statement=(ForkStmt{statement=(LockStmt{varName='q'},(HeapWriteStmt{referenceName='v2', expression=Expression plus between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:5}},UnLockStmt{varName='q'}))},(LockStmt{varName='q'},(HeapWriteStmt{referenceName='v2', expression=Expression multiplication between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:10}},UnLockStmt{varName='q'})))},(NopStatement,(NopStatement,(NopStatement,(NopStatement,(LockStmt{varName='x'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v1'}}},(UnLockStmt{varName='x'},(LockStmt{varName='q'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v2'}}},UnLockStmt{varName='q'}))))))))))))))))]
  *FileTable: {}
  *Heap: {}
 
 id 0 
- *SymtableStack : [{v=Type:IntType Value:0}]
+ *SymtableStack : [{x=Type:IntType Value:0, v2=RefValue{adress=0, locationType=IntType}, v1=RefValue{adress=0, locationType=IntType}}]
  *Output log : []
- *ExecutionStack:[NopStatement, (AssigmentStatemnet v=ValueExpression{value=Type:IntType Value:2},(AssigmentStatemnet w=ValueExpression{value=Type:IntType Value:5},(ExecuteProc{procName='sum', procArguments=[Expression multiplication between VariableExpression{key='v'} and ValueExpression{value=Type:IntType Value:10}, VariableExpression{key='w'}]},(PrintStatement{VariableExpression{key='v'}},ForkStmt{statement=(ExecuteProc{procName='product', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]},ForkStmt{statement=ExecuteProc{procName='sum', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]}})})))), VarDeclarationStatement:w with type=IntType]
+ *ExecutionStack:[NopStatement, (NewStatement{varName='v1', expression=ValueExpression{value=Type:IntType Value:20}},(NewStatement{varName='v2', expression=ValueExpression{value=Type:IntType Value:30}},(domain.statement.lock.NewLockStmt@a7397d3,(ForkStmt{statement=(ForkStmt{statement=(LockStmt{varName='x'},(HeapWriteStmt{referenceName='v1', expression=Expression minus between ReadHeapExp{expression=VariableExpression{key='v1'}} and ValueExpression{value=Type:IntType Value:1}},UnLockStmt{varName='x'}))},(LockStmt{varName='x'},(HeapWriteStmt{referenceName='v1', expression=Expression multiplication between ReadHeapExp{expression=VariableExpression{key='v1'}} and ValueExpression{value=Type:IntType Value:10}},UnLockStmt{varName='x'})))},(domain.statement.lock.NewLockStmt@62fe79f0,(ForkStmt{statement=(ForkStmt{statement=(LockStmt{varName='q'},(HeapWriteStmt{referenceName='v2', expression=Expression plus between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:5}},UnLockStmt{varName='q'}))},(LockStmt{varName='q'},(HeapWriteStmt{referenceName='v2', expression=Expression multiplication between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:10}},UnLockStmt{varName='q'})))},(NopStatement,(NopStatement,(NopStatement,(NopStatement,(LockStmt{varName='x'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v1'}}},(UnLockStmt{varName='x'},(LockStmt{varName='q'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v2'}}},UnLockStmt{varName='q'}))))))))))))))), VarDeclarationStatement:q with type=IntType]
  *FileTable: {}
  *Heap: {}
 
 id 0 
- *SymtableStack : [{v=Type:IntType Value:0}]
+ *SymtableStack : [{x=Type:IntType Value:0, v2=RefValue{adress=0, locationType=IntType}, v1=RefValue{adress=0, locationType=IntType}}]
  *Output log : []
- *ExecutionStack:[NopStatement, (AssigmentStatemnet v=ValueExpression{value=Type:IntType Value:2},(AssigmentStatemnet w=ValueExpression{value=Type:IntType Value:5},(ExecuteProc{procName='sum', procArguments=[Expression multiplication between VariableExpression{key='v'} and ValueExpression{value=Type:IntType Value:10}, VariableExpression{key='w'}]},(PrintStatement{VariableExpression{key='v'}},ForkStmt{statement=(ExecuteProc{procName='product', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]},ForkStmt{statement=ExecuteProc{procName='sum', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]}})})))), VarDeclarationStatement:w with type=IntType]
+ *ExecutionStack:[NopStatement, (NewStatement{varName='v1', expression=ValueExpression{value=Type:IntType Value:20}},(NewStatement{varName='v2', expression=ValueExpression{value=Type:IntType Value:30}},(domain.statement.lock.NewLockStmt@a7397d3,(ForkStmt{statement=(ForkStmt{statement=(LockStmt{varName='x'},(HeapWriteStmt{referenceName='v1', expression=Expression minus between ReadHeapExp{expression=VariableExpression{key='v1'}} and ValueExpression{value=Type:IntType Value:1}},UnLockStmt{varName='x'}))},(LockStmt{varName='x'},(HeapWriteStmt{referenceName='v1', expression=Expression multiplication between ReadHeapExp{expression=VariableExpression{key='v1'}} and ValueExpression{value=Type:IntType Value:10}},UnLockStmt{varName='x'})))},(domain.statement.lock.NewLockStmt@62fe79f0,(ForkStmt{statement=(ForkStmt{statement=(LockStmt{varName='q'},(HeapWriteStmt{referenceName='v2', expression=Expression plus between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:5}},UnLockStmt{varName='q'}))},(LockStmt{varName='q'},(HeapWriteStmt{referenceName='v2', expression=Expression multiplication between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:10}},UnLockStmt{varName='q'})))},(NopStatement,(NopStatement,(NopStatement,(NopStatement,(LockStmt{varName='x'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v1'}}},(UnLockStmt{varName='x'},(LockStmt{varName='q'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v2'}}},UnLockStmt{varName='q'}))))))))))))))), VarDeclarationStatement:q with type=IntType]
  *FileTable: {}
  *Heap: {}
 
 id 0 
- *SymtableStack : [{w=Type:IntType Value:0, v=Type:IntType Value:0}]
+ *SymtableStack : [{x=Type:IntType Value:0, q=Type:IntType Value:0, v2=RefValue{adress=0, locationType=IntType}, v1=RefValue{adress=0, locationType=IntType}}]
  *Output log : []
- *ExecutionStack:[NopStatement, (AssigmentStatemnet v=ValueExpression{value=Type:IntType Value:2},(AssigmentStatemnet w=ValueExpression{value=Type:IntType Value:5},(ExecuteProc{procName='sum', procArguments=[Expression multiplication between VariableExpression{key='v'} and ValueExpression{value=Type:IntType Value:10}, VariableExpression{key='w'}]},(PrintStatement{VariableExpression{key='v'}},ForkStmt{statement=(ExecuteProc{procName='product', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]},ForkStmt{statement=ExecuteProc{procName='sum', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]}})}))))]
+ *ExecutionStack:[NopStatement, (NewStatement{varName='v1', expression=ValueExpression{value=Type:IntType Value:20}},(NewStatement{varName='v2', expression=ValueExpression{value=Type:IntType Value:30}},(domain.statement.lock.NewLockStmt@a7397d3,(ForkStmt{statement=(ForkStmt{statement=(LockStmt{varName='x'},(HeapWriteStmt{referenceName='v1', expression=Expression minus between ReadHeapExp{expression=VariableExpression{key='v1'}} and ValueExpression{value=Type:IntType Value:1}},UnLockStmt{varName='x'}))},(LockStmt{varName='x'},(HeapWriteStmt{referenceName='v1', expression=Expression multiplication between ReadHeapExp{expression=VariableExpression{key='v1'}} and ValueExpression{value=Type:IntType Value:10}},UnLockStmt{varName='x'})))},(domain.statement.lock.NewLockStmt@62fe79f0,(ForkStmt{statement=(ForkStmt{statement=(LockStmt{varName='q'},(HeapWriteStmt{referenceName='v2', expression=Expression plus between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:5}},UnLockStmt{varName='q'}))},(LockStmt{varName='q'},(HeapWriteStmt{referenceName='v2', expression=Expression multiplication between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:10}},UnLockStmt{varName='q'})))},(NopStatement,(NopStatement,(NopStatement,(NopStatement,(LockStmt{varName='x'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v1'}}},(UnLockStmt{varName='x'},(LockStmt{varName='q'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v2'}}},UnLockStmt{varName='q'})))))))))))))))]
  *FileTable: {}
  *Heap: {}
 
 id 0 
- *SymtableStack : [{w=Type:IntType Value:0, v=Type:IntType Value:0}]
+ *SymtableStack : [{x=Type:IntType Value:0, q=Type:IntType Value:0, v2=RefValue{adress=0, locationType=IntType}, v1=RefValue{adress=0, locationType=IntType}}]
  *Output log : []
- *ExecutionStack:[NopStatement, (AssigmentStatemnet v=ValueExpression{value=Type:IntType Value:2},(AssigmentStatemnet w=ValueExpression{value=Type:IntType Value:5},(ExecuteProc{procName='sum', procArguments=[Expression multiplication between VariableExpression{key='v'} and ValueExpression{value=Type:IntType Value:10}, VariableExpression{key='w'}]},(PrintStatement{VariableExpression{key='v'}},ForkStmt{statement=(ExecuteProc{procName='product', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]},ForkStmt{statement=ExecuteProc{procName='sum', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]}})}))))]
+ *ExecutionStack:[NopStatement, (NewStatement{varName='v1', expression=ValueExpression{value=Type:IntType Value:20}},(NewStatement{varName='v2', expression=ValueExpression{value=Type:IntType Value:30}},(domain.statement.lock.NewLockStmt@a7397d3,(ForkStmt{statement=(ForkStmt{statement=(LockStmt{varName='x'},(HeapWriteStmt{referenceName='v1', expression=Expression minus between ReadHeapExp{expression=VariableExpression{key='v1'}} and ValueExpression{value=Type:IntType Value:1}},UnLockStmt{varName='x'}))},(LockStmt{varName='x'},(HeapWriteStmt{referenceName='v1', expression=Expression multiplication between ReadHeapExp{expression=VariableExpression{key='v1'}} and ValueExpression{value=Type:IntType Value:10}},UnLockStmt{varName='x'})))},(domain.statement.lock.NewLockStmt@62fe79f0,(ForkStmt{statement=(ForkStmt{statement=(LockStmt{varName='q'},(HeapWriteStmt{referenceName='v2', expression=Expression plus between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:5}},UnLockStmt{varName='q'}))},(LockStmt{varName='q'},(HeapWriteStmt{referenceName='v2', expression=Expression multiplication between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:10}},UnLockStmt{varName='q'})))},(NopStatement,(NopStatement,(NopStatement,(NopStatement,(LockStmt{varName='x'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v1'}}},(UnLockStmt{varName='x'},(LockStmt{varName='q'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v2'}}},UnLockStmt{varName='q'})))))))))))))))]
  *FileTable: {}
  *Heap: {}
 
 id 0 
- *SymtableStack : [{w=Type:IntType Value:0, v=Type:IntType Value:0}]
+ *SymtableStack : [{x=Type:IntType Value:0, q=Type:IntType Value:0, v2=RefValue{adress=0, locationType=IntType}, v1=RefValue{adress=0, locationType=IntType}}]
  *Output log : []
- *ExecutionStack:[NopStatement, (AssigmentStatemnet w=ValueExpression{value=Type:IntType Value:5},(ExecuteProc{procName='sum', procArguments=[Expression multiplication between VariableExpression{key='v'} and ValueExpression{value=Type:IntType Value:10}, VariableExpression{key='w'}]},(PrintStatement{VariableExpression{key='v'}},ForkStmt{statement=(ExecuteProc{procName='product', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]},ForkStmt{statement=ExecuteProc{procName='sum', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]}})}))), AssigmentStatemnet v=ValueExpression{value=Type:IntType Value:2}]
+ *ExecutionStack:[NopStatement, (NewStatement{varName='v2', expression=ValueExpression{value=Type:IntType Value:30}},(domain.statement.lock.NewLockStmt@a7397d3,(ForkStmt{statement=(ForkStmt{statement=(LockStmt{varName='x'},(HeapWriteStmt{referenceName='v1', expression=Expression minus between ReadHeapExp{expression=VariableExpression{key='v1'}} and ValueExpression{value=Type:IntType Value:1}},UnLockStmt{varName='x'}))},(LockStmt{varName='x'},(HeapWriteStmt{referenceName='v1', expression=Expression multiplication between ReadHeapExp{expression=VariableExpression{key='v1'}} and ValueExpression{value=Type:IntType Value:10}},UnLockStmt{varName='x'})))},(domain.statement.lock.NewLockStmt@62fe79f0,(ForkStmt{statement=(ForkStmt{statement=(LockStmt{varName='q'},(HeapWriteStmt{referenceName='v2', expression=Expression plus between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:5}},UnLockStmt{varName='q'}))},(LockStmt{varName='q'},(HeapWriteStmt{referenceName='v2', expression=Expression multiplication between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:10}},UnLockStmt{varName='q'})))},(NopStatement,(NopStatement,(NopStatement,(NopStatement,(LockStmt{varName='x'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v1'}}},(UnLockStmt{varName='x'},(LockStmt{varName='q'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v2'}}},UnLockStmt{varName='q'})))))))))))))), NewStatement{varName='v1', expression=ValueExpression{value=Type:IntType Value:20}}]
  *FileTable: {}
  *Heap: {}
 
 id 0 
- *SymtableStack : [{w=Type:IntType Value:0, v=Type:IntType Value:0}]
+ *SymtableStack : [{x=Type:IntType Value:0, q=Type:IntType Value:0, v2=RefValue{adress=0, locationType=IntType}, v1=RefValue{adress=0, locationType=IntType}}]
  *Output log : []
- *ExecutionStack:[NopStatement, (AssigmentStatemnet w=ValueExpression{value=Type:IntType Value:5},(ExecuteProc{procName='sum', procArguments=[Expression multiplication between VariableExpression{key='v'} and ValueExpression{value=Type:IntType Value:10}, VariableExpression{key='w'}]},(PrintStatement{VariableExpression{key='v'}},ForkStmt{statement=(ExecuteProc{procName='product', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]},ForkStmt{statement=ExecuteProc{procName='sum', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]}})}))), AssigmentStatemnet v=ValueExpression{value=Type:IntType Value:2}]
+ *ExecutionStack:[NopStatement, (NewStatement{varName='v2', expression=ValueExpression{value=Type:IntType Value:30}},(domain.statement.lock.NewLockStmt@a7397d3,(ForkStmt{statement=(ForkStmt{statement=(LockStmt{varName='x'},(HeapWriteStmt{referenceName='v1', expression=Expression minus between ReadHeapExp{expression=VariableExpression{key='v1'}} and ValueExpression{value=Type:IntType Value:1}},UnLockStmt{varName='x'}))},(LockStmt{varName='x'},(HeapWriteStmt{referenceName='v1', expression=Expression multiplication between ReadHeapExp{expression=VariableExpression{key='v1'}} and ValueExpression{value=Type:IntType Value:10}},UnLockStmt{varName='x'})))},(domain.statement.lock.NewLockStmt@62fe79f0,(ForkStmt{statement=(ForkStmt{statement=(LockStmt{varName='q'},(HeapWriteStmt{referenceName='v2', expression=Expression plus between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:5}},UnLockStmt{varName='q'}))},(LockStmt{varName='q'},(HeapWriteStmt{referenceName='v2', expression=Expression multiplication between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:10}},UnLockStmt{varName='q'})))},(NopStatement,(NopStatement,(NopStatement,(NopStatement,(LockStmt{varName='x'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v1'}}},(UnLockStmt{varName='x'},(LockStmt{varName='q'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v2'}}},UnLockStmt{varName='q'})))))))))))))), NewStatement{varName='v1', expression=ValueExpression{value=Type:IntType Value:20}}]
  *FileTable: {}
  *Heap: {}
 
 id 0 
- *SymtableStack : [{w=Type:IntType Value:0, v=Type:IntType Value:2}]
+ *SymtableStack : [{x=Type:IntType Value:0, q=Type:IntType Value:0, v2=RefValue{adress=0, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
  *Output log : []
- *ExecutionStack:[NopStatement, (AssigmentStatemnet w=ValueExpression{value=Type:IntType Value:5},(ExecuteProc{procName='sum', procArguments=[Expression multiplication between VariableExpression{key='v'} and ValueExpression{value=Type:IntType Value:10}, VariableExpression{key='w'}]},(PrintStatement{VariableExpression{key='v'}},ForkStmt{statement=(ExecuteProc{procName='product', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]},ForkStmt{statement=ExecuteProc{procName='sum', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]}})})))]
+ *ExecutionStack:[NopStatement, (NewStatement{varName='v2', expression=ValueExpression{value=Type:IntType Value:30}},(domain.statement.lock.NewLockStmt@a7397d3,(ForkStmt{statement=(ForkStmt{statement=(LockStmt{varName='x'},(HeapWriteStmt{referenceName='v1', expression=Expression minus between ReadHeapExp{expression=VariableExpression{key='v1'}} and ValueExpression{value=Type:IntType Value:1}},UnLockStmt{varName='x'}))},(LockStmt{varName='x'},(HeapWriteStmt{referenceName='v1', expression=Expression multiplication between ReadHeapExp{expression=VariableExpression{key='v1'}} and ValueExpression{value=Type:IntType Value:10}},UnLockStmt{varName='x'})))},(domain.statement.lock.NewLockStmt@62fe79f0,(ForkStmt{statement=(ForkStmt{statement=(LockStmt{varName='q'},(HeapWriteStmt{referenceName='v2', expression=Expression plus between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:5}},UnLockStmt{varName='q'}))},(LockStmt{varName='q'},(HeapWriteStmt{referenceName='v2', expression=Expression multiplication between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:10}},UnLockStmt{varName='q'})))},(NopStatement,(NopStatement,(NopStatement,(NopStatement,(LockStmt{varName='x'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v1'}}},(UnLockStmt{varName='x'},(LockStmt{varName='q'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v2'}}},UnLockStmt{varName='q'}))))))))))))))]
  *FileTable: {}
- *Heap: {}
+ *Heap: {1=Type:IntType Value:20}
 
 id 0 
- *SymtableStack : [{w=Type:IntType Value:0, v=Type:IntType Value:2}]
+ *SymtableStack : [{x=Type:IntType Value:0, q=Type:IntType Value:0, v2=RefValue{adress=0, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
  *Output log : []
- *ExecutionStack:[NopStatement, (AssigmentStatemnet w=ValueExpression{value=Type:IntType Value:5},(ExecuteProc{procName='sum', procArguments=[Expression multiplication between VariableExpression{key='v'} and ValueExpression{value=Type:IntType Value:10}, VariableExpression{key='w'}]},(PrintStatement{VariableExpression{key='v'}},ForkStmt{statement=(ExecuteProc{procName='product', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]},ForkStmt{statement=ExecuteProc{procName='sum', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]}})})))]
+ *ExecutionStack:[NopStatement, (NewStatement{varName='v2', expression=ValueExpression{value=Type:IntType Value:30}},(domain.statement.lock.NewLockStmt@a7397d3,(ForkStmt{statement=(ForkStmt{statement=(LockStmt{varName='x'},(HeapWriteStmt{referenceName='v1', expression=Expression minus between ReadHeapExp{expression=VariableExpression{key='v1'}} and ValueExpression{value=Type:IntType Value:1}},UnLockStmt{varName='x'}))},(LockStmt{varName='x'},(HeapWriteStmt{referenceName='v1', expression=Expression multiplication between ReadHeapExp{expression=VariableExpression{key='v1'}} and ValueExpression{value=Type:IntType Value:10}},UnLockStmt{varName='x'})))},(domain.statement.lock.NewLockStmt@62fe79f0,(ForkStmt{statement=(ForkStmt{statement=(LockStmt{varName='q'},(HeapWriteStmt{referenceName='v2', expression=Expression plus between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:5}},UnLockStmt{varName='q'}))},(LockStmt{varName='q'},(HeapWriteStmt{referenceName='v2', expression=Expression multiplication between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:10}},UnLockStmt{varName='q'})))},(NopStatement,(NopStatement,(NopStatement,(NopStatement,(LockStmt{varName='x'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v1'}}},(UnLockStmt{varName='x'},(LockStmt{varName='q'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v2'}}},UnLockStmt{varName='q'}))))))))))))))]
  *FileTable: {}
- *Heap: {}
+ *Heap: {1=Type:IntType Value:20}
 
 id 0 
- *SymtableStack : [{w=Type:IntType Value:0, v=Type:IntType Value:2}]
+ *SymtableStack : [{x=Type:IntType Value:0, q=Type:IntType Value:0, v2=RefValue{adress=0, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
  *Output log : []
- *ExecutionStack:[NopStatement, (ExecuteProc{procName='sum', procArguments=[Expression multiplication between VariableExpression{key='v'} and ValueExpression{value=Type:IntType Value:10}, VariableExpression{key='w'}]},(PrintStatement{VariableExpression{key='v'}},ForkStmt{statement=(ExecuteProc{procName='product', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]},ForkStmt{statement=ExecuteProc{procName='sum', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]}})})), AssigmentStatemnet w=ValueExpression{value=Type:IntType Value:5}]
+ *ExecutionStack:[NopStatement, (domain.statement.lock.NewLockStmt@a7397d3,(ForkStmt{statement=(ForkStmt{statement=(LockStmt{varName='x'},(HeapWriteStmt{referenceName='v1', expression=Expression minus between ReadHeapExp{expression=VariableExpression{key='v1'}} and ValueExpression{value=Type:IntType Value:1}},UnLockStmt{varName='x'}))},(LockStmt{varName='x'},(HeapWriteStmt{referenceName='v1', expression=Expression multiplication between ReadHeapExp{expression=VariableExpression{key='v1'}} and ValueExpression{value=Type:IntType Value:10}},UnLockStmt{varName='x'})))},(domain.statement.lock.NewLockStmt@62fe79f0,(ForkStmt{statement=(ForkStmt{statement=(LockStmt{varName='q'},(HeapWriteStmt{referenceName='v2', expression=Expression plus between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:5}},UnLockStmt{varName='q'}))},(LockStmt{varName='q'},(HeapWriteStmt{referenceName='v2', expression=Expression multiplication between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:10}},UnLockStmt{varName='q'})))},(NopStatement,(NopStatement,(NopStatement,(NopStatement,(LockStmt{varName='x'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v1'}}},(UnLockStmt{varName='x'},(LockStmt{varName='q'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v2'}}},UnLockStmt{varName='q'}))))))))))))), NewStatement{varName='v2', expression=ValueExpression{value=Type:IntType Value:30}}]
  *FileTable: {}
- *Heap: {}
+ *Heap: {1=Type:IntType Value:20}
 
 id 0 
- *SymtableStack : [{w=Type:IntType Value:0, v=Type:IntType Value:2}]
+ *SymtableStack : [{x=Type:IntType Value:0, q=Type:IntType Value:0, v2=RefValue{adress=0, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
  *Output log : []
- *ExecutionStack:[NopStatement, (ExecuteProc{procName='sum', procArguments=[Expression multiplication between VariableExpression{key='v'} and ValueExpression{value=Type:IntType Value:10}, VariableExpression{key='w'}]},(PrintStatement{VariableExpression{key='v'}},ForkStmt{statement=(ExecuteProc{procName='product', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]},ForkStmt{statement=ExecuteProc{procName='sum', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]}})})), AssigmentStatemnet w=ValueExpression{value=Type:IntType Value:5}]
+ *ExecutionStack:[NopStatement, (domain.statement.lock.NewLockStmt@a7397d3,(ForkStmt{statement=(ForkStmt{statement=(LockStmt{varName='x'},(HeapWriteStmt{referenceName='v1', expression=Expression minus between ReadHeapExp{expression=VariableExpression{key='v1'}} and ValueExpression{value=Type:IntType Value:1}},UnLockStmt{varName='x'}))},(LockStmt{varName='x'},(HeapWriteStmt{referenceName='v1', expression=Expression multiplication between ReadHeapExp{expression=VariableExpression{key='v1'}} and ValueExpression{value=Type:IntType Value:10}},UnLockStmt{varName='x'})))},(domain.statement.lock.NewLockStmt@62fe79f0,(ForkStmt{statement=(ForkStmt{statement=(LockStmt{varName='q'},(HeapWriteStmt{referenceName='v2', expression=Expression plus between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:5}},UnLockStmt{varName='q'}))},(LockStmt{varName='q'},(HeapWriteStmt{referenceName='v2', expression=Expression multiplication between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:10}},UnLockStmt{varName='q'})))},(NopStatement,(NopStatement,(NopStatement,(NopStatement,(LockStmt{varName='x'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v1'}}},(UnLockStmt{varName='x'},(LockStmt{varName='q'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v2'}}},UnLockStmt{varName='q'}))))))))))))), NewStatement{varName='v2', expression=ValueExpression{value=Type:IntType Value:30}}]
  *FileTable: {}
- *Heap: {}
+ *Heap: {1=Type:IntType Value:20}
 
 id 0 
- *SymtableStack : [{w=Type:IntType Value:5, v=Type:IntType Value:2}]
+ *SymtableStack : [{x=Type:IntType Value:0, q=Type:IntType Value:0, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
  *Output log : []
- *ExecutionStack:[NopStatement, (ExecuteProc{procName='sum', procArguments=[Expression multiplication between VariableExpression{key='v'} and ValueExpression{value=Type:IntType Value:10}, VariableExpression{key='w'}]},(PrintStatement{VariableExpression{key='v'}},ForkStmt{statement=(ExecuteProc{procName='product', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]},ForkStmt{statement=ExecuteProc{procName='sum', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]}})}))]
+ *ExecutionStack:[NopStatement, (domain.statement.lock.NewLockStmt@a7397d3,(ForkStmt{statement=(ForkStmt{statement=(LockStmt{varName='x'},(HeapWriteStmt{referenceName='v1', expression=Expression minus between ReadHeapExp{expression=VariableExpression{key='v1'}} and ValueExpression{value=Type:IntType Value:1}},UnLockStmt{varName='x'}))},(LockStmt{varName='x'},(HeapWriteStmt{referenceName='v1', expression=Expression multiplication between ReadHeapExp{expression=VariableExpression{key='v1'}} and ValueExpression{value=Type:IntType Value:10}},UnLockStmt{varName='x'})))},(domain.statement.lock.NewLockStmt@62fe79f0,(ForkStmt{statement=(ForkStmt{statement=(LockStmt{varName='q'},(HeapWriteStmt{referenceName='v2', expression=Expression plus between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:5}},UnLockStmt{varName='q'}))},(LockStmt{varName='q'},(HeapWriteStmt{referenceName='v2', expression=Expression multiplication between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:10}},UnLockStmt{varName='q'})))},(NopStatement,(NopStatement,(NopStatement,(NopStatement,(LockStmt{varName='x'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v1'}}},(UnLockStmt{varName='x'},(LockStmt{varName='q'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v2'}}},UnLockStmt{varName='q'})))))))))))))]
  *FileTable: {}
- *Heap: {}
+ *Heap: {2=Type:IntType Value:30, 1=Type:IntType Value:20}
 
 id 0 
- *SymtableStack : [{w=Type:IntType Value:5, v=Type:IntType Value:2}]
+ *SymtableStack : [{x=Type:IntType Value:0, q=Type:IntType Value:0, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
  *Output log : []
- *ExecutionStack:[NopStatement, (ExecuteProc{procName='sum', procArguments=[Expression multiplication between VariableExpression{key='v'} and ValueExpression{value=Type:IntType Value:10}, VariableExpression{key='w'}]},(PrintStatement{VariableExpression{key='v'}},ForkStmt{statement=(ExecuteProc{procName='product', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]},ForkStmt{statement=ExecuteProc{procName='sum', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]}})}))]
+ *ExecutionStack:[NopStatement, (domain.statement.lock.NewLockStmt@a7397d3,(ForkStmt{statement=(ForkStmt{statement=(LockStmt{varName='x'},(HeapWriteStmt{referenceName='v1', expression=Expression minus between ReadHeapExp{expression=VariableExpression{key='v1'}} and ValueExpression{value=Type:IntType Value:1}},UnLockStmt{varName='x'}))},(LockStmt{varName='x'},(HeapWriteStmt{referenceName='v1', expression=Expression multiplication between ReadHeapExp{expression=VariableExpression{key='v1'}} and ValueExpression{value=Type:IntType Value:10}},UnLockStmt{varName='x'})))},(domain.statement.lock.NewLockStmt@62fe79f0,(ForkStmt{statement=(ForkStmt{statement=(LockStmt{varName='q'},(HeapWriteStmt{referenceName='v2', expression=Expression plus between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:5}},UnLockStmt{varName='q'}))},(LockStmt{varName='q'},(HeapWriteStmt{referenceName='v2', expression=Expression multiplication between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:10}},UnLockStmt{varName='q'})))},(NopStatement,(NopStatement,(NopStatement,(NopStatement,(LockStmt{varName='x'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v1'}}},(UnLockStmt{varName='x'},(LockStmt{varName='q'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v2'}}},UnLockStmt{varName='q'})))))))))))))]
  *FileTable: {}
- *Heap: {}
+ *Heap: {2=Type:IntType Value:30, 1=Type:IntType Value:20}
 
 id 0 
- *SymtableStack : [{w=Type:IntType Value:5, v=Type:IntType Value:2}]
+ *SymtableStack : [{x=Type:IntType Value:0, q=Type:IntType Value:0, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
  *Output log : []
- *ExecutionStack:[NopStatement, (PrintStatement{VariableExpression{key='v'}},ForkStmt{statement=(ExecuteProc{procName='product', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]},ForkStmt{statement=ExecuteProc{procName='sum', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]}})}), ExecuteProc{procName='sum', procArguments=[Expression multiplication between VariableExpression{key='v'} and ValueExpression{value=Type:IntType Value:10}, VariableExpression{key='w'}]}]
+ *ExecutionStack:[NopStatement, (ForkStmt{statement=(ForkStmt{statement=(LockStmt{varName='x'},(HeapWriteStmt{referenceName='v1', expression=Expression minus between ReadHeapExp{expression=VariableExpression{key='v1'}} and ValueExpression{value=Type:IntType Value:1}},UnLockStmt{varName='x'}))},(LockStmt{varName='x'},(HeapWriteStmt{referenceName='v1', expression=Expression multiplication between ReadHeapExp{expression=VariableExpression{key='v1'}} and ValueExpression{value=Type:IntType Value:10}},UnLockStmt{varName='x'})))},(domain.statement.lock.NewLockStmt@62fe79f0,(ForkStmt{statement=(ForkStmt{statement=(LockStmt{varName='q'},(HeapWriteStmt{referenceName='v2', expression=Expression plus between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:5}},UnLockStmt{varName='q'}))},(LockStmt{varName='q'},(HeapWriteStmt{referenceName='v2', expression=Expression multiplication between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:10}},UnLockStmt{varName='q'})))},(NopStatement,(NopStatement,(NopStatement,(NopStatement,(LockStmt{varName='x'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v1'}}},(UnLockStmt{varName='x'},(LockStmt{varName='q'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v2'}}},UnLockStmt{varName='q'})))))))))))), domain.statement.lock.NewLockStmt@a7397d3]
  *FileTable: {}
- *Heap: {}
+ *Heap: {2=Type:IntType Value:30, 1=Type:IntType Value:20}
 
 id 0 
- *SymtableStack : [{w=Type:IntType Value:5, v=Type:IntType Value:2}]
+ *SymtableStack : [{x=Type:IntType Value:0, q=Type:IntType Value:0, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
  *Output log : []
- *ExecutionStack:[NopStatement, (PrintStatement{VariableExpression{key='v'}},ForkStmt{statement=(ExecuteProc{procName='product', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]},ForkStmt{statement=ExecuteProc{procName='sum', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]}})}), ExecuteProc{procName='sum', procArguments=[Expression multiplication between VariableExpression{key='v'} and ValueExpression{value=Type:IntType Value:10}, VariableExpression{key='w'}]}]
+ *ExecutionStack:[NopStatement, (ForkStmt{statement=(ForkStmt{statement=(LockStmt{varName='x'},(HeapWriteStmt{referenceName='v1', expression=Expression minus between ReadHeapExp{expression=VariableExpression{key='v1'}} and ValueExpression{value=Type:IntType Value:1}},UnLockStmt{varName='x'}))},(LockStmt{varName='x'},(HeapWriteStmt{referenceName='v1', expression=Expression multiplication between ReadHeapExp{expression=VariableExpression{key='v1'}} and ValueExpression{value=Type:IntType Value:10}},UnLockStmt{varName='x'})))},(domain.statement.lock.NewLockStmt@62fe79f0,(ForkStmt{statement=(ForkStmt{statement=(LockStmt{varName='q'},(HeapWriteStmt{referenceName='v2', expression=Expression plus between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:5}},UnLockStmt{varName='q'}))},(LockStmt{varName='q'},(HeapWriteStmt{referenceName='v2', expression=Expression multiplication between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:10}},UnLockStmt{varName='q'})))},(NopStatement,(NopStatement,(NopStatement,(NopStatement,(LockStmt{varName='x'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v1'}}},(UnLockStmt{varName='x'},(LockStmt{varName='q'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v2'}}},UnLockStmt{varName='q'})))))))))))), domain.statement.lock.NewLockStmt@a7397d3]
  *FileTable: {}
- *Heap: {}
+ *Heap: {2=Type:IntType Value:30, 1=Type:IntType Value:20}
 
 id 0 
- *SymtableStack : [{w=Type:IntType Value:5, v=Type:IntType Value:2}, {b=Type:IntType Value:5, a=Type:IntType Value:20}]
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:0, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
  *Output log : []
- *ExecutionStack:[NopStatement, (PrintStatement{VariableExpression{key='v'}},ForkStmt{statement=(ExecuteProc{procName='product', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]},ForkStmt{statement=ExecuteProc{procName='sum', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]}})}), ((VarDeclarationStatement:v with type=IntType,(AssigmentStatemnet v=Expression plus between VariableExpression{key='a'} and VariableExpression{key='b'},PrintStatement{VariableExpression{key='v'}})),ReturnStmt)]
+ *ExecutionStack:[NopStatement, (ForkStmt{statement=(ForkStmt{statement=(LockStmt{varName='x'},(HeapWriteStmt{referenceName='v1', expression=Expression minus between ReadHeapExp{expression=VariableExpression{key='v1'}} and ValueExpression{value=Type:IntType Value:1}},UnLockStmt{varName='x'}))},(LockStmt{varName='x'},(HeapWriteStmt{referenceName='v1', expression=Expression multiplication between ReadHeapExp{expression=VariableExpression{key='v1'}} and ValueExpression{value=Type:IntType Value:10}},UnLockStmt{varName='x'})))},(domain.statement.lock.NewLockStmt@62fe79f0,(ForkStmt{statement=(ForkStmt{statement=(LockStmt{varName='q'},(HeapWriteStmt{referenceName='v2', expression=Expression plus between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:5}},UnLockStmt{varName='q'}))},(LockStmt{varName='q'},(HeapWriteStmt{referenceName='v2', expression=Expression multiplication between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:10}},UnLockStmt{varName='q'})))},(NopStatement,(NopStatement,(NopStatement,(NopStatement,(LockStmt{varName='x'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v1'}}},(UnLockStmt{varName='x'},(LockStmt{varName='q'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v2'}}},UnLockStmt{varName='q'}))))))))))))]
  *FileTable: {}
- *Heap: {}
+ *Heap: {2=Type:IntType Value:30, 1=Type:IntType Value:20}
 
 id 0 
- *SymtableStack : [{w=Type:IntType Value:5, v=Type:IntType Value:2}, {b=Type:IntType Value:5, a=Type:IntType Value:20}]
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:0, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
  *Output log : []
- *ExecutionStack:[NopStatement, (PrintStatement{VariableExpression{key='v'}},ForkStmt{statement=(ExecuteProc{procName='product', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]},ForkStmt{statement=ExecuteProc{procName='sum', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]}})}), ((VarDeclarationStatement:v with type=IntType,(AssigmentStatemnet v=Expression plus between VariableExpression{key='a'} and VariableExpression{key='b'},PrintStatement{VariableExpression{key='v'}})),ReturnStmt)]
+ *ExecutionStack:[NopStatement, (ForkStmt{statement=(ForkStmt{statement=(LockStmt{varName='x'},(HeapWriteStmt{referenceName='v1', expression=Expression minus between ReadHeapExp{expression=VariableExpression{key='v1'}} and ValueExpression{value=Type:IntType Value:1}},UnLockStmt{varName='x'}))},(LockStmt{varName='x'},(HeapWriteStmt{referenceName='v1', expression=Expression multiplication between ReadHeapExp{expression=VariableExpression{key='v1'}} and ValueExpression{value=Type:IntType Value:10}},UnLockStmt{varName='x'})))},(domain.statement.lock.NewLockStmt@62fe79f0,(ForkStmt{statement=(ForkStmt{statement=(LockStmt{varName='q'},(HeapWriteStmt{referenceName='v2', expression=Expression plus between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:5}},UnLockStmt{varName='q'}))},(LockStmt{varName='q'},(HeapWriteStmt{referenceName='v2', expression=Expression multiplication between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:10}},UnLockStmt{varName='q'})))},(NopStatement,(NopStatement,(NopStatement,(NopStatement,(LockStmt{varName='x'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v1'}}},(UnLockStmt{varName='x'},(LockStmt{varName='q'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v2'}}},UnLockStmt{varName='q'}))))))))))))]
  *FileTable: {}
- *Heap: {}
+ *Heap: {2=Type:IntType Value:30, 1=Type:IntType Value:20}
 
 id 0 
- *SymtableStack : [{w=Type:IntType Value:5, v=Type:IntType Value:2}, {b=Type:IntType Value:5, a=Type:IntType Value:20}]
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:0, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
  *Output log : []
- *ExecutionStack:[NopStatement, (PrintStatement{VariableExpression{key='v'}},ForkStmt{statement=(ExecuteProc{procName='product', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]},ForkStmt{statement=ExecuteProc{procName='sum', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]}})}), ReturnStmt, (VarDeclarationStatement:v with type=IntType,(AssigmentStatemnet v=Expression plus between VariableExpression{key='a'} and VariableExpression{key='b'},PrintStatement{VariableExpression{key='v'}}))]
+ *ExecutionStack:[NopStatement, (domain.statement.lock.NewLockStmt@62fe79f0,(ForkStmt{statement=(ForkStmt{statement=(LockStmt{varName='q'},(HeapWriteStmt{referenceName='v2', expression=Expression plus between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:5}},UnLockStmt{varName='q'}))},(LockStmt{varName='q'},(HeapWriteStmt{referenceName='v2', expression=Expression multiplication between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:10}},UnLockStmt{varName='q'})))},(NopStatement,(NopStatement,(NopStatement,(NopStatement,(LockStmt{varName='x'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v1'}}},(UnLockStmt{varName='x'},(LockStmt{varName='q'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v2'}}},UnLockStmt{varName='q'}))))))))))), ForkStmt{statement=(ForkStmt{statement=(LockStmt{varName='x'},(HeapWriteStmt{referenceName='v1', expression=Expression minus between ReadHeapExp{expression=VariableExpression{key='v1'}} and ValueExpression{value=Type:IntType Value:1}},UnLockStmt{varName='x'}))},(LockStmt{varName='x'},(HeapWriteStmt{referenceName='v1', expression=Expression multiplication between ReadHeapExp{expression=VariableExpression{key='v1'}} and ValueExpression{value=Type:IntType Value:10}},UnLockStmt{varName='x'})))}]
  *FileTable: {}
- *Heap: {}
+ *Heap: {2=Type:IntType Value:30, 1=Type:IntType Value:20}
 
 id 0 
- *SymtableStack : [{w=Type:IntType Value:5, v=Type:IntType Value:2}, {b=Type:IntType Value:5, a=Type:IntType Value:20}]
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:0, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
  *Output log : []
- *ExecutionStack:[NopStatement, (PrintStatement{VariableExpression{key='v'}},ForkStmt{statement=(ExecuteProc{procName='product', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]},ForkStmt{statement=ExecuteProc{procName='sum', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]}})}), ReturnStmt, (VarDeclarationStatement:v with type=IntType,(AssigmentStatemnet v=Expression plus between VariableExpression{key='a'} and VariableExpression{key='b'},PrintStatement{VariableExpression{key='v'}}))]
+ *ExecutionStack:[NopStatement, (domain.statement.lock.NewLockStmt@62fe79f0,(ForkStmt{statement=(ForkStmt{statement=(LockStmt{varName='q'},(HeapWriteStmt{referenceName='v2', expression=Expression plus between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:5}},UnLockStmt{varName='q'}))},(LockStmt{varName='q'},(HeapWriteStmt{referenceName='v2', expression=Expression multiplication between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:10}},UnLockStmt{varName='q'})))},(NopStatement,(NopStatement,(NopStatement,(NopStatement,(LockStmt{varName='x'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v1'}}},(UnLockStmt{varName='x'},(LockStmt{varName='q'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v2'}}},UnLockStmt{varName='q'}))))))))))), ForkStmt{statement=(ForkStmt{statement=(LockStmt{varName='x'},(HeapWriteStmt{referenceName='v1', expression=Expression minus between ReadHeapExp{expression=VariableExpression{key='v1'}} and ValueExpression{value=Type:IntType Value:1}},UnLockStmt{varName='x'}))},(LockStmt{varName='x'},(HeapWriteStmt{referenceName='v1', expression=Expression multiplication between ReadHeapExp{expression=VariableExpression{key='v1'}} and ValueExpression{value=Type:IntType Value:10}},UnLockStmt{varName='x'})))}]
  *FileTable: {}
- *Heap: {}
+ *Heap: {2=Type:IntType Value:30, 1=Type:IntType Value:20}
 
 id 0 
- *SymtableStack : [{w=Type:IntType Value:5, v=Type:IntType Value:2}, {b=Type:IntType Value:5, a=Type:IntType Value:20}]
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:0, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
  *Output log : []
- *ExecutionStack:[NopStatement, (PrintStatement{VariableExpression{key='v'}},ForkStmt{statement=(ExecuteProc{procName='product', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]},ForkStmt{statement=ExecuteProc{procName='sum', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]}})}), ReturnStmt, (AssigmentStatemnet v=Expression plus between VariableExpression{key='a'} and VariableExpression{key='b'},PrintStatement{VariableExpression{key='v'}}), VarDeclarationStatement:v with type=IntType]
+ *ExecutionStack:[NopStatement, (domain.statement.lock.NewLockStmt@62fe79f0,(ForkStmt{statement=(ForkStmt{statement=(LockStmt{varName='q'},(HeapWriteStmt{referenceName='v2', expression=Expression plus between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:5}},UnLockStmt{varName='q'}))},(LockStmt{varName='q'},(HeapWriteStmt{referenceName='v2', expression=Expression multiplication between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:10}},UnLockStmt{varName='q'})))},(NopStatement,(NopStatement,(NopStatement,(NopStatement,(LockStmt{varName='x'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v1'}}},(UnLockStmt{varName='x'},(LockStmt{varName='q'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v2'}}},UnLockStmt{varName='q'})))))))))))]
  *FileTable: {}
- *Heap: {}
+ *Heap: {2=Type:IntType Value:30, 1=Type:IntType Value:20}
 
-id 0 
- *SymtableStack : [{w=Type:IntType Value:5, v=Type:IntType Value:2}, {b=Type:IntType Value:5, a=Type:IntType Value:20}]
+id 1 
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:0, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
  *Output log : []
- *ExecutionStack:[NopStatement, (PrintStatement{VariableExpression{key='v'}},ForkStmt{statement=(ExecuteProc{procName='product', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]},ForkStmt{statement=ExecuteProc{procName='sum', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]}})}), ReturnStmt, (AssigmentStatemnet v=Expression plus between VariableExpression{key='a'} and VariableExpression{key='b'},PrintStatement{VariableExpression{key='v'}}), VarDeclarationStatement:v with type=IntType]
+ *ExecutionStack:[(ForkStmt{statement=(LockStmt{varName='x'},(HeapWriteStmt{referenceName='v1', expression=Expression minus between ReadHeapExp{expression=VariableExpression{key='v1'}} and ValueExpression{value=Type:IntType Value:1}},UnLockStmt{varName='x'}))},(LockStmt{varName='x'},(HeapWriteStmt{referenceName='v1', expression=Expression multiplication between ReadHeapExp{expression=VariableExpression{key='v1'}} and ValueExpression{value=Type:IntType Value:10}},UnLockStmt{varName='x'})))]
  *FileTable: {}
- *Heap: {}
+ *Heap: {2=Type:IntType Value:30, 1=Type:IntType Value:20}
 
 id 0 
- *SymtableStack : [{w=Type:IntType Value:5, v=Type:IntType Value:2}, {b=Type:IntType Value:5, a=Type:IntType Value:20, v=Type:IntType Value:0}]
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:0, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
  *Output log : []
- *ExecutionStack:[NopStatement, (PrintStatement{VariableExpression{key='v'}},ForkStmt{statement=(ExecuteProc{procName='product', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]},ForkStmt{statement=ExecuteProc{procName='sum', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]}})}), ReturnStmt, (AssigmentStatemnet v=Expression plus between VariableExpression{key='a'} and VariableExpression{key='b'},PrintStatement{VariableExpression{key='v'}})]
+ *ExecutionStack:[NopStatement, (domain.statement.lock.NewLockStmt@62fe79f0,(ForkStmt{statement=(ForkStmt{statement=(LockStmt{varName='q'},(HeapWriteStmt{referenceName='v2', expression=Expression plus between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:5}},UnLockStmt{varName='q'}))},(LockStmt{varName='q'},(HeapWriteStmt{referenceName='v2', expression=Expression multiplication between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:10}},UnLockStmt{varName='q'})))},(NopStatement,(NopStatement,(NopStatement,(NopStatement,(LockStmt{varName='x'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v1'}}},(UnLockStmt{varName='x'},(LockStmt{varName='q'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v2'}}},UnLockStmt{varName='q'})))))))))))]
  *FileTable: {}
- *Heap: {}
+ *Heap: {2=Type:IntType Value:30, 1=Type:IntType Value:20}
 
-id 0 
- *SymtableStack : [{w=Type:IntType Value:5, v=Type:IntType Value:2}, {b=Type:IntType Value:5, a=Type:IntType Value:20, v=Type:IntType Value:0}]
+id 1 
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:0, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
  *Output log : []
- *ExecutionStack:[NopStatement, (PrintStatement{VariableExpression{key='v'}},ForkStmt{statement=(ExecuteProc{procName='product', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]},ForkStmt{statement=ExecuteProc{procName='sum', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]}})}), ReturnStmt, (AssigmentStatemnet v=Expression plus between VariableExpression{key='a'} and VariableExpression{key='b'},PrintStatement{VariableExpression{key='v'}})]
+ *ExecutionStack:[(ForkStmt{statement=(LockStmt{varName='x'},(HeapWriteStmt{referenceName='v1', expression=Expression minus between ReadHeapExp{expression=VariableExpression{key='v1'}} and ValueExpression{value=Type:IntType Value:1}},UnLockStmt{varName='x'}))},(LockStmt{varName='x'},(HeapWriteStmt{referenceName='v1', expression=Expression multiplication between ReadHeapExp{expression=VariableExpression{key='v1'}} and ValueExpression{value=Type:IntType Value:10}},UnLockStmt{varName='x'})))]
  *FileTable: {}
- *Heap: {}
+ *Heap: {2=Type:IntType Value:30, 1=Type:IntType Value:20}
 
 id 0 
- *SymtableStack : [{w=Type:IntType Value:5, v=Type:IntType Value:2}, {b=Type:IntType Value:5, a=Type:IntType Value:20, v=Type:IntType Value:0}]
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:0, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
  *Output log : []
- *ExecutionStack:[NopStatement, (PrintStatement{VariableExpression{key='v'}},ForkStmt{statement=(ExecuteProc{procName='product', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]},ForkStmt{statement=ExecuteProc{procName='sum', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]}})}), ReturnStmt, PrintStatement{VariableExpression{key='v'}}, AssigmentStatemnet v=Expression plus between VariableExpression{key='a'} and VariableExpression{key='b'}]
+ *ExecutionStack:[NopStatement, (ForkStmt{statement=(ForkStmt{statement=(LockStmt{varName='q'},(HeapWriteStmt{referenceName='v2', expression=Expression plus between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:5}},UnLockStmt{varName='q'}))},(LockStmt{varName='q'},(HeapWriteStmt{referenceName='v2', expression=Expression multiplication between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:10}},UnLockStmt{varName='q'})))},(NopStatement,(NopStatement,(NopStatement,(NopStatement,(LockStmt{varName='x'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v1'}}},(UnLockStmt{varName='x'},(LockStmt{varName='q'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v2'}}},UnLockStmt{varName='q'})))))))))), domain.statement.lock.NewLockStmt@62fe79f0]
  *FileTable: {}
- *Heap: {}
+ *Heap: {2=Type:IntType Value:30, 1=Type:IntType Value:20}
 
-id 0 
- *SymtableStack : [{w=Type:IntType Value:5, v=Type:IntType Value:2}, {b=Type:IntType Value:5, a=Type:IntType Value:20, v=Type:IntType Value:0}]
+id 1 
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:0, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
  *Output log : []
- *ExecutionStack:[NopStatement, (PrintStatement{VariableExpression{key='v'}},ForkStmt{statement=(ExecuteProc{procName='product', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]},ForkStmt{statement=ExecuteProc{procName='sum', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]}})}), ReturnStmt, PrintStatement{VariableExpression{key='v'}}, AssigmentStatemnet v=Expression plus between VariableExpression{key='a'} and VariableExpression{key='b'}]
+ *ExecutionStack:[(LockStmt{varName='x'},(HeapWriteStmt{referenceName='v1', expression=Expression multiplication between ReadHeapExp{expression=VariableExpression{key='v1'}} and ValueExpression{value=Type:IntType Value:10}},UnLockStmt{varName='x'})), ForkStmt{statement=(LockStmt{varName='x'},(HeapWriteStmt{referenceName='v1', expression=Expression minus between ReadHeapExp{expression=VariableExpression{key='v1'}} and ValueExpression{value=Type:IntType Value:1}},UnLockStmt{varName='x'}))}]
  *FileTable: {}
- *Heap: {}
+ *Heap: {2=Type:IntType Value:30, 1=Type:IntType Value:20}
 
 id 0 
- *SymtableStack : [{w=Type:IntType Value:5, v=Type:IntType Value:2}, {b=Type:IntType Value:5, a=Type:IntType Value:20, v=Type:IntType Value:25}]
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:0, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
  *Output log : []
- *ExecutionStack:[NopStatement, (PrintStatement{VariableExpression{key='v'}},ForkStmt{statement=(ExecuteProc{procName='product', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]},ForkStmt{statement=ExecuteProc{procName='sum', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]}})}), ReturnStmt, PrintStatement{VariableExpression{key='v'}}]
+ *ExecutionStack:[NopStatement, (ForkStmt{statement=(ForkStmt{statement=(LockStmt{varName='q'},(HeapWriteStmt{referenceName='v2', expression=Expression plus between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:5}},UnLockStmt{varName='q'}))},(LockStmt{varName='q'},(HeapWriteStmt{referenceName='v2', expression=Expression multiplication between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:10}},UnLockStmt{varName='q'})))},(NopStatement,(NopStatement,(NopStatement,(NopStatement,(LockStmt{varName='x'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v1'}}},(UnLockStmt{varName='x'},(LockStmt{varName='q'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v2'}}},UnLockStmt{varName='q'})))))))))), domain.statement.lock.NewLockStmt@62fe79f0]
  *FileTable: {}
- *Heap: {}
+ *Heap: {2=Type:IntType Value:30, 1=Type:IntType Value:20}
 
-id 0 
- *SymtableStack : [{w=Type:IntType Value:5, v=Type:IntType Value:2}, {b=Type:IntType Value:5, a=Type:IntType Value:20, v=Type:IntType Value:25}]
+id 1 
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:0, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
  *Output log : []
- *ExecutionStack:[NopStatement, (PrintStatement{VariableExpression{key='v'}},ForkStmt{statement=(ExecuteProc{procName='product', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]},ForkStmt{statement=ExecuteProc{procName='sum', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]}})}), ReturnStmt, PrintStatement{VariableExpression{key='v'}}]
+ *ExecutionStack:[(LockStmt{varName='x'},(HeapWriteStmt{referenceName='v1', expression=Expression multiplication between ReadHeapExp{expression=VariableExpression{key='v1'}} and ValueExpression{value=Type:IntType Value:10}},UnLockStmt{varName='x'})), ForkStmt{statement=(LockStmt{varName='x'},(HeapWriteStmt{referenceName='v1', expression=Expression minus between ReadHeapExp{expression=VariableExpression{key='v1'}} and ValueExpression{value=Type:IntType Value:1}},UnLockStmt{varName='x'}))}]
  *FileTable: {}
- *Heap: {}
+ *Heap: {2=Type:IntType Value:30, 1=Type:IntType Value:20}
 
 id 0 
- *SymtableStack : [{w=Type:IntType Value:5, v=Type:IntType Value:2}, {b=Type:IntType Value:5, a=Type:IntType Value:20, v=Type:IntType Value:25}]
- *Output log : [Type:IntType Value:25
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:2, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : []
+ *ExecutionStack:[NopStatement, (ForkStmt{statement=(ForkStmt{statement=(LockStmt{varName='q'},(HeapWriteStmt{referenceName='v2', expression=Expression plus between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:5}},UnLockStmt{varName='q'}))},(LockStmt{varName='q'},(HeapWriteStmt{referenceName='v2', expression=Expression multiplication between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:10}},UnLockStmt{varName='q'})))},(NopStatement,(NopStatement,(NopStatement,(NopStatement,(LockStmt{varName='x'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v1'}}},(UnLockStmt{varName='x'},(LockStmt{varName='q'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v2'}}},UnLockStmt{varName='q'}))))))))))]
+ *FileTable: {}
+ *Heap: {2=Type:IntType Value:30, 1=Type:IntType Value:20}
+
+id 1 
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:0, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : []
+ *ExecutionStack:[(LockStmt{varName='x'},(HeapWriteStmt{referenceName='v1', expression=Expression multiplication between ReadHeapExp{expression=VariableExpression{key='v1'}} and ValueExpression{value=Type:IntType Value:10}},UnLockStmt{varName='x'}))]
+ *FileTable: {}
+ *Heap: {2=Type:IntType Value:30, 1=Type:IntType Value:20}
+
+id 2 
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:0, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : []
+ *ExecutionStack:[(LockStmt{varName='x'},(HeapWriteStmt{referenceName='v1', expression=Expression minus between ReadHeapExp{expression=VariableExpression{key='v1'}} and ValueExpression{value=Type:IntType Value:1}},UnLockStmt{varName='x'}))]
+ *FileTable: {}
+ *Heap: {2=Type:IntType Value:30, 1=Type:IntType Value:20}
+
+id 0 
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:2, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : []
+ *ExecutionStack:[NopStatement, (ForkStmt{statement=(ForkStmt{statement=(LockStmt{varName='q'},(HeapWriteStmt{referenceName='v2', expression=Expression plus between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:5}},UnLockStmt{varName='q'}))},(LockStmt{varName='q'},(HeapWriteStmt{referenceName='v2', expression=Expression multiplication between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:10}},UnLockStmt{varName='q'})))},(NopStatement,(NopStatement,(NopStatement,(NopStatement,(LockStmt{varName='x'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v1'}}},(UnLockStmt{varName='x'},(LockStmt{varName='q'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v2'}}},UnLockStmt{varName='q'}))))))))))]
+ *FileTable: {}
+ *Heap: {2=Type:IntType Value:30, 1=Type:IntType Value:20}
+
+id 1 
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:0, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : []
+ *ExecutionStack:[(LockStmt{varName='x'},(HeapWriteStmt{referenceName='v1', expression=Expression multiplication between ReadHeapExp{expression=VariableExpression{key='v1'}} and ValueExpression{value=Type:IntType Value:10}},UnLockStmt{varName='x'}))]
+ *FileTable: {}
+ *Heap: {2=Type:IntType Value:30, 1=Type:IntType Value:20}
+
+id 2 
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:0, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : []
+ *ExecutionStack:[(LockStmt{varName='x'},(HeapWriteStmt{referenceName='v1', expression=Expression minus between ReadHeapExp{expression=VariableExpression{key='v1'}} and ValueExpression{value=Type:IntType Value:1}},UnLockStmt{varName='x'}))]
+ *FileTable: {}
+ *Heap: {2=Type:IntType Value:30, 1=Type:IntType Value:20}
+
+id 0 
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:2, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : []
+ *ExecutionStack:[NopStatement, (NopStatement,(NopStatement,(NopStatement,(NopStatement,(LockStmt{varName='x'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v1'}}},(UnLockStmt{varName='x'},(LockStmt{varName='q'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v2'}}},UnLockStmt{varName='q'}))))))))), ForkStmt{statement=(ForkStmt{statement=(LockStmt{varName='q'},(HeapWriteStmt{referenceName='v2', expression=Expression plus between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:5}},UnLockStmt{varName='q'}))},(LockStmt{varName='q'},(HeapWriteStmt{referenceName='v2', expression=Expression multiplication between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:10}},UnLockStmt{varName='q'})))}]
+ *FileTable: {}
+ *Heap: {2=Type:IntType Value:30, 1=Type:IntType Value:20}
+
+id 1 
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:0, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : []
+ *ExecutionStack:[(HeapWriteStmt{referenceName='v1', expression=Expression multiplication between ReadHeapExp{expression=VariableExpression{key='v1'}} and ValueExpression{value=Type:IntType Value:10}},UnLockStmt{varName='x'}), LockStmt{varName='x'}]
+ *FileTable: {}
+ *Heap: {2=Type:IntType Value:30, 1=Type:IntType Value:20}
+
+id 2 
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:0, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : []
+ *ExecutionStack:[(HeapWriteStmt{referenceName='v1', expression=Expression minus between ReadHeapExp{expression=VariableExpression{key='v1'}} and ValueExpression{value=Type:IntType Value:1}},UnLockStmt{varName='x'}), LockStmt{varName='x'}]
+ *FileTable: {}
+ *Heap: {2=Type:IntType Value:30, 1=Type:IntType Value:20}
+
+id 0 
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:2, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : []
+ *ExecutionStack:[NopStatement, (NopStatement,(NopStatement,(NopStatement,(NopStatement,(LockStmt{varName='x'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v1'}}},(UnLockStmt{varName='x'},(LockStmt{varName='q'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v2'}}},UnLockStmt{varName='q'}))))))))), ForkStmt{statement=(ForkStmt{statement=(LockStmt{varName='q'},(HeapWriteStmt{referenceName='v2', expression=Expression plus between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:5}},UnLockStmt{varName='q'}))},(LockStmt{varName='q'},(HeapWriteStmt{referenceName='v2', expression=Expression multiplication between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:10}},UnLockStmt{varName='q'})))}]
+ *FileTable: {}
+ *Heap: {2=Type:IntType Value:30, 1=Type:IntType Value:20}
+
+id 1 
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:0, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : []
+ *ExecutionStack:[(HeapWriteStmt{referenceName='v1', expression=Expression multiplication between ReadHeapExp{expression=VariableExpression{key='v1'}} and ValueExpression{value=Type:IntType Value:10}},UnLockStmt{varName='x'}), LockStmt{varName='x'}]
+ *FileTable: {}
+ *Heap: {2=Type:IntType Value:30, 1=Type:IntType Value:20}
+
+id 2 
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:0, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : []
+ *ExecutionStack:[(HeapWriteStmt{referenceName='v1', expression=Expression minus between ReadHeapExp{expression=VariableExpression{key='v1'}} and ValueExpression{value=Type:IntType Value:1}},UnLockStmt{varName='x'}), LockStmt{varName='x'}]
+ *FileTable: {}
+ *Heap: {2=Type:IntType Value:30, 1=Type:IntType Value:20}
+
+id 0 
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:2, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : []
+ *ExecutionStack:[NopStatement, (NopStatement,(NopStatement,(NopStatement,(NopStatement,(LockStmt{varName='x'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v1'}}},(UnLockStmt{varName='x'},(LockStmt{varName='q'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v2'}}},UnLockStmt{varName='q'})))))))))]
+ *FileTable: {}
+ *Heap: {2=Type:IntType Value:30, 1=Type:IntType Value:20}
+
+id 1 
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:0, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : []
+ *ExecutionStack:[(HeapWriteStmt{referenceName='v1', expression=Expression multiplication between ReadHeapExp{expression=VariableExpression{key='v1'}} and ValueExpression{value=Type:IntType Value:10}},UnLockStmt{varName='x'})]
+ *FileTable: {}
+ *Heap: {2=Type:IntType Value:30, 1=Type:IntType Value:20}
+
+id 2 
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:0, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : []
+ *ExecutionStack:[(HeapWriteStmt{referenceName='v1', expression=Expression minus between ReadHeapExp{expression=VariableExpression{key='v1'}} and ValueExpression{value=Type:IntType Value:1}},UnLockStmt{varName='x'}), LockStmt{varName='x'}]
+ *FileTable: {}
+ *Heap: {2=Type:IntType Value:30, 1=Type:IntType Value:20}
+
+id 3 
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:2, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : []
+ *ExecutionStack:[(ForkStmt{statement=(LockStmt{varName='q'},(HeapWriteStmt{referenceName='v2', expression=Expression plus between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:5}},UnLockStmt{varName='q'}))},(LockStmt{varName='q'},(HeapWriteStmt{referenceName='v2', expression=Expression multiplication between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:10}},UnLockStmt{varName='q'})))]
+ *FileTable: {}
+ *Heap: {2=Type:IntType Value:30, 1=Type:IntType Value:20}
+
+id 0 
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:2, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : []
+ *ExecutionStack:[NopStatement, (NopStatement,(NopStatement,(NopStatement,(NopStatement,(LockStmt{varName='x'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v1'}}},(UnLockStmt{varName='x'},(LockStmt{varName='q'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v2'}}},UnLockStmt{varName='q'})))))))))]
+ *FileTable: {}
+ *Heap: {2=Type:IntType Value:30, 1=Type:IntType Value:20}
+
+id 1 
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:0, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : []
+ *ExecutionStack:[(HeapWriteStmt{referenceName='v1', expression=Expression multiplication between ReadHeapExp{expression=VariableExpression{key='v1'}} and ValueExpression{value=Type:IntType Value:10}},UnLockStmt{varName='x'})]
+ *FileTable: {}
+ *Heap: {2=Type:IntType Value:30, 1=Type:IntType Value:20}
+
+id 2 
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:0, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : []
+ *ExecutionStack:[(HeapWriteStmt{referenceName='v1', expression=Expression minus between ReadHeapExp{expression=VariableExpression{key='v1'}} and ValueExpression{value=Type:IntType Value:1}},UnLockStmt{varName='x'}), LockStmt{varName='x'}]
+ *FileTable: {}
+ *Heap: {2=Type:IntType Value:30, 1=Type:IntType Value:20}
+
+id 3 
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:2, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : []
+ *ExecutionStack:[(ForkStmt{statement=(LockStmt{varName='q'},(HeapWriteStmt{referenceName='v2', expression=Expression plus between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:5}},UnLockStmt{varName='q'}))},(LockStmt{varName='q'},(HeapWriteStmt{referenceName='v2', expression=Expression multiplication between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:10}},UnLockStmt{varName='q'})))]
+ *FileTable: {}
+ *Heap: {2=Type:IntType Value:30, 1=Type:IntType Value:20}
+
+id 0 
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:2, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : []
+ *ExecutionStack:[NopStatement, (NopStatement,(NopStatement,(NopStatement,(LockStmt{varName='x'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v1'}}},(UnLockStmt{varName='x'},(LockStmt{varName='q'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v2'}}},UnLockStmt{varName='q'})))))))), NopStatement]
+ *FileTable: {}
+ *Heap: {2=Type:IntType Value:30, 1=Type:IntType Value:20}
+
+id 1 
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:0, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : []
+ *ExecutionStack:[UnLockStmt{varName='x'}, HeapWriteStmt{referenceName='v1', expression=Expression multiplication between ReadHeapExp{expression=VariableExpression{key='v1'}} and ValueExpression{value=Type:IntType Value:10}}]
+ *FileTable: {}
+ *Heap: {2=Type:IntType Value:30, 1=Type:IntType Value:20}
+
+id 2 
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:0, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : []
+ *ExecutionStack:[(HeapWriteStmt{referenceName='v1', expression=Expression minus between ReadHeapExp{expression=VariableExpression{key='v1'}} and ValueExpression{value=Type:IntType Value:1}},UnLockStmt{varName='x'}), LockStmt{varName='x'}]
+ *FileTable: {}
+ *Heap: {2=Type:IntType Value:30, 1=Type:IntType Value:20}
+
+id 3 
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:2, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : []
+ *ExecutionStack:[(LockStmt{varName='q'},(HeapWriteStmt{referenceName='v2', expression=Expression multiplication between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:10}},UnLockStmt{varName='q'})), ForkStmt{statement=(LockStmt{varName='q'},(HeapWriteStmt{referenceName='v2', expression=Expression plus between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:5}},UnLockStmt{varName='q'}))}]
+ *FileTable: {}
+ *Heap: {2=Type:IntType Value:30, 1=Type:IntType Value:20}
+
+id 0 
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:2, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : []
+ *ExecutionStack:[NopStatement, (NopStatement,(NopStatement,(NopStatement,(LockStmt{varName='x'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v1'}}},(UnLockStmt{varName='x'},(LockStmt{varName='q'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v2'}}},UnLockStmt{varName='q'})))))))), NopStatement]
+ *FileTable: {}
+ *Heap: {2=Type:IntType Value:30, 1=Type:IntType Value:20}
+
+id 1 
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:0, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : []
+ *ExecutionStack:[UnLockStmt{varName='x'}, HeapWriteStmt{referenceName='v1', expression=Expression multiplication between ReadHeapExp{expression=VariableExpression{key='v1'}} and ValueExpression{value=Type:IntType Value:10}}]
+ *FileTable: {}
+ *Heap: {2=Type:IntType Value:30, 1=Type:IntType Value:20}
+
+id 2 
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:0, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : []
+ *ExecutionStack:[(HeapWriteStmt{referenceName='v1', expression=Expression minus between ReadHeapExp{expression=VariableExpression{key='v1'}} and ValueExpression{value=Type:IntType Value:1}},UnLockStmt{varName='x'}), LockStmt{varName='x'}]
+ *FileTable: {}
+ *Heap: {2=Type:IntType Value:30, 1=Type:IntType Value:20}
+
+id 3 
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:2, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : []
+ *ExecutionStack:[(LockStmt{varName='q'},(HeapWriteStmt{referenceName='v2', expression=Expression multiplication between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:10}},UnLockStmt{varName='q'})), ForkStmt{statement=(LockStmt{varName='q'},(HeapWriteStmt{referenceName='v2', expression=Expression plus between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:5}},UnLockStmt{varName='q'}))}]
+ *FileTable: {}
+ *Heap: {2=Type:IntType Value:30, 1=Type:IntType Value:20}
+
+id 0 
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:2, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : []
+ *ExecutionStack:[NopStatement, (NopStatement,(NopStatement,(NopStatement,(LockStmt{varName='x'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v1'}}},(UnLockStmt{varName='x'},(LockStmt{varName='q'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v2'}}},UnLockStmt{varName='q'}))))))))]
+ *FileTable: {}
+ *Heap: {2=Type:IntType Value:30, 1=Type:IntType Value:200}
+
+id 1 
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:0, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : []
+ *ExecutionStack:[UnLockStmt{varName='x'}]
+ *FileTable: {}
+ *Heap: {2=Type:IntType Value:30, 1=Type:IntType Value:200}
+
+id 2 
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:0, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : []
+ *ExecutionStack:[(HeapWriteStmt{referenceName='v1', expression=Expression minus between ReadHeapExp{expression=VariableExpression{key='v1'}} and ValueExpression{value=Type:IntType Value:1}},UnLockStmt{varName='x'}), LockStmt{varName='x'}]
+ *FileTable: {}
+ *Heap: {2=Type:IntType Value:30, 1=Type:IntType Value:200}
+
+id 3 
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:2, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : []
+ *ExecutionStack:[(LockStmt{varName='q'},(HeapWriteStmt{referenceName='v2', expression=Expression multiplication between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:10}},UnLockStmt{varName='q'}))]
+ *FileTable: {}
+ *Heap: {2=Type:IntType Value:30, 1=Type:IntType Value:200}
+
+id 4 
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:2, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : []
+ *ExecutionStack:[(LockStmt{varName='q'},(HeapWriteStmt{referenceName='v2', expression=Expression plus between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:5}},UnLockStmt{varName='q'}))]
+ *FileTable: {}
+ *Heap: {2=Type:IntType Value:30, 1=Type:IntType Value:200}
+
+id 0 
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:2, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : []
+ *ExecutionStack:[NopStatement, (NopStatement,(NopStatement,(NopStatement,(LockStmt{varName='x'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v1'}}},(UnLockStmt{varName='x'},(LockStmt{varName='q'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v2'}}},UnLockStmt{varName='q'}))))))))]
+ *FileTable: {}
+ *Heap: {2=Type:IntType Value:30, 1=Type:IntType Value:200}
+
+id 1 
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:0, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : []
+ *ExecutionStack:[UnLockStmt{varName='x'}]
+ *FileTable: {}
+ *Heap: {2=Type:IntType Value:30, 1=Type:IntType Value:200}
+
+id 2 
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:0, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : []
+ *ExecutionStack:[(HeapWriteStmt{referenceName='v1', expression=Expression minus between ReadHeapExp{expression=VariableExpression{key='v1'}} and ValueExpression{value=Type:IntType Value:1}},UnLockStmt{varName='x'}), LockStmt{varName='x'}]
+ *FileTable: {}
+ *Heap: {2=Type:IntType Value:30, 1=Type:IntType Value:200}
+
+id 3 
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:2, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : []
+ *ExecutionStack:[(LockStmt{varName='q'},(HeapWriteStmt{referenceName='v2', expression=Expression multiplication between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:10}},UnLockStmt{varName='q'}))]
+ *FileTable: {}
+ *Heap: {2=Type:IntType Value:30, 1=Type:IntType Value:200}
+
+id 4 
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:2, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : []
+ *ExecutionStack:[(LockStmt{varName='q'},(HeapWriteStmt{referenceName='v2', expression=Expression plus between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:5}},UnLockStmt{varName='q'}))]
+ *FileTable: {}
+ *Heap: {2=Type:IntType Value:30, 1=Type:IntType Value:200}
+
+id 0 
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:2, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : []
+ *ExecutionStack:[NopStatement, (NopStatement,(NopStatement,(LockStmt{varName='x'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v1'}}},(UnLockStmt{varName='x'},(LockStmt{varName='q'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v2'}}},UnLockStmt{varName='q'}))))))), NopStatement]
+ *FileTable: {}
+ *Heap: {2=Type:IntType Value:30, 1=Type:IntType Value:200}
+
+id 1 
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:0, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : []
+ *ExecutionStack:[]
+ *FileTable: {}
+ *Heap: {2=Type:IntType Value:30, 1=Type:IntType Value:200}
+
+id 2 
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:0, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : []
+ *ExecutionStack:[(HeapWriteStmt{referenceName='v1', expression=Expression minus between ReadHeapExp{expression=VariableExpression{key='v1'}} and ValueExpression{value=Type:IntType Value:1}},UnLockStmt{varName='x'}), LockStmt{varName='x'}]
+ *FileTable: {}
+ *Heap: {2=Type:IntType Value:30, 1=Type:IntType Value:200}
+
+id 3 
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:2, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : []
+ *ExecutionStack:[(HeapWriteStmt{referenceName='v2', expression=Expression multiplication between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:10}},UnLockStmt{varName='q'}), LockStmt{varName='q'}]
+ *FileTable: {}
+ *Heap: {2=Type:IntType Value:30, 1=Type:IntType Value:200}
+
+id 4 
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:2, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : []
+ *ExecutionStack:[(HeapWriteStmt{referenceName='v2', expression=Expression plus between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:5}},UnLockStmt{varName='q'}), LockStmt{varName='q'}]
+ *FileTable: {}
+ *Heap: {2=Type:IntType Value:30, 1=Type:IntType Value:200}
+
+id 0 
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:2, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : []
+ *ExecutionStack:[NopStatement, (NopStatement,(NopStatement,(LockStmt{varName='x'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v1'}}},(UnLockStmt{varName='x'},(LockStmt{varName='q'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v2'}}},UnLockStmt{varName='q'}))))))), NopStatement]
+ *FileTable: {}
+ *Heap: {2=Type:IntType Value:30, 1=Type:IntType Value:200}
+
+id 2 
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:0, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : []
+ *ExecutionStack:[(HeapWriteStmt{referenceName='v1', expression=Expression minus between ReadHeapExp{expression=VariableExpression{key='v1'}} and ValueExpression{value=Type:IntType Value:1}},UnLockStmt{varName='x'}), LockStmt{varName='x'}]
+ *FileTable: {}
+ *Heap: {2=Type:IntType Value:30, 1=Type:IntType Value:200}
+
+id 3 
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:2, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : []
+ *ExecutionStack:[(HeapWriteStmt{referenceName='v2', expression=Expression multiplication between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:10}},UnLockStmt{varName='q'}), LockStmt{varName='q'}]
+ *FileTable: {}
+ *Heap: {2=Type:IntType Value:30, 1=Type:IntType Value:200}
+
+id 4 
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:2, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : []
+ *ExecutionStack:[(HeapWriteStmt{referenceName='v2', expression=Expression plus between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:5}},UnLockStmt{varName='q'}), LockStmt{varName='q'}]
+ *FileTable: {}
+ *Heap: {2=Type:IntType Value:30, 1=Type:IntType Value:200}
+
+id 0 
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:2, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : []
+ *ExecutionStack:[NopStatement, (NopStatement,(NopStatement,(LockStmt{varName='x'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v1'}}},(UnLockStmt{varName='x'},(LockStmt{varName='q'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v2'}}},UnLockStmt{varName='q'})))))))]
+ *FileTable: {}
+ *Heap: {2=Type:IntType Value:30, 1=Type:IntType Value:200}
+
+id 2 
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:0, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : []
+ *ExecutionStack:[(HeapWriteStmt{referenceName='v1', expression=Expression minus between ReadHeapExp{expression=VariableExpression{key='v1'}} and ValueExpression{value=Type:IntType Value:1}},UnLockStmt{varName='x'})]
+ *FileTable: {}
+ *Heap: {2=Type:IntType Value:30, 1=Type:IntType Value:200}
+
+id 3 
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:2, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : []
+ *ExecutionStack:[(HeapWriteStmt{referenceName='v2', expression=Expression multiplication between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:10}},UnLockStmt{varName='q'})]
+ *FileTable: {}
+ *Heap: {2=Type:IntType Value:30, 1=Type:IntType Value:200}
+
+id 4 
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:2, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : []
+ *ExecutionStack:[(HeapWriteStmt{referenceName='v2', expression=Expression plus between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:5}},UnLockStmt{varName='q'}), LockStmt{varName='q'}]
+ *FileTable: {}
+ *Heap: {2=Type:IntType Value:30, 1=Type:IntType Value:200}
+
+id 0 
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:2, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : []
+ *ExecutionStack:[NopStatement, (NopStatement,(NopStatement,(LockStmt{varName='x'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v1'}}},(UnLockStmt{varName='x'},(LockStmt{varName='q'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v2'}}},UnLockStmt{varName='q'})))))))]
+ *FileTable: {}
+ *Heap: {2=Type:IntType Value:30, 1=Type:IntType Value:200}
+
+id 2 
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:0, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : []
+ *ExecutionStack:[(HeapWriteStmt{referenceName='v1', expression=Expression minus between ReadHeapExp{expression=VariableExpression{key='v1'}} and ValueExpression{value=Type:IntType Value:1}},UnLockStmt{varName='x'})]
+ *FileTable: {}
+ *Heap: {2=Type:IntType Value:30, 1=Type:IntType Value:200}
+
+id 3 
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:2, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : []
+ *ExecutionStack:[(HeapWriteStmt{referenceName='v2', expression=Expression multiplication between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:10}},UnLockStmt{varName='q'})]
+ *FileTable: {}
+ *Heap: {2=Type:IntType Value:30, 1=Type:IntType Value:200}
+
+id 4 
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:2, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : []
+ *ExecutionStack:[(HeapWriteStmt{referenceName='v2', expression=Expression plus between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:5}},UnLockStmt{varName='q'}), LockStmt{varName='q'}]
+ *FileTable: {}
+ *Heap: {2=Type:IntType Value:30, 1=Type:IntType Value:200}
+
+id 0 
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:2, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : []
+ *ExecutionStack:[NopStatement, (NopStatement,(LockStmt{varName='x'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v1'}}},(UnLockStmt{varName='x'},(LockStmt{varName='q'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v2'}}},UnLockStmt{varName='q'})))))), NopStatement]
+ *FileTable: {}
+ *Heap: {2=Type:IntType Value:30, 1=Type:IntType Value:200}
+
+id 2 
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:0, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : []
+ *ExecutionStack:[UnLockStmt{varName='x'}, HeapWriteStmt{referenceName='v1', expression=Expression minus between ReadHeapExp{expression=VariableExpression{key='v1'}} and ValueExpression{value=Type:IntType Value:1}}]
+ *FileTable: {}
+ *Heap: {2=Type:IntType Value:30, 1=Type:IntType Value:200}
+
+id 3 
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:2, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : []
+ *ExecutionStack:[UnLockStmt{varName='q'}, HeapWriteStmt{referenceName='v2', expression=Expression multiplication between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:10}}]
+ *FileTable: {}
+ *Heap: {2=Type:IntType Value:30, 1=Type:IntType Value:200}
+
+id 4 
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:2, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : []
+ *ExecutionStack:[(HeapWriteStmt{referenceName='v2', expression=Expression plus between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:5}},UnLockStmt{varName='q'}), LockStmt{varName='q'}]
+ *FileTable: {}
+ *Heap: {2=Type:IntType Value:30, 1=Type:IntType Value:200}
+
+id 0 
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:2, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : []
+ *ExecutionStack:[NopStatement, (NopStatement,(LockStmt{varName='x'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v1'}}},(UnLockStmt{varName='x'},(LockStmt{varName='q'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v2'}}},UnLockStmt{varName='q'})))))), NopStatement]
+ *FileTable: {}
+ *Heap: {2=Type:IntType Value:30, 1=Type:IntType Value:200}
+
+id 2 
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:0, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : []
+ *ExecutionStack:[UnLockStmt{varName='x'}, HeapWriteStmt{referenceName='v1', expression=Expression minus between ReadHeapExp{expression=VariableExpression{key='v1'}} and ValueExpression{value=Type:IntType Value:1}}]
+ *FileTable: {}
+ *Heap: {2=Type:IntType Value:30, 1=Type:IntType Value:200}
+
+id 3 
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:2, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : []
+ *ExecutionStack:[UnLockStmt{varName='q'}, HeapWriteStmt{referenceName='v2', expression=Expression multiplication between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:10}}]
+ *FileTable: {}
+ *Heap: {2=Type:IntType Value:30, 1=Type:IntType Value:200}
+
+id 4 
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:2, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : []
+ *ExecutionStack:[(HeapWriteStmt{referenceName='v2', expression=Expression plus between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:5}},UnLockStmt{varName='q'}), LockStmt{varName='q'}]
+ *FileTable: {}
+ *Heap: {2=Type:IntType Value:30, 1=Type:IntType Value:200}
+
+id 0 
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:2, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : []
+ *ExecutionStack:[NopStatement, (NopStatement,(LockStmt{varName='x'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v1'}}},(UnLockStmt{varName='x'},(LockStmt{varName='q'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v2'}}},UnLockStmt{varName='q'}))))))]
+ *FileTable: {}
+ *Heap: {2=Type:IntType Value:300, 1=Type:IntType Value:199}
+
+id 2 
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:0, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : []
+ *ExecutionStack:[UnLockStmt{varName='x'}]
+ *FileTable: {}
+ *Heap: {2=Type:IntType Value:300, 1=Type:IntType Value:199}
+
+id 3 
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:2, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : []
+ *ExecutionStack:[UnLockStmt{varName='q'}]
+ *FileTable: {}
+ *Heap: {2=Type:IntType Value:300, 1=Type:IntType Value:199}
+
+id 4 
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:2, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : []
+ *ExecutionStack:[(HeapWriteStmt{referenceName='v2', expression=Expression plus between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:5}},UnLockStmt{varName='q'}), LockStmt{varName='q'}]
+ *FileTable: {}
+ *Heap: {2=Type:IntType Value:300, 1=Type:IntType Value:199}
+
+id 0 
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:2, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : []
+ *ExecutionStack:[NopStatement, (NopStatement,(LockStmt{varName='x'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v1'}}},(UnLockStmt{varName='x'},(LockStmt{varName='q'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v2'}}},UnLockStmt{varName='q'}))))))]
+ *FileTable: {}
+ *Heap: {2=Type:IntType Value:300, 1=Type:IntType Value:199}
+
+id 2 
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:0, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : []
+ *ExecutionStack:[UnLockStmt{varName='x'}]
+ *FileTable: {}
+ *Heap: {2=Type:IntType Value:300, 1=Type:IntType Value:199}
+
+id 3 
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:2, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : []
+ *ExecutionStack:[UnLockStmt{varName='q'}]
+ *FileTable: {}
+ *Heap: {2=Type:IntType Value:300, 1=Type:IntType Value:199}
+
+id 4 
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:2, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : []
+ *ExecutionStack:[(HeapWriteStmt{referenceName='v2', expression=Expression plus between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:5}},UnLockStmt{varName='q'}), LockStmt{varName='q'}]
+ *FileTable: {}
+ *Heap: {2=Type:IntType Value:300, 1=Type:IntType Value:199}
+
+id 0 
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:2, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : []
+ *ExecutionStack:[NopStatement, (LockStmt{varName='x'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v1'}}},(UnLockStmt{varName='x'},(LockStmt{varName='q'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v2'}}},UnLockStmt{varName='q'}))))), NopStatement]
+ *FileTable: {}
+ *Heap: {2=Type:IntType Value:300, 1=Type:IntType Value:199}
+
+id 2 
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:0, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : []
+ *ExecutionStack:[]
+ *FileTable: {}
+ *Heap: {2=Type:IntType Value:300, 1=Type:IntType Value:199}
+
+id 3 
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:2, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : []
+ *ExecutionStack:[]
+ *FileTable: {}
+ *Heap: {2=Type:IntType Value:300, 1=Type:IntType Value:199}
+
+id 4 
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:2, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : []
+ *ExecutionStack:[(HeapWriteStmt{referenceName='v2', expression=Expression plus between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:5}},UnLockStmt{varName='q'})]
+ *FileTable: {}
+ *Heap: {2=Type:IntType Value:300, 1=Type:IntType Value:199}
+
+id 0 
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:2, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : []
+ *ExecutionStack:[NopStatement, (LockStmt{varName='x'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v1'}}},(UnLockStmt{varName='x'},(LockStmt{varName='q'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v2'}}},UnLockStmt{varName='q'}))))), NopStatement]
+ *FileTable: {}
+ *Heap: {2=Type:IntType Value:300, 1=Type:IntType Value:199}
+
+id 4 
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:2, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : []
+ *ExecutionStack:[(HeapWriteStmt{referenceName='v2', expression=Expression plus between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:5}},UnLockStmt{varName='q'})]
+ *FileTable: {}
+ *Heap: {2=Type:IntType Value:300, 1=Type:IntType Value:199}
+
+id 0 
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:2, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : []
+ *ExecutionStack:[NopStatement, (LockStmt{varName='x'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v1'}}},(UnLockStmt{varName='x'},(LockStmt{varName='q'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v2'}}},UnLockStmt{varName='q'})))))]
+ *FileTable: {}
+ *Heap: {2=Type:IntType Value:300, 1=Type:IntType Value:199}
+
+id 4 
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:2, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : []
+ *ExecutionStack:[UnLockStmt{varName='q'}, HeapWriteStmt{referenceName='v2', expression=Expression plus between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:5}}]
+ *FileTable: {}
+ *Heap: {2=Type:IntType Value:300, 1=Type:IntType Value:199}
+
+id 0 
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:2, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : []
+ *ExecutionStack:[NopStatement, (LockStmt{varName='x'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v1'}}},(UnLockStmt{varName='x'},(LockStmt{varName='q'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v2'}}},UnLockStmt{varName='q'})))))]
+ *FileTable: {}
+ *Heap: {2=Type:IntType Value:300, 1=Type:IntType Value:199}
+
+id 4 
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:2, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : []
+ *ExecutionStack:[UnLockStmt{varName='q'}, HeapWriteStmt{referenceName='v2', expression=Expression plus between ReadHeapExp{expression=VariableExpression{key='v2'}} and ValueExpression{value=Type:IntType Value:5}}]
+ *FileTable: {}
+ *Heap: {2=Type:IntType Value:300, 1=Type:IntType Value:199}
+
+id 0 
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:2, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : []
+ *ExecutionStack:[NopStatement, (PrintStatement{ReadHeapExp{expression=VariableExpression{key='v1'}}},(UnLockStmt{varName='x'},(LockStmt{varName='q'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v2'}}},UnLockStmt{varName='q'})))), LockStmt{varName='x'}]
+ *FileTable: {}
+ *Heap: {2=Type:IntType Value:305, 1=Type:IntType Value:199}
+
+id 4 
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:2, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : []
+ *ExecutionStack:[UnLockStmt{varName='q'}]
+ *FileTable: {}
+ *Heap: {2=Type:IntType Value:305, 1=Type:IntType Value:199}
+
+id 0 
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:2, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : []
+ *ExecutionStack:[NopStatement, (PrintStatement{ReadHeapExp{expression=VariableExpression{key='v1'}}},(UnLockStmt{varName='x'},(LockStmt{varName='q'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v2'}}},UnLockStmt{varName='q'})))), LockStmt{varName='x'}]
+ *FileTable: {}
+ *Heap: {2=Type:IntType Value:305, 1=Type:IntType Value:199}
+
+id 4 
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:2, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : []
+ *ExecutionStack:[UnLockStmt{varName='q'}]
+ *FileTable: {}
+ *Heap: {2=Type:IntType Value:305, 1=Type:IntType Value:199}
+
+id 0 
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:2, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : []
+ *ExecutionStack:[NopStatement, (PrintStatement{ReadHeapExp{expression=VariableExpression{key='v1'}}},(UnLockStmt{varName='x'},(LockStmt{varName='q'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v2'}}},UnLockStmt{varName='q'}))))]
+ *FileTable: {}
+ *Heap: {2=Type:IntType Value:305, 1=Type:IntType Value:199}
+
+id 4 
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:2, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : []
+ *ExecutionStack:[]
+ *FileTable: {}
+ *Heap: {2=Type:IntType Value:305, 1=Type:IntType Value:199}
+
+id 0 
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:2, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : []
+ *ExecutionStack:[NopStatement, (PrintStatement{ReadHeapExp{expression=VariableExpression{key='v1'}}},(UnLockStmt{varName='x'},(LockStmt{varName='q'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v2'}}},UnLockStmt{varName='q'}))))]
+ *FileTable: {}
+ *Heap: {2=Type:IntType Value:305, 1=Type:IntType Value:199}
+
+id 0 
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:2, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : []
+ *ExecutionStack:[NopStatement, (UnLockStmt{varName='x'},(LockStmt{varName='q'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v2'}}},UnLockStmt{varName='q'}))), PrintStatement{ReadHeapExp{expression=VariableExpression{key='v1'}}}]
+ *FileTable: {}
+ *Heap: {2=Type:IntType Value:305, 1=Type:IntType Value:199}
+
+id 0 
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:2, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : []
+ *ExecutionStack:[NopStatement, (UnLockStmt{varName='x'},(LockStmt{varName='q'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v2'}}},UnLockStmt{varName='q'}))), PrintStatement{ReadHeapExp{expression=VariableExpression{key='v1'}}}]
+ *FileTable: {}
+ *Heap: {2=Type:IntType Value:305, 1=Type:IntType Value:199}
+
+id 0 
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:2, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : [Type:IntType Value:199
 ]
- *ExecutionStack:[NopStatement, (PrintStatement{VariableExpression{key='v'}},ForkStmt{statement=(ExecuteProc{procName='product', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]},ForkStmt{statement=ExecuteProc{procName='sum', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]}})}), ReturnStmt]
+ *ExecutionStack:[NopStatement, (UnLockStmt{varName='x'},(LockStmt{varName='q'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v2'}}},UnLockStmt{varName='q'})))]
  *FileTable: {}
- *Heap: {}
+ *Heap: {2=Type:IntType Value:305, 1=Type:IntType Value:199}
 
 id 0 
- *SymtableStack : [{w=Type:IntType Value:5, v=Type:IntType Value:2}, {b=Type:IntType Value:5, a=Type:IntType Value:20, v=Type:IntType Value:25}]
- *Output log : [Type:IntType Value:25
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:2, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : [Type:IntType Value:199
 ]
- *ExecutionStack:[NopStatement, (PrintStatement{VariableExpression{key='v'}},ForkStmt{statement=(ExecuteProc{procName='product', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]},ForkStmt{statement=ExecuteProc{procName='sum', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]}})}), ReturnStmt]
+ *ExecutionStack:[NopStatement, (UnLockStmt{varName='x'},(LockStmt{varName='q'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v2'}}},UnLockStmt{varName='q'})))]
  *FileTable: {}
- *Heap: {}
+ *Heap: {2=Type:IntType Value:305, 1=Type:IntType Value:199}
 
 id 0 
- *SymtableStack : [{w=Type:IntType Value:5, v=Type:IntType Value:2}]
- *Output log : [Type:IntType Value:25
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:2, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : [Type:IntType Value:199
 ]
- *ExecutionStack:[NopStatement, (PrintStatement{VariableExpression{key='v'}},ForkStmt{statement=(ExecuteProc{procName='product', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]},ForkStmt{statement=ExecuteProc{procName='sum', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]}})})]
+ *ExecutionStack:[NopStatement, (LockStmt{varName='q'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v2'}}},UnLockStmt{varName='q'})), UnLockStmt{varName='x'}]
  *FileTable: {}
- *Heap: {}
+ *Heap: {2=Type:IntType Value:305, 1=Type:IntType Value:199}
 
 id 0 
- *SymtableStack : [{w=Type:IntType Value:5, v=Type:IntType Value:2}]
- *Output log : [Type:IntType Value:25
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:2, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : [Type:IntType Value:199
 ]
- *ExecutionStack:[NopStatement, (PrintStatement{VariableExpression{key='v'}},ForkStmt{statement=(ExecuteProc{procName='product', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]},ForkStmt{statement=ExecuteProc{procName='sum', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]}})})]
+ *ExecutionStack:[NopStatement, (LockStmt{varName='q'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v2'}}},UnLockStmt{varName='q'})), UnLockStmt{varName='x'}]
  *FileTable: {}
- *Heap: {}
+ *Heap: {2=Type:IntType Value:305, 1=Type:IntType Value:199}
 
 id 0 
- *SymtableStack : [{w=Type:IntType Value:5, v=Type:IntType Value:2}]
- *Output log : [Type:IntType Value:25
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:2, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : [Type:IntType Value:199
 ]
- *ExecutionStack:[NopStatement, ForkStmt{statement=(ExecuteProc{procName='product', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]},ForkStmt{statement=ExecuteProc{procName='sum', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]}})}, PrintStatement{VariableExpression{key='v'}}]
+ *ExecutionStack:[NopStatement, (LockStmt{varName='q'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v2'}}},UnLockStmt{varName='q'}))]
  *FileTable: {}
- *Heap: {}
+ *Heap: {2=Type:IntType Value:305, 1=Type:IntType Value:199}
 
 id 0 
- *SymtableStack : [{w=Type:IntType Value:5, v=Type:IntType Value:2}]
- *Output log : [Type:IntType Value:25
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:2, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : [Type:IntType Value:199
 ]
- *ExecutionStack:[NopStatement, ForkStmt{statement=(ExecuteProc{procName='product', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]},ForkStmt{statement=ExecuteProc{procName='sum', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]}})}, PrintStatement{VariableExpression{key='v'}}]
+ *ExecutionStack:[NopStatement, (LockStmt{varName='q'},(PrintStatement{ReadHeapExp{expression=VariableExpression{key='v2'}}},UnLockStmt{varName='q'}))]
  *FileTable: {}
- *Heap: {}
+ *Heap: {2=Type:IntType Value:305, 1=Type:IntType Value:199}
 
 id 0 
- *SymtableStack : [{w=Type:IntType Value:5, v=Type:IntType Value:2}]
- *Output log : [Type:IntType Value:25
-, Type:IntType Value:2
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:2, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : [Type:IntType Value:199
 ]
- *ExecutionStack:[NopStatement, ForkStmt{statement=(ExecuteProc{procName='product', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]},ForkStmt{statement=ExecuteProc{procName='sum', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]}})}]
+ *ExecutionStack:[NopStatement, (PrintStatement{ReadHeapExp{expression=VariableExpression{key='v2'}}},UnLockStmt{varName='q'}), LockStmt{varName='q'}]
  *FileTable: {}
- *Heap: {}
+ *Heap: {2=Type:IntType Value:305, 1=Type:IntType Value:199}
 
 id 0 
- *SymtableStack : [{w=Type:IntType Value:5, v=Type:IntType Value:2}]
- *Output log : [Type:IntType Value:25
-, Type:IntType Value:2
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:2, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : [Type:IntType Value:199
 ]
- *ExecutionStack:[NopStatement, ForkStmt{statement=(ExecuteProc{procName='product', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]},ForkStmt{statement=ExecuteProc{procName='sum', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]}})}]
+ *ExecutionStack:[NopStatement, (PrintStatement{ReadHeapExp{expression=VariableExpression{key='v2'}}},UnLockStmt{varName='q'}), LockStmt{varName='q'}]
  *FileTable: {}
- *Heap: {}
+ *Heap: {2=Type:IntType Value:305, 1=Type:IntType Value:199}
 
 id 0 
- *SymtableStack : [{w=Type:IntType Value:5, v=Type:IntType Value:2}]
- *Output log : [Type:IntType Value:25
-, Type:IntType Value:2
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:2, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : [Type:IntType Value:199
+]
+ *ExecutionStack:[NopStatement, (PrintStatement{ReadHeapExp{expression=VariableExpression{key='v2'}}},UnLockStmt{varName='q'})]
+ *FileTable: {}
+ *Heap: {2=Type:IntType Value:305, 1=Type:IntType Value:199}
+
+id 0 
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:2, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : [Type:IntType Value:199
+]
+ *ExecutionStack:[NopStatement, (PrintStatement{ReadHeapExp{expression=VariableExpression{key='v2'}}},UnLockStmt{varName='q'})]
+ *FileTable: {}
+ *Heap: {2=Type:IntType Value:305, 1=Type:IntType Value:199}
+
+id 0 
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:2, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : [Type:IntType Value:199
+]
+ *ExecutionStack:[NopStatement, UnLockStmt{varName='q'}, PrintStatement{ReadHeapExp{expression=VariableExpression{key='v2'}}}]
+ *FileTable: {}
+ *Heap: {2=Type:IntType Value:305, 1=Type:IntType Value:199}
+
+id 0 
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:2, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : [Type:IntType Value:199
+]
+ *ExecutionStack:[NopStatement, UnLockStmt{varName='q'}, PrintStatement{ReadHeapExp{expression=VariableExpression{key='v2'}}}]
+ *FileTable: {}
+ *Heap: {2=Type:IntType Value:305, 1=Type:IntType Value:199}
+
+id 0 
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:2, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : [Type:IntType Value:199
+, Type:IntType Value:305
+]
+ *ExecutionStack:[NopStatement, UnLockStmt{varName='q'}]
+ *FileTable: {}
+ *Heap: {2=Type:IntType Value:305, 1=Type:IntType Value:199}
+
+id 0 
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:2, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : [Type:IntType Value:199
+, Type:IntType Value:305
+]
+ *ExecutionStack:[NopStatement, UnLockStmt{varName='q'}]
+ *FileTable: {}
+ *Heap: {2=Type:IntType Value:305, 1=Type:IntType Value:199}
+
+id 0 
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:2, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : [Type:IntType Value:199
+, Type:IntType Value:305
 ]
  *ExecutionStack:[NopStatement]
  *FileTable: {}
- *Heap: {}
-
-id 1 
- *SymtableStack : [{w=Type:IntType Value:5, v=Type:IntType Value:2}]
- *Output log : [Type:IntType Value:25
-, Type:IntType Value:2
-]
- *ExecutionStack:[(ExecuteProc{procName='product', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]},ForkStmt{statement=ExecuteProc{procName='sum', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]}})]
- *FileTable: {}
- *Heap: {}
+ *Heap: {2=Type:IntType Value:305, 1=Type:IntType Value:199}
 
 id 0 
- *SymtableStack : [{w=Type:IntType Value:5, v=Type:IntType Value:2}]
- *Output log : [Type:IntType Value:25
-, Type:IntType Value:2
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:2, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : [Type:IntType Value:199
+, Type:IntType Value:305
 ]
  *ExecutionStack:[NopStatement]
  *FileTable: {}
- *Heap: {}
-
-id 1 
- *SymtableStack : [{w=Type:IntType Value:5, v=Type:IntType Value:2}]
- *Output log : [Type:IntType Value:25
-, Type:IntType Value:2
-]
- *ExecutionStack:[(ExecuteProc{procName='product', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]},ForkStmt{statement=ExecuteProc{procName='sum', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]}})]
- *FileTable: {}
- *Heap: {}
+ *Heap: {2=Type:IntType Value:305, 1=Type:IntType Value:199}
 
 id 0 
- *SymtableStack : [{w=Type:IntType Value:5, v=Type:IntType Value:2}]
- *Output log : [Type:IntType Value:25
-, Type:IntType Value:2
+ *SymtableStack : [{x=Type:IntType Value:1, q=Type:IntType Value:2, v2=RefValue{adress=2, locationType=IntType}, v1=RefValue{adress=1, locationType=IntType}}]
+ *Output log : [Type:IntType Value:199
+, Type:IntType Value:305
 ]
  *ExecutionStack:[]
  *FileTable: {}
- *Heap: {}
-
-id 1 
- *SymtableStack : [{w=Type:IntType Value:5, v=Type:IntType Value:2}]
- *Output log : [Type:IntType Value:25
-, Type:IntType Value:2
-]
- *ExecutionStack:[ForkStmt{statement=ExecuteProc{procName='sum', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]}}, ExecuteProc{procName='product', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]}]
- *FileTable: {}
- *Heap: {}
-
-id 1 
- *SymtableStack : [{w=Type:IntType Value:5, v=Type:IntType Value:2}]
- *Output log : [Type:IntType Value:25
-, Type:IntType Value:2
-]
- *ExecutionStack:[ForkStmt{statement=ExecuteProc{procName='sum', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]}}, ExecuteProc{procName='product', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]}]
- *FileTable: {}
- *Heap: {}
-
-id 1 
- *SymtableStack : [{w=Type:IntType Value:5, v=Type:IntType Value:2}, {b=Type:IntType Value:5, a=Type:IntType Value:2}]
- *Output log : [Type:IntType Value:25
-, Type:IntType Value:2
-]
- *ExecutionStack:[ForkStmt{statement=ExecuteProc{procName='sum', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]}}, ((VarDeclarationStatement:v with type=IntType,(AssigmentStatemnet v=Expression multiplication between VariableExpression{key='a'} and VariableExpression{key='b'},PrintStatement{VariableExpression{key='v'}})),ReturnStmt)]
- *FileTable: {}
- *Heap: {}
-
-id 1 
- *SymtableStack : [{w=Type:IntType Value:5, v=Type:IntType Value:2}, {b=Type:IntType Value:5, a=Type:IntType Value:2}]
- *Output log : [Type:IntType Value:25
-, Type:IntType Value:2
-]
- *ExecutionStack:[ForkStmt{statement=ExecuteProc{procName='sum', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]}}, ((VarDeclarationStatement:v with type=IntType,(AssigmentStatemnet v=Expression multiplication between VariableExpression{key='a'} and VariableExpression{key='b'},PrintStatement{VariableExpression{key='v'}})),ReturnStmt)]
- *FileTable: {}
- *Heap: {}
-
-id 1 
- *SymtableStack : [{w=Type:IntType Value:5, v=Type:IntType Value:2}, {b=Type:IntType Value:5, a=Type:IntType Value:2}]
- *Output log : [Type:IntType Value:25
-, Type:IntType Value:2
-]
- *ExecutionStack:[ForkStmt{statement=ExecuteProc{procName='sum', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]}}, ReturnStmt, (VarDeclarationStatement:v with type=IntType,(AssigmentStatemnet v=Expression multiplication between VariableExpression{key='a'} and VariableExpression{key='b'},PrintStatement{VariableExpression{key='v'}}))]
- *FileTable: {}
- *Heap: {}
-
-id 1 
- *SymtableStack : [{w=Type:IntType Value:5, v=Type:IntType Value:2}, {b=Type:IntType Value:5, a=Type:IntType Value:2}]
- *Output log : [Type:IntType Value:25
-, Type:IntType Value:2
-]
- *ExecutionStack:[ForkStmt{statement=ExecuteProc{procName='sum', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]}}, ReturnStmt, (VarDeclarationStatement:v with type=IntType,(AssigmentStatemnet v=Expression multiplication between VariableExpression{key='a'} and VariableExpression{key='b'},PrintStatement{VariableExpression{key='v'}}))]
- *FileTable: {}
- *Heap: {}
-
-id 1 
- *SymtableStack : [{w=Type:IntType Value:5, v=Type:IntType Value:2}, {b=Type:IntType Value:5, a=Type:IntType Value:2}]
- *Output log : [Type:IntType Value:25
-, Type:IntType Value:2
-]
- *ExecutionStack:[ForkStmt{statement=ExecuteProc{procName='sum', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]}}, ReturnStmt, (AssigmentStatemnet v=Expression multiplication between VariableExpression{key='a'} and VariableExpression{key='b'},PrintStatement{VariableExpression{key='v'}}), VarDeclarationStatement:v with type=IntType]
- *FileTable: {}
- *Heap: {}
-
-id 1 
- *SymtableStack : [{w=Type:IntType Value:5, v=Type:IntType Value:2}, {b=Type:IntType Value:5, a=Type:IntType Value:2}]
- *Output log : [Type:IntType Value:25
-, Type:IntType Value:2
-]
- *ExecutionStack:[ForkStmt{statement=ExecuteProc{procName='sum', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]}}, ReturnStmt, (AssigmentStatemnet v=Expression multiplication between VariableExpression{key='a'} and VariableExpression{key='b'},PrintStatement{VariableExpression{key='v'}}), VarDeclarationStatement:v with type=IntType]
- *FileTable: {}
- *Heap: {}
-
-id 1 
- *SymtableStack : [{w=Type:IntType Value:5, v=Type:IntType Value:2}, {b=Type:IntType Value:5, a=Type:IntType Value:2, v=Type:IntType Value:0}]
- *Output log : [Type:IntType Value:25
-, Type:IntType Value:2
-]
- *ExecutionStack:[ForkStmt{statement=ExecuteProc{procName='sum', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]}}, ReturnStmt, (AssigmentStatemnet v=Expression multiplication between VariableExpression{key='a'} and VariableExpression{key='b'},PrintStatement{VariableExpression{key='v'}})]
- *FileTable: {}
- *Heap: {}
-
-id 1 
- *SymtableStack : [{w=Type:IntType Value:5, v=Type:IntType Value:2}, {b=Type:IntType Value:5, a=Type:IntType Value:2, v=Type:IntType Value:0}]
- *Output log : [Type:IntType Value:25
-, Type:IntType Value:2
-]
- *ExecutionStack:[ForkStmt{statement=ExecuteProc{procName='sum', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]}}, ReturnStmt, (AssigmentStatemnet v=Expression multiplication between VariableExpression{key='a'} and VariableExpression{key='b'},PrintStatement{VariableExpression{key='v'}})]
- *FileTable: {}
- *Heap: {}
-
-id 1 
- *SymtableStack : [{w=Type:IntType Value:5, v=Type:IntType Value:2}, {b=Type:IntType Value:5, a=Type:IntType Value:2, v=Type:IntType Value:0}]
- *Output log : [Type:IntType Value:25
-, Type:IntType Value:2
-]
- *ExecutionStack:[ForkStmt{statement=ExecuteProc{procName='sum', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]}}, ReturnStmt, PrintStatement{VariableExpression{key='v'}}, AssigmentStatemnet v=Expression multiplication between VariableExpression{key='a'} and VariableExpression{key='b'}]
- *FileTable: {}
- *Heap: {}
-
-id 1 
- *SymtableStack : [{w=Type:IntType Value:5, v=Type:IntType Value:2}, {b=Type:IntType Value:5, a=Type:IntType Value:2, v=Type:IntType Value:0}]
- *Output log : [Type:IntType Value:25
-, Type:IntType Value:2
-]
- *ExecutionStack:[ForkStmt{statement=ExecuteProc{procName='sum', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]}}, ReturnStmt, PrintStatement{VariableExpression{key='v'}}, AssigmentStatemnet v=Expression multiplication between VariableExpression{key='a'} and VariableExpression{key='b'}]
- *FileTable: {}
- *Heap: {}
-
-id 1 
- *SymtableStack : [{w=Type:IntType Value:5, v=Type:IntType Value:2}, {b=Type:IntType Value:5, a=Type:IntType Value:2, v=Type:IntType Value:10}]
- *Output log : [Type:IntType Value:25
-, Type:IntType Value:2
-]
- *ExecutionStack:[ForkStmt{statement=ExecuteProc{procName='sum', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]}}, ReturnStmt, PrintStatement{VariableExpression{key='v'}}]
- *FileTable: {}
- *Heap: {}
-
-id 1 
- *SymtableStack : [{w=Type:IntType Value:5, v=Type:IntType Value:2}, {b=Type:IntType Value:5, a=Type:IntType Value:2, v=Type:IntType Value:10}]
- *Output log : [Type:IntType Value:25
-, Type:IntType Value:2
-]
- *ExecutionStack:[ForkStmt{statement=ExecuteProc{procName='sum', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]}}, ReturnStmt, PrintStatement{VariableExpression{key='v'}}]
- *FileTable: {}
- *Heap: {}
-
-id 1 
- *SymtableStack : [{w=Type:IntType Value:5, v=Type:IntType Value:2}, {b=Type:IntType Value:5, a=Type:IntType Value:2, v=Type:IntType Value:10}]
- *Output log : [Type:IntType Value:25
-, Type:IntType Value:2
-, Type:IntType Value:10
-]
- *ExecutionStack:[ForkStmt{statement=ExecuteProc{procName='sum', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]}}, ReturnStmt]
- *FileTable: {}
- *Heap: {}
-
-id 1 
- *SymtableStack : [{w=Type:IntType Value:5, v=Type:IntType Value:2}, {b=Type:IntType Value:5, a=Type:IntType Value:2, v=Type:IntType Value:10}]
- *Output log : [Type:IntType Value:25
-, Type:IntType Value:2
-, Type:IntType Value:10
-]
- *ExecutionStack:[ForkStmt{statement=ExecuteProc{procName='sum', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]}}, ReturnStmt]
- *FileTable: {}
- *Heap: {}
-
-id 1 
- *SymtableStack : [{w=Type:IntType Value:5, v=Type:IntType Value:2}]
- *Output log : [Type:IntType Value:25
-, Type:IntType Value:2
-, Type:IntType Value:10
-]
- *ExecutionStack:[ForkStmt{statement=ExecuteProc{procName='sum', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]}}]
- *FileTable: {}
- *Heap: {}
-
-id 1 
- *SymtableStack : [{w=Type:IntType Value:5, v=Type:IntType Value:2}]
- *Output log : [Type:IntType Value:25
-, Type:IntType Value:2
-, Type:IntType Value:10
-]
- *ExecutionStack:[ForkStmt{statement=ExecuteProc{procName='sum', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]}}]
- *FileTable: {}
- *Heap: {}
-
-id 1 
- *SymtableStack : [{w=Type:IntType Value:5, v=Type:IntType Value:2}]
- *Output log : [Type:IntType Value:25
-, Type:IntType Value:2
-, Type:IntType Value:10
-]
- *ExecutionStack:[]
- *FileTable: {}
- *Heap: {}
-
-id 2 
- *SymtableStack : [{w=Type:IntType Value:5, v=Type:IntType Value:2}]
- *Output log : [Type:IntType Value:25
-, Type:IntType Value:2
-, Type:IntType Value:10
-]
- *ExecutionStack:[ExecuteProc{procName='sum', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]}]
- *FileTable: {}
- *Heap: {}
-
-id 2 
- *SymtableStack : [{w=Type:IntType Value:5, v=Type:IntType Value:2}]
- *Output log : [Type:IntType Value:25
-, Type:IntType Value:2
-, Type:IntType Value:10
-]
- *ExecutionStack:[ExecuteProc{procName='sum', procArguments=[VariableExpression{key='v'}, VariableExpression{key='w'}]}]
- *FileTable: {}
- *Heap: {}
-
-id 2 
- *SymtableStack : [{w=Type:IntType Value:5, v=Type:IntType Value:2}, {b=Type:IntType Value:5, a=Type:IntType Value:2}]
- *Output log : [Type:IntType Value:25
-, Type:IntType Value:2
-, Type:IntType Value:10
-]
- *ExecutionStack:[((VarDeclarationStatement:v with type=IntType,(AssigmentStatemnet v=Expression plus between VariableExpression{key='a'} and VariableExpression{key='b'},PrintStatement{VariableExpression{key='v'}})),ReturnStmt)]
- *FileTable: {}
- *Heap: {}
-
-id 2 
- *SymtableStack : [{w=Type:IntType Value:5, v=Type:IntType Value:2}, {b=Type:IntType Value:5, a=Type:IntType Value:2}]
- *Output log : [Type:IntType Value:25
-, Type:IntType Value:2
-, Type:IntType Value:10
-]
- *ExecutionStack:[((VarDeclarationStatement:v with type=IntType,(AssigmentStatemnet v=Expression plus between VariableExpression{key='a'} and VariableExpression{key='b'},PrintStatement{VariableExpression{key='v'}})),ReturnStmt)]
- *FileTable: {}
- *Heap: {}
-
-id 2 
- *SymtableStack : [{w=Type:IntType Value:5, v=Type:IntType Value:2}, {b=Type:IntType Value:5, a=Type:IntType Value:2}]
- *Output log : [Type:IntType Value:25
-, Type:IntType Value:2
-, Type:IntType Value:10
-]
- *ExecutionStack:[ReturnStmt, (VarDeclarationStatement:v with type=IntType,(AssigmentStatemnet v=Expression plus between VariableExpression{key='a'} and VariableExpression{key='b'},PrintStatement{VariableExpression{key='v'}}))]
- *FileTable: {}
- *Heap: {}
-
-id 2 
- *SymtableStack : [{w=Type:IntType Value:5, v=Type:IntType Value:2}, {b=Type:IntType Value:5, a=Type:IntType Value:2}]
- *Output log : [Type:IntType Value:25
-, Type:IntType Value:2
-, Type:IntType Value:10
-]
- *ExecutionStack:[ReturnStmt, (VarDeclarationStatement:v with type=IntType,(AssigmentStatemnet v=Expression plus between VariableExpression{key='a'} and VariableExpression{key='b'},PrintStatement{VariableExpression{key='v'}}))]
- *FileTable: {}
- *Heap: {}
-
-id 2 
- *SymtableStack : [{w=Type:IntType Value:5, v=Type:IntType Value:2}, {b=Type:IntType Value:5, a=Type:IntType Value:2}]
- *Output log : [Type:IntType Value:25
-, Type:IntType Value:2
-, Type:IntType Value:10
-]
- *ExecutionStack:[ReturnStmt, (AssigmentStatemnet v=Expression plus between VariableExpression{key='a'} and VariableExpression{key='b'},PrintStatement{VariableExpression{key='v'}}), VarDeclarationStatement:v with type=IntType]
- *FileTable: {}
- *Heap: {}
-
-id 2 
- *SymtableStack : [{w=Type:IntType Value:5, v=Type:IntType Value:2}, {b=Type:IntType Value:5, a=Type:IntType Value:2}]
- *Output log : [Type:IntType Value:25
-, Type:IntType Value:2
-, Type:IntType Value:10
-]
- *ExecutionStack:[ReturnStmt, (AssigmentStatemnet v=Expression plus between VariableExpression{key='a'} and VariableExpression{key='b'},PrintStatement{VariableExpression{key='v'}}), VarDeclarationStatement:v with type=IntType]
- *FileTable: {}
- *Heap: {}
-
-id 2 
- *SymtableStack : [{w=Type:IntType Value:5, v=Type:IntType Value:2}, {b=Type:IntType Value:5, a=Type:IntType Value:2, v=Type:IntType Value:0}]
- *Output log : [Type:IntType Value:25
-, Type:IntType Value:2
-, Type:IntType Value:10
-]
- *ExecutionStack:[ReturnStmt, (AssigmentStatemnet v=Expression plus between VariableExpression{key='a'} and VariableExpression{key='b'},PrintStatement{VariableExpression{key='v'}})]
- *FileTable: {}
- *Heap: {}
-
-id 2 
- *SymtableStack : [{w=Type:IntType Value:5, v=Type:IntType Value:2}, {b=Type:IntType Value:5, a=Type:IntType Value:2, v=Type:IntType Value:0}]
- *Output log : [Type:IntType Value:25
-, Type:IntType Value:2
-, Type:IntType Value:10
-]
- *ExecutionStack:[ReturnStmt, (AssigmentStatemnet v=Expression plus between VariableExpression{key='a'} and VariableExpression{key='b'},PrintStatement{VariableExpression{key='v'}})]
- *FileTable: {}
- *Heap: {}
-
-id 2 
- *SymtableStack : [{w=Type:IntType Value:5, v=Type:IntType Value:2}, {b=Type:IntType Value:5, a=Type:IntType Value:2, v=Type:IntType Value:0}]
- *Output log : [Type:IntType Value:25
-, Type:IntType Value:2
-, Type:IntType Value:10
-]
- *ExecutionStack:[ReturnStmt, PrintStatement{VariableExpression{key='v'}}, AssigmentStatemnet v=Expression plus between VariableExpression{key='a'} and VariableExpression{key='b'}]
- *FileTable: {}
- *Heap: {}
-
-id 2 
- *SymtableStack : [{w=Type:IntType Value:5, v=Type:IntType Value:2}, {b=Type:IntType Value:5, a=Type:IntType Value:2, v=Type:IntType Value:0}]
- *Output log : [Type:IntType Value:25
-, Type:IntType Value:2
-, Type:IntType Value:10
-]
- *ExecutionStack:[ReturnStmt, PrintStatement{VariableExpression{key='v'}}, AssigmentStatemnet v=Expression plus between VariableExpression{key='a'} and VariableExpression{key='b'}]
- *FileTable: {}
- *Heap: {}
-
-id 2 
- *SymtableStack : [{w=Type:IntType Value:5, v=Type:IntType Value:2}, {b=Type:IntType Value:5, a=Type:IntType Value:2, v=Type:IntType Value:7}]
- *Output log : [Type:IntType Value:25
-, Type:IntType Value:2
-, Type:IntType Value:10
-]
- *ExecutionStack:[ReturnStmt, PrintStatement{VariableExpression{key='v'}}]
- *FileTable: {}
- *Heap: {}
-
-id 2 
- *SymtableStack : [{w=Type:IntType Value:5, v=Type:IntType Value:2}, {b=Type:IntType Value:5, a=Type:IntType Value:2, v=Type:IntType Value:7}]
- *Output log : [Type:IntType Value:25
-, Type:IntType Value:2
-, Type:IntType Value:10
-]
- *ExecutionStack:[ReturnStmt, PrintStatement{VariableExpression{key='v'}}]
- *FileTable: {}
- *Heap: {}
-
-id 2 
- *SymtableStack : [{w=Type:IntType Value:5, v=Type:IntType Value:2}, {b=Type:IntType Value:5, a=Type:IntType Value:2, v=Type:IntType Value:7}]
- *Output log : [Type:IntType Value:25
-, Type:IntType Value:2
-, Type:IntType Value:10
-, Type:IntType Value:7
-]
- *ExecutionStack:[ReturnStmt]
- *FileTable: {}
- *Heap: {}
-
-id 2 
- *SymtableStack : [{w=Type:IntType Value:5, v=Type:IntType Value:2}, {b=Type:IntType Value:5, a=Type:IntType Value:2, v=Type:IntType Value:7}]
- *Output log : [Type:IntType Value:25
-, Type:IntType Value:2
-, Type:IntType Value:10
-, Type:IntType Value:7
-]
- *ExecutionStack:[ReturnStmt]
- *FileTable: {}
- *Heap: {}
-
-id 2 
- *SymtableStack : [{w=Type:IntType Value:5, v=Type:IntType Value:2}]
- *Output log : [Type:IntType Value:25
-, Type:IntType Value:2
-, Type:IntType Value:10
-, Type:IntType Value:7
-]
- *ExecutionStack:[]
- *FileTable: {}
- *Heap: {}
+ *Heap: {2=Type:IntType Value:305, 1=Type:IntType Value:199}
 

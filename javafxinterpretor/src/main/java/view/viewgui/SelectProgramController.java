@@ -12,6 +12,7 @@ import domain.my_data_structures.my_table.MyTable;
 import domain.program_state.ProgramState;
 import domain.program_state.heap.IHeap;
 import domain.program_state.latch_table.LatchTable;
+import domain.program_state.lock_table.LockTable;
 import domain.program_state.proc_table.ProcTable;
 import domain.program_state.semaphore_table.ISemaphoreTable;
 import domain.program_state.semaphore_table.SemaphoreTable;
@@ -19,6 +20,9 @@ import domain.statement.*;
 import domain.statement.latch.AwaitStmt;
 import domain.statement.latch.CountDown;
 import domain.statement.latch.NewLatchStmt;
+import domain.statement.lock.LockStmt;
+import domain.statement.lock.NewLockStmt;
+import domain.statement.lock.UnLockStmt;
 import domain.statement.procedure.DefineProcedure;
 import domain.statement.procedure.ExecuteProcStmt;
 import domain.statement.switch_statement.CaseSwitch;
@@ -65,7 +69,7 @@ public class SelectProgramController {
         MyTable<String, FileDesc> fileTable=new MyTable<String,FileDesc>();
         ISemaphoreTable semaphoreTable=new SemaphoreTable();
         executionStack.push(ex);
-        ProgramState program=new ProgramState(symTable,heap, outputLog, executionStack, fileTable, semaphoreTable, new LatchTable(), new ProcTable());
+        ProgramState program=new ProgramState(symTable,heap, outputLog, executionStack, fileTable, semaphoreTable, new LatchTable(),new LockTable(), new ProcTable());
         controller.addProgramToExecution(program);
         return controller;
     }
@@ -310,6 +314,78 @@ public class SelectProgramController {
                         new ExecuteProcStmt("sum", new ArrayList<>(Arrays.asList(new VarExp("v"), new VarExp("w"))))
         ) ) ) ) ) ) ) ) )));
 }
+    private IStmt addLockExample(){
+//        Ref int v1; Ref int v2; int x; int q;
+//        new(v1,20);new(v2,30);newLock(x);
+//        fork(
+//                fork(
+//                        lock(x);wh(v1,rh(v1)-1);unlock(x)
+                    //);
+                //        lock(x);wh(v1,rh(v1)*10);unlock(x)
+//        );
+//        newLock(q);
+//        fork(
+//                fork(lock(q);wh(v2,rh(v2)+5);unlock(q)
+//            );
+//        lock(q);wh(v2,rh(v2)*10);unlock(q)
+//);
+//        nop;nop;nop;nop;
+//        lock(x); print(rh(v1)); unlock(x);
+//        lock(q); print(rh(v2)); unlock(q);
+//
+        return new CompStmt(
+                new VarDeclStmt("v1", new RefType(new IntType())), new CompStmt(
+                new VarDeclStmt("v2", new RefType(new IntType())), new CompStmt(
+                new VarDeclStmt("x", new IntType()), new CompStmt(
+                new VarDeclStmt("q", new IntType()), new CompStmt(
+                new NewStatement("v1", new ValueExp(new IntValue(20))), new CompStmt(
+                new NewStatement("v2", new ValueExp(new IntValue(30))), new CompStmt(
+                new NewLockStmt("x"), new CompStmt(
+                new ForkStmt(new CompStmt(
+                        new ForkStmt( new CompStmt(
+                                new LockStmt("x"), new CompStmt(
+                                new HeapWriteStmt("v1", new ArithExp(BinaryExpression.OperationTypes.minus, new ReadHeapExp(new VarExp("v1")), new ValueExp(new IntValue(1)))        ),
+                                new UnLockStmt("x")
+                        ))), new CompStmt(
+                        new LockStmt("x"), new CompStmt(
+                        new HeapWriteStmt("v1", new ArithExp(BinaryExpression.OperationTypes.multiplication, new ReadHeapExp(new VarExp("v1")), new ValueExp(new IntValue(10)))),
+                        new UnLockStmt("x")
+                )))),new CompStmt(
+                new NewLockStmt("q"),new CompStmt(
+                new ForkStmt(new CompStmt(
+                        new ForkStmt( new CompStmt(
+                                new LockStmt("q"), new CompStmt(
+                                new HeapWriteStmt("v2", new ArithExp(BinaryExpression.OperationTypes.plus, new ReadHeapExp(new VarExp("v2")), new ValueExp(new IntValue(5)))        ),
+                                new UnLockStmt("q")
+                        ))), new CompStmt(
+                        new LockStmt("q"), new CompStmt(
+                        new HeapWriteStmt("v2", new ArithExp(BinaryExpression.OperationTypes.multiplication, new ReadHeapExp(new VarExp("v2")), new ValueExp(new IntValue(10)))),
+                        new UnLockStmt("q")
+                )))),new CompStmt(
+                new NopStmt(), new CompStmt(
+                new NopStmt(), new CompStmt(
+                new NopStmt(), new CompStmt(
+                new NopStmt(), new CompStmt(
+                new LockStmt("x"), new CompStmt(
+                new PrintStmt(new ReadHeapExp(new VarExp("v1"))),new CompStmt(
+                new UnLockStmt("x"),new CompStmt(
+                new LockStmt("q"), new CompStmt(
+                new PrintStmt(new ReadHeapExp(new VarExp("v2"))),
+                new UnLockStmt("q")
+
+                        )
+                        )
+
+                        )
+
+                        ))))
+
+        ))
+        )))))))
+        )
+        )
+        );
+    }
     private void addExamples(){
         programList.setItems(FXCollections.observableArrayList(
                 addNop( getRelationalExample()),
@@ -319,7 +395,8 @@ public class SelectProgramController {
                 addNop(addSemaphoreEx()),
                 addNop(addConditionalExamples()),
                 addNop(addLatchExample()),
-                addNop(addProcExample())
+                addNop(addProcExample()),
+                addNop(addLockExample())
         ) );
     }
     @FXML

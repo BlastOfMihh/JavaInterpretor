@@ -12,6 +12,7 @@ import domain.my_data_structures.my_list.MyList;
 import domain.my_data_structures.my_stack.MyStack;
 import domain.my_data_structures.my_table.MyTable;
 import domain.program_state.latch_table.LatchTable;
+import domain.program_state.lock_table.LockTable;
 import domain.program_state.proc_table.ProcTable;
 import domain.program_state.semaphore_table.SemaphoreTable;
 import domain.statement.*;
@@ -44,6 +45,7 @@ public class InterpreterMain {
                 fileTable,
                 new SemaphoreTable(),
                 new LatchTable(),
+                new LockTable(),
                 new ProcTable()
         );
         controller.addProgramToExecution(program);

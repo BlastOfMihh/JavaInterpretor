@@ -28,7 +28,7 @@ public class ForkStmt implements IStmt{
         IMyStack<IStmt> newExecutionStack= new MyStack<>();
         newExecutionStack.push(statement);
         return new ProgramState(
-                cloneSymStack, state.getHeap(), state.getOutputLog(), newExecutionStack, state.getFileTable(), state.getSemaphoreTable(), state.getLatchTable(), state.getProcTable()
+                cloneSymStack, state.getHeap(), state.getOutputLog(), newExecutionStack, state.getFileTable(), state.getSemaphoreTable(), state.getLatchTable(),state.getLockTable(), state.getProcTable()
         );
     }
 

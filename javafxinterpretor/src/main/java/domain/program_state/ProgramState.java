@@ -8,6 +8,7 @@ import domain.my_data_structures.my_stack.IMyStack;
 import domain.my_data_structures.my_list.IMyList;
 import domain.my_data_structures.my_table.IMyTable;
 import domain.program_state.latch_table.ILatchTable;
+import domain.program_state.lock_table.ILockTable;
 import domain.program_state.proc_table.IProcTable;
 import domain.program_state.semaphore_table.ISemaphoreTable;
 import domain.statement.IStmt;
@@ -26,10 +27,11 @@ public class ProgramState {
     ISemaphoreTable semaphoreTable;
     ILatchTable latchTable;
     IProcTable procTable;
+    ILockTable lockTable;
     private final int id;
     static int availableId=0;
 
-    public ProgramState(IMyTable<String,IValue> symTable, IHeap heap, IMyList<String> outputLog, IMyStack<IStmt> executionStack, IMyTable<String,FileDesc> fileTable, ISemaphoreTable semaphoreTable, ILatchTable latchTable, IProcTable procTable){
+    public ProgramState(IMyTable<String,IValue> symTable, IHeap heap, IMyList<String> outputLog, IMyStack<IStmt> executionStack, IMyTable<String,FileDesc> fileTable, ISemaphoreTable semaphoreTable, ILatchTable latchTable, ILockTable lockTable, IProcTable procTable){
         this.heap=heap;
         this.symTableStack=new MyStack<>();
         this.symTableStack.push(symTable);
@@ -40,10 +42,11 @@ public class ProgramState {
         this.id=availableId++;
         this.semaphoreTable=semaphoreTable;
         this.latchTable=latchTable;
+        this.lockTable=lockTable;
         this.procTable=procTable;
     }
-    public ProgramState(IMyStack<IMyTable<String,IValue>> symTableStack, IHeap heap, IMyList<String> outputLog, IMyStack<IStmt> executionStack, IMyTable<String,FileDesc> fileTable, ISemaphoreTable semaphoreTable, ILatchTable latchTable, IProcTable procTable){
-        this(symTableStack.getLast(), heap,outputLog,executionStack,fileTable,semaphoreTable,latchTable, procTable);
+    public ProgramState(IMyStack<IMyTable<String,IValue>> symTableStack, IHeap heap, IMyList<String> outputLog, IMyStack<IStmt> executionStack, IMyTable<String,FileDesc> fileTable, ISemaphoreTable semaphoreTable, ILatchTable latchTable, ILockTable lockTable, IProcTable procTable){
+        this(symTableStack.getLast(), heap,outputLog,executionStack,fileTable,semaphoreTable,latchTable, lockTable, procTable);
         this.symTableStack=symTableStack;
     }
     public int getId(){
@@ -76,17 +79,8 @@ public class ProgramState {
     public IProcTable getProcTable() {
         return procTable;
     }
+    public ILockTable getLockTable() { return lockTable; }
 
-    public ProgramState executeOneStep()throws MyException {
-        if (executionStack.empty()){
-            throw new MyException("No more elements in the execution Stack");
-        }
-        IStmt topStatement=executionStack.pop();
-        return topStatement.execute(this);
-    }
-    public boolean isCompleted() {
-        return executionStack.empty();
-    }
     public String getOutput(){
         StringBuilder answer=new StringBuilder();
         for (int i=0; i<outputLog.size();++i){
@@ -100,6 +94,16 @@ public class ProgramState {
     public void setHeap(IHeap heap){
         this.heap=heap;
         this.garbageCollector.setHeap(heap);
+    }
+    public ProgramState executeOneStep()throws MyException {
+        if (executionStack.empty()){
+            throw new MyException("No more elements in the execution Stack");
+        }
+        IStmt topStatement=executionStack.pop();
+        return topStatement.execute(this);
+    }
+    public boolean isCompleted() {
+        return executionStack.empty();
     }
     @Override
     public String toString() {// good enough might change later
