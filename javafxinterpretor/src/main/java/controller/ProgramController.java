@@ -13,6 +13,7 @@ import java.util.Vector;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.atomic.AtomicReference;
 import java.util.stream.Collectors;
 
 public class ProgramController {
@@ -52,6 +53,8 @@ public class ProgramController {
                 .collect(Collectors.toList());
         // starting execution
         List<ProgramState> newPrgList;
+        AtomicReference<String> myErrorMsg = new AtomicReference<>();
+        myErrorMsg.set("");
         try{
             newPrgList = executor.invokeAll(callables) .stream()
                     .map(programStateFuture -> {
@@ -61,6 +64,8 @@ public class ProgramController {
                             //throw new MyException(exception.getMessage());
                             // hope nothing happens
                             System.out.print(exception.getMessage());//not good code
+                            myErrorMsg.set(exception.getMessage());
+                            //throw new MyException(exception.getMessage());
                             return null;
                         }
                     }).filter(p->p!=null)
@@ -71,6 +76,8 @@ public class ProgramController {
         programList.addAll(newPrgList);
         repository.setProgramList(programList);
         repository.logRepo();
+        if (!myErrorMsg.get().equals(""))
+            throw new MyException(myErrorMsg.get());
     }
     public void executeOneStep() throws MyException {
         List<ProgramState> programList=repository.getAll();

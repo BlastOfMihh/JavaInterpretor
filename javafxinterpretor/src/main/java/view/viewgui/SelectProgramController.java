@@ -369,6 +369,7 @@ public class SelectProgramController {
                 new LockStmt("x"), new CompStmt(
                 new PrintStmt(new ReadHeapExp(new VarExp("v1"))),new CompStmt(
                 new UnLockStmt("x"),new CompStmt(
+                //new AssignStmt("q", new ValueExp(new IntValue(10000))), new CompStmt(///remove pls
                 new LockStmt("q"), new CompStmt(
                 new PrintStmt(new ReadHeapExp(new VarExp("v2"))),
                 new UnLockStmt("q")
@@ -383,6 +384,34 @@ public class SelectProgramController {
         ))
         )))))))
         )
+        //)
+        ));
+    }
+    private IStmt addForExample(){
+        return new CompStmt(
+        //  Ref int a; new(a,20);
+        //  (for(v=0;v<3;v=v+1)
+    //           fork( print(v), v=v*rh(a)) );
+        //  print(rh(a))
+        //  The final Out should be {0,1,2,20}
+            new VarDeclStmt("a", new RefType(new IntType())), new CompStmt(
+            new NewStatement("a", new ValueExp(new IntValue(20))), new CompStmt(
+            new ForStmt(
+                    "v",
+                    new ValueExp(new IntValue(0)),
+                    new ValueExp(new IntValue(3)),
+                    new ArithExp(BinaryExpression.OperationTypes.plus, new VarExp("v"), new ValueExp(new IntValue(1))),
+                    new ForkStmt(
+                            new CompStmt(
+                                new PrintStmt(new VarExp("v")),new CompStmt(
+                                new AssignStmt("v", new ArithExp(BinaryExpression.OperationTypes.multiplication,
+                                        new VarExp("v"), new ReadHeapExp(new VarExp("a")))),
+                                    new NopStmt()
+                            )
+                            )
+                    )
+            ),
+            new PrintStmt(new ReadHeapExp(new VarExp("a"))))
         )
         );
     }
@@ -391,6 +420,8 @@ public class SelectProgramController {
                 addNop( getRelationalExample()),
                 addNop( addNimrodExamples()),
                 addNop( addThreadsExample()),
+                addNop(addForExample()),
+                addNop(addForExample()),
                 addNop(addSwitchStatementEx()),
                 addNop(addSemaphoreEx()),
                 addNop(addConditionalExamples()),

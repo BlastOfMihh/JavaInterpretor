@@ -17,6 +17,8 @@ public class LockStmt implements IStmt {
     public ProgramState execute(ProgramState state) throws MyException {
         Integer index=((IntValue)state.getSymTable().get(varName)).getValue();
         synchronized (state.getLockTable()){
+            if (!state.getSymTable().get(varName).getType().equals(new IntType()))
+                throw new MyException("Variable not of type INT in "+this);
             if (!state.getLockTable().containsKey(index))
                 throw new MyException("Index not found in lockTable in "+this);
             if (state.getLockTable().get(index)==-1)

@@ -39,6 +39,10 @@ public class ExecuteProgramController extends StatedEPC {
     }
     @FXML Label programStateLabel;
 
+    public VBox lockPane;
+    public TableView<Pair<Integer,Integer>> lockView;
+    public TableColumn<Pair<Integer, Integer>, Integer> lockAddressColumn;
+    public TableColumn<Pair<Integer, Integer>, Integer> lockValueColumn;
 
     static boolean showSemaphore=true;
     public VBox semaphorePane;
@@ -48,7 +52,7 @@ public class ExecuteProgramController extends StatedEPC {
     public TableColumn<Pair<Integer, Pair<Integer, List<Integer>>>, String> semaphoreListIntColumn;
 
 
-    boolean showLatchPane=false;
+    boolean showLatchPane=true;
     public VBox latchPane;
     public TableView<Pair<Integer,Integer>> latchView;
     public TableColumn<Pair<Integer, Integer>, Integer> latchAddressColumn;
@@ -87,6 +91,9 @@ public class ExecuteProgramController extends StatedEPC {
         latchAddressColumn.setCellValueFactory(p -> new SimpleIntegerProperty(p.getValue().getKey()).asObject());
         latchValueColumn.setCellValueFactory(p -> new SimpleIntegerProperty(   p.getValue().getValue()  ).asObject());
         latchPane.setVisible(showLatchPane);
+
+        lockAddressColumn.setCellValueFactory(p -> new SimpleIntegerProperty(p.getValue().getKey()).asObject());
+        lockValueColumn.setCellValueFactory(p -> new SimpleIntegerProperty(   p.getValue().getValue()  ).asObject());
     }
 
     private void updateProgramIDsView() {
@@ -181,6 +188,7 @@ public class ExecuteProgramController extends StatedEPC {
             updateSemaphore();
         if (showLatchPane)
             updateLatch();
+        updateLock();
     }
 
     @FXML
@@ -192,7 +200,7 @@ public class ExecuteProgramController extends StatedEPC {
                 try{
                     programController.executeOneStep();
                     updateGui();
-                }catch (MyException e){
+                }catch (Exception e){
                     Alert alert = new Alert(Alert.AlertType.ERROR, e.getMessage(), ButtonType.OK);
                     alert.showAndWait();
                     stateChangeRequst(States.FINISHED);

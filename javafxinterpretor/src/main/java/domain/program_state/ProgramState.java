@@ -107,13 +107,14 @@ public class ProgramState {
     }
     @Override
     public String toString() {// good enough might change later
-        return String.format("id %s \n *SymtableStack : %s\n *Output log : %s\n *ExecutionStack:%s\n *FileTable: %s\n *Heap: %s\n\n",
+        return String.format("id %s \n *SymtableStack : %s\n *Output log : %s\n *ExecutionStack:%s\n *FileTable: %s\n *Heap: %s\n *LockTable: %s\n",
                 id,
                 symTableStack.toString(),
                 outputLog.toString(),
                 executionStack.toString(),
                 fileTable.toString(),
-                heap.toString()
+                heap.toString(),
+                lockTable.toString()
         );
     }
 }
