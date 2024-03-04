@@ -177,6 +177,17 @@ public class ExecuteProgramController extends StatedEPC {
         latchView.setItems(FXCollections.observableList(latchTableList));
         latchView.refresh();
     }
+
+
+    private void updateLock() {
+        ProgramState currentProgram = getCurrentProgram();
+        List<Pair<Integer, Integer>> lockTableList = new ArrayList<>();
+        if (currentProgram!=null)
+            for (Map.Entry<Integer, Integer> entry : currentProgram.getLockTable().entrySet())
+                lockTableList.add(new Pair<>(entry.getKey(), entry.getValue()));
+        lockView.setItems(FXCollections.observableList(lockTableList));
+        lockView.refresh();
+    }
     protected void updateGui(){
         updateExecutionStackView();
         updateSymbolTableView();
