@@ -90,7 +90,7 @@
                             </children>
                         </VBox>
 
-                        <VBox fx:id="lockPane" GridPane.rowIndex="2" GridPane.columnIndex="1" >
+                        <VBox fx:id="lockPane" GridPane.rowIndex="2" GridPane.columnIndex="0" >
                             <children>
                                 <Label text="LockTable" />
                                 <TableView fx:id="lockView" prefHeight="200.0" prefWidth="200.0">
